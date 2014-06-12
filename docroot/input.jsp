@@ -96,7 +96,7 @@
 
             <fieldset class="gadget2_fieldset">
 
-                <legend class="gadget2_legend"> SETUP </legend>
+                <legend class="gadget2_legend"> SETUP Value </legend>
                 <dl>
 
                     <dt><label id="gadget2_label">Boxlength =</label><input  id="boxlengthID" name="boxlength" type="text"   /></dt>
