@@ -87,7 +87,7 @@
     -->
     <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
        
- <div id="gadget2_setup1">Click to add the setup value</div>
+
               
 
         
@@ -215,10 +215,3 @@
 
 
                 </center>
-<script>            
-    $(document).ready(function () {
-        $("#gadget2_setup1").click(function () {
-            $("#gadget2_setup").slideToggle("slow")
-        });
-    });            
-</script> 
