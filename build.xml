@@ -2,7 +2,7 @@
 <!DOCTYPE project>
 
 <project name="portlets" basedir="." default="deploy" xmlns:antelope="antlib:ise.antelope.tasks">
-	<import file="../build-common-plugins.xml" />
+	<import file="../../build-common-plugins.xml" />
 
 	<target name="create">
 		<if>
