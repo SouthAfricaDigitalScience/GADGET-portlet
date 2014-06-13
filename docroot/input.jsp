@@ -48,7 +48,11 @@
         </td>
         <td>
             This is an example portlet!
+<<<<<<< HEAD
             <p><b>Exchange data between jsp page and java codeeee</b></p>
+=======
+            <p><b>Exchange data between jsp page and java code</b></p>
+>>>>>>> cc1919abe5a60eb35a81f31733ee7760c4d8858a
         </td>
     <tr>
 </table>
@@ -63,6 +67,7 @@
 // the Enum type: Views. This value will be assigned calling the function: setRenderParameter
 //
 %>
+<<<<<<< HEAD
 
 <!-- <div>
      <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
@@ -673,10 +678,152 @@
 
 
 </form>
+=======
+<center>
+    <!-- <div>
+         <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
+ 
+                 <b>Input value</b> 
+                 <input type="text" id="inputValueId" name="inputValue" />
+ 
+                 <input type="submit" value="GO">
+ 
+         </form>
+     </div>
+     <br>
+     <div>
+         <form  action="<portlet:renderURL portletMode="view"><portlet:param name="PortletStatus" value="VIEW_NO_ACTION"/></portlet:renderURL>" method="post">
+ 
+                 <b>Go a new JSP page without Action</b> 
+                 <input type="submit" value="GO">
+ 
+         </form>
+     </div>
+     
+    -->
+    <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
+       
+
+              
+
+        
+
+        <div id="gadget2_setup" hidden="true">
+
+            <fieldset class="gadget2_fieldset">
+
+                <legend class="gadget2_legend"> SETUP Value </legend>
+                <dl>
+
+                    <dt><label id="gadget2_label">Boxlength =</label><input  id="boxlengthID" name="boxlength" type="text"   /></dt>
+                </dl>
+
+
+
+                <dl>
+                    <dt><label id="gadget2_label"> Zstart =</label>
+
+                    <input  id="zstartID" name="zstart" type="text" value=""/></dt>
+
+                </dl>
+
+
+
+                <dl>
+                    <dt><label id="gadget2_label">Levelmin</label>
+
+
+                    <input id="levelminID" name="levelmin" type="text" value=""/></dt>
+                </dl>
+                <dl>
+                    <dt><label id="gadget2_label">Levelmin_TF</label>
+
+
+                   <input id="levelmin_TFID" name="levelmin_TF" type="text" value=""/></dt>
+                </dl>
+                <dl>
+                    <dt><label id="gadget2_label">levelmax</label>
+
+
+                    <input id="levelmaxID" name="levelmax" type="text" value=""/></dt>
+                </dl>
+                <dl>
+                    <dt><label id="gadget2_label">padding</label>
+
+
+                   <input id="paddingID" name="padding" type="text" value=""/></dt>
+                </dl>
+                <dl>
+                    <dt><label id="gadget2_label">overlap</label>
+
+
+                   <input id="overlapID" name="overlap" type="text" value=""/></dt>
+                </dl>
+                <dl>
+                    <dt><label id="gadget2_label">ref_center</label>
+
+
+                    <input id="ref_centerID" name="ref_center" type="text" value=""/></dt>
+                </dl>
+                <dl>
+                    <dt><label id="gadget2_label">ref_extent</label>
+
+
+                    <input id="ref_extentID" name="ref_extent" type="text" value=""/></dt>
+                </dl>
+                <dl>
+                    <dt><label id="gadget2_label">ref_extent</label>
+
+
+                    <input id="ref_extentID" name="ref_extent" type="text" value=""/></dt>
+                </dl>
+
+                <dl>
+                    <dt><label id="gadget2_label">align_top</label>
+                    <input  type="radio" name="align_top" id="align_topID" value="Y"> Yes 
+                    <input type="radio" name="align_top" id="align_topID" valueID="N"> No </dt>
+
+                </dl>
+
+
+                <dl>
+                    <dt><label id="gadget2_label">baryons</label>
+                    <input  type="radio" name="baryons" id="baryonsID" value="Y"> Yes 
+                    <input type="radio" name="baryons" id="baryonsID" valueID="N"> No </dt>
+
+                </dl>
+
+                <dl>
+                    <dt><label id="gadget2_label">use_2LPT</label>
+                   <input  type="radio" name="use_2LPT" id="use_2LPTID" value="Y"> Yes 
+                    <input type="radio" name="use_2LPT" id="use_2LPTID" valueID="N"> No </dt>
+
+                </dl>
+                <dl>
+                    <dt><label id="gadget2_label">use_LLA</label></dt>
+                    <dt><input  type="radio" name="use_LLA" id="use_LLAID" value="Y"> Yes 
+                    <input type="radio" name="use_LLA" id="use_LLAID" valueID="N"> No </dt>
+
+                </dl>
+                <dl>
+                    <dt><label id="gadget2_label">periodic_TF</label>
+                    <input  type="radio" name="periodic_TF" id="periodic_TFID" value="Y"> Yes 
+                    <input type="radio" name="periodic_TF" id="periodic_TFID" valueID="N"> No </dt>
+
+                </dl>
+
+          
+
+
+
+            </fieldset>
+        </div>
+>>>>>>> cc1919abe5a60eb35a81f31733ee7760c4d8858a
 
 
 
 
+<<<<<<< HEAD
 <script>
     
  
@@ -845,7 +992,17 @@ function ValidatePoissonValues(){
 }
 </script>
 
+=======
+
+
+
+                </form>
+>>>>>>> cc1919abe5a60eb35a81f31733ee7760c4d8858a
 
 
 
 
+<<<<<<< HEAD
+=======
+                </center>
+>>>>>>> cc1919abe5a60eb35a81f31733ee7760c4d8858a
