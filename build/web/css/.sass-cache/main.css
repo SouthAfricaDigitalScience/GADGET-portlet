@@ -1,0 +1,30 @@
+.gadget2_textbox {
+  width: 80px;
+  float: right; }
+
+#gadget2_setup {
+  width: 100px; }
+
+#gadget2_legend {
+  font: bold; }
+
+#gadget2_label {
+  float: left; }
+
+#labelEquals {
+  float: center; }
+
+/*.tabel{
+    border-spacing: 10;
+    border-collapse:collapse;
+}*/
+#td_left {
+  padding-right: 10px; }
+
+#td_center {
+  padding-right: 10px;
+  padding-left: 5px; }
+
+#td_right {
+  padding-bottom: 10px; }
+
