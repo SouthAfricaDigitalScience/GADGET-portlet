@@ -256,6 +256,18 @@
                                 </tr>
 
 
+                                <tr>
+                                    <td id="td_left">
+                                        <label class="gadget2_label" id="ref_offsetLabelID">ref_offset</label>
+                                    </td>
+                                    <td id="td_center">
+                                        <label id="labelEquals">= </label>
+
+                                    </td>
+                                    <td id="td_right">
+                                        <input class="gadget2_textbox" id="ref_offsetID" name="ref_offset" type="text" value=""/>
+                                    </td>
+                                </tr>
 
 
                                 <tr>
@@ -733,18 +745,18 @@
         document.getElementById("levelminID").value="7";
         document.getElementById("levelminLabelID").style.color="black";
         
-        document.getElementById("levelmin_TFID").value="8";
+        document.getElementById("levelmin_TFID").value="7";
         document.getElementById("levelmin_TFLabelID").style.color="black";
         
         
-        document.getElementById("levelmaxID").value="9";
+        document.getElementById("levelmaxID").value="8";
         document.getElementById("levelmaxLabelID").style.color="black";
         
         
-        document.getElementById("paddingID").value="4";
+        document.getElementById("paddingID").value="8";
         document.getElementById("paddingLabelID").style.color="black";
         
-        document.getElementById("overlapID").value="8";
+        document.getElementById("overlapID").value="4";
         document.getElementById("overlapLabelID").style.color="black";
         
         document.getElementById("ref_centerID").value="0.5,0.5,0.5";
@@ -753,9 +765,12 @@
         document.getElementById("ref_extentID").value="0.2,0.2,0.2";
         document.getElementById("ref_extentLabelID").style.color="black";
         
+        document.getElementById("ref_offsetID").value="0.4,0.4,0.4";
+        document.getElementById("ref_offsetLabelID").style.color="black";
         
-        if(document.getElementById("align_top_N_ID").value=="N"){
-            document.getElementById("align_top_N_ID").checked=true;
+        
+        if(document.getElementById("align_top_Y_ID").value=="Y"){
+            document.getElementById("align_top_Y_ID").checked=true;
             document.getElementById("align_top_LabelID").style.color="black";
         }
        
@@ -771,8 +786,8 @@
             document.getElementById("baryons_N_ID").checked=true;
             document.getElementById("baryons_LabelID").style.color="black";
         }
-        if(document.getElementById("use_LLA_N_ID").value=="N"){
-            document.getElementById("use_LLA_N_ID").checked=true;
+        if(document.getElementById("use_LLA_Y_ID").value=="Y"){
+            document.getElementById("use_LLA_Y_ID").checked=true;
             document.getElementById("use_LLA_LabelID").style.color="black";
         }
        
@@ -799,6 +814,7 @@
         document.getElementById("levelmin_TFID").value="";
         document.getElementById("ref_centerID").value="";
         document.getElementById("ref_extentID").value="";
+        document.getElementById("ref_offsetID").value="";
         
 
         
@@ -841,6 +857,7 @@
         document.getElementById("levelmin_TFLabelID").style.color="black";
         document.getElementById("ref_centerLabelID").style.color="black";
         document.getElementById("ref_extentLabelID").style.color="black";
+        document.getElementById("ref_offsetLabelID").style.color="black";
         document.getElementById("align_top_LabelID").style.color="black";
         document.getElementById("use_2LPT_LabelID").style.color="black";
         document.getElementById("baryons_LabelID").style.color="black";
@@ -942,6 +959,17 @@
           
             document.getElementById("ref_extentID").value="";
             document.getElementById("ref_extentLabelID").style.color="red";
+            b1=false;
+       
+        }else{
+            document.getElementById("ref_extentLabelID").style.color="black";
+        }
+        
+        if(document.getElementById("ref_offsetID").value== null || document.getElementById("ref_offsetID").value==""){
+ 
+          
+            document.getElementById("ref_offsetID").value="";
+            document.getElementById("ref_offsetLabelID").style.color="red";
             b1=false;
        
         }else{
