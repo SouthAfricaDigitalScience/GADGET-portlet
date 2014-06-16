@@ -44,18 +44,54 @@
 <table>
     <tr>
         <td valign="top">
-            <img align="left" style="padding:10px 10px;" src="<%=renderRequest.getContextPath()%>/images/AppLogo.png" width="80%"/>
+            <img align="left" style="padding:10px 10px;" src="<%=renderRequest.getContextPath()%>/images/AppLogo.jpg" width="80%"/>
         </td>
         <td>
-            This is an example portlet!
-<<<<<<< HEAD
-            <p><b>Exchange data between jsp page and java codeeee</b></p>
-=======
-            <p><b>Exchange data between jsp page and java code</b></p>
->>>>>>> cc1919abe5a60eb35a81f31733ee7760c4d8858a
+           <!--This is an example portlet!
+            <p><b>Exchange data between jsp page and java codeeee</b></p>-->
+           
+           <p style="font-size: small"> 
+               GADGET is a freely available code for cosmological N-body/SPH simulations <br> 
+               on massively parallel computers with distributed memory.<br> 
+               GADGET uses an explicit communication model that is implemented<br>
+               with the standardized MPI communication interface. <br>
+               The code can be run on essentially all supercomputer systems presently in use,<br>
+               including clusters of workstations or individual PCs.  
+           </p>
         </td>
     <tr>
 </table>
+            
+<form enctype="multipart/form-data" action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT_FILE"/></portlet:actionURL>" method="post">
+<div style="text-align: center;">
+    <dl>	
+	<!-- This block contains: label, file input and textarea for GATE Macro file -->
+	<dd>		
+ 		<p><b>Application' input file</b> <input type="file" name="file_inputFile" id="upload_inputFileId" accept="*.*" onchange="uploadInputFile()"/></p>
+                <div hidden="yes">
+                    <textarea id="inputFileId" rows="20" cols="100%" name="inputFile">Insert here your text file, or upload a file</textarea>
+                </div>
+        </dd>
+        <div hidden="yes">
+            <!-- This block contains the experiment name -->
+            <dd>
+        	<p>Insert below your <b>job identifyer</b></p>
+            	<textarea id="jobIdentifierId" rows="1" cols="60%" name="JobIdentifier">multi-infrastructure job description</textarea>
+            </dd>	
+            <!-- This block contains form buttons: Demo, SUBMIT and Reset values -->
+            <dd>
+  		<td><input type="button" value="Demo" onClick="addDemo()"></td>
+  		<td><input type="button" value="Submit" onClick="preSubmit()"></td> 
+  		<td><input type="reset" value="Reset values" onClick="resetForm()"></td>
+            </dd>
+        </div>
+    </dl>
+    <br/><br/>
+</div>    
+</form>            
+
+          
+            
 <%
 // Below the application submission web form 
 //
@@ -67,7 +103,6 @@
 // the Enum type: Views. This value will be assigned calling the function: setRenderParameter
 //
 %>
-<<<<<<< HEAD
 
 <!-- <div>
      <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
@@ -90,6 +125,7 @@
  </div>
  
 -->
+
 <script src="<%=renderRequest.getContextPath()%>/js/jquery-1.3.2.min.js" type="text/javascript"></script>
 <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
 
@@ -678,152 +714,10 @@
 
 
 </form>
-=======
-<center>
-    <!-- <div>
-         <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
- 
-                 <b>Input value</b> 
-                 <input type="text" id="inputValueId" name="inputValue" />
- 
-                 <input type="submit" value="GO">
- 
-         </form>
-     </div>
-     <br>
-     <div>
-         <form  action="<portlet:renderURL portletMode="view"><portlet:param name="PortletStatus" value="VIEW_NO_ACTION"/></portlet:renderURL>" method="post">
- 
-                 <b>Go a new JSP page without Action</b> 
-                 <input type="submit" value="GO">
- 
-         </form>
-     </div>
-     
-    -->
-    <form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
-       
-
-              
-
-        
-
-        <div id="gadget2_setup" hidden="true">
-
-            <fieldset class="gadget2_fieldset">
-
-                <legend class="gadget2_legend"> SETUP Value </legend>
-                <dl>
-
-                    <dt><label id="gadget2_label">Boxlength =</label><input  id="boxlengthID" name="boxlength" type="text"   /></dt>
-                </dl>
-
-
-
-                <dl>
-                    <dt><label id="gadget2_label"> Zstart =</label>
-
-                    <input  id="zstartID" name="zstart" type="text" value=""/></dt>
-
-                </dl>
-
-
-
-                <dl>
-                    <dt><label id="gadget2_label">Levelmin</label>
-
-
-                    <input id="levelminID" name="levelmin" type="text" value=""/></dt>
-                </dl>
-                <dl>
-                    <dt><label id="gadget2_label">Levelmin_TF</label>
-
-
-                   <input id="levelmin_TFID" name="levelmin_TF" type="text" value=""/></dt>
-                </dl>
-                <dl>
-                    <dt><label id="gadget2_label">levelmax</label>
-
-
-                    <input id="levelmaxID" name="levelmax" type="text" value=""/></dt>
-                </dl>
-                <dl>
-                    <dt><label id="gadget2_label">padding</label>
-
-
-                   <input id="paddingID" name="padding" type="text" value=""/></dt>
-                </dl>
-                <dl>
-                    <dt><label id="gadget2_label">overlap</label>
-
-
-                   <input id="overlapID" name="overlap" type="text" value=""/></dt>
-                </dl>
-                <dl>
-                    <dt><label id="gadget2_label">ref_center</label>
-
-
-                    <input id="ref_centerID" name="ref_center" type="text" value=""/></dt>
-                </dl>
-                <dl>
-                    <dt><label id="gadget2_label">ref_extent</label>
-
-
-                    <input id="ref_extentID" name="ref_extent" type="text" value=""/></dt>
-                </dl>
-                <dl>
-                    <dt><label id="gadget2_label">ref_extent</label>
-
-
-                    <input id="ref_extentID" name="ref_extent" type="text" value=""/></dt>
-                </dl>
-
-                <dl>
-                    <dt><label id="gadget2_label">align_top</label>
-                    <input  type="radio" name="align_top" id="align_topID" value="Y"> Yes 
-                    <input type="radio" name="align_top" id="align_topID" valueID="N"> No </dt>
-
-                </dl>
-
-
-                <dl>
-                    <dt><label id="gadget2_label">baryons</label>
-                    <input  type="radio" name="baryons" id="baryonsID" value="Y"> Yes 
-                    <input type="radio" name="baryons" id="baryonsID" valueID="N"> No </dt>
-
-                </dl>
-
-                <dl>
-                    <dt><label id="gadget2_label">use_2LPT</label>
-                   <input  type="radio" name="use_2LPT" id="use_2LPTID" value="Y"> Yes 
-                    <input type="radio" name="use_2LPT" id="use_2LPTID" valueID="N"> No </dt>
-
-                </dl>
-                <dl>
-                    <dt><label id="gadget2_label">use_LLA</label></dt>
-                    <dt><input  type="radio" name="use_LLA" id="use_LLAID" value="Y"> Yes 
-                    <input type="radio" name="use_LLA" id="use_LLAID" valueID="N"> No </dt>
-
-                </dl>
-                <dl>
-                    <dt><label id="gadget2_label">periodic_TF</label>
-                    <input  type="radio" name="periodic_TF" id="periodic_TFID" value="Y"> Yes 
-                    <input type="radio" name="periodic_TF" id="periodic_TFID" valueID="N"> No </dt>
-
-                </dl>
-
-          
-
-
-
-            </fieldset>
-        </div>
->>>>>>> cc1919abe5a60eb35a81f31733ee7760c4d8858a
 
 
 
 
-<<<<<<< HEAD
 <script>
     
  
@@ -863,7 +757,7 @@
         if(document.getElementById("periodic_TF_Y_ID").value=="Y")
             document.getElementById("periodic_TF_Y_ID").checked=true;
         var y=document.getElementById("periodic_TF_Y_ID").value;
-        alert(x+" "+y);
+        
 
         
       
@@ -992,17 +886,7 @@ function ValidatePoissonValues(){
 }
 </script>
 
-=======
-
-
-
-                </form>
->>>>>>> cc1919abe5a60eb35a81f31733ee7760c4d8858a
 
 
 
 
-<<<<<<< HEAD
-=======
-                </center>
->>>>>>> cc1919abe5a60eb35a81f31733ee7760c4d8858a
