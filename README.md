@@ -1,7 +1,7 @@
 # Project SitRep
 [![Build Status](http://ci.sagrid.ac.za:8080/view/All/job/GADGET2-portlet/badge/icon)](http://ci.sagrid.ac.za:8080/view/All/job/GADGET2-portlet/)
-+[![Stories in Ready](https://badge.waffle.io/southafricadigitalscience/GADGET-portlet.png?label=ready&title=Ready)](https://waffle.io/southafricadigitalscience/GADGET-portlet)
-+[![Stories in Ready](https://badge.waffle.io/southafricadigitalscience/GADGET-portlet.png?label=In%20Progress&title=In%20Progress)](https://waffle.io/southafricadigitalscience/GADGET-portlet)
+ [![Stories in Ready](https://badge.waffle.io/southafricadigitalscience/GADGET-portlet.png?label=ready&title=Ready)](https://waffle.io/southafricadigitalscience/GADGET-portlet)
+ [![Stories in Ready](https://badge.waffle.io/southafricadigitalscience/GADGET-portlet.png?label=In%20Progress&title=In%20Progress)](https://waffle.io/southafricadigitalscience/GADGET-portlet)
 
 GADGET-portlet
 ==============
@@ -16,4 +16,6 @@ The portlet will provide an interface to the user. The main functionality of the
 
 ![screenshot 1][screenshots/screenshotGadgetInterface.png]
 
-# further comments
+# Contributing
+
+Are you an astronomer interested in using this portlet ? [Open a ticket with a requested feature](https://github.com/SouthAfricaDigitalScience/GADGET-portlet/issues/new)
