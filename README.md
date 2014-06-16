@@ -9,3 +9,5 @@ This portlet is intended to be deployed on a Liferay 6.1 instance with Glassfish
 
 The portlet will provide an interface to the user. The main functionality of the portlet will be to generate the MAGIC `.conf` file and the GADGET `.param` file using a GUI:
 
+![screenshot 1][screenshots/screenshotGadgetInterface.png]
+
