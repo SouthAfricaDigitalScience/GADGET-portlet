@@ -1,3 +1,4 @@
+[![Build Status](http://ci.sagrid.ac.za:8080/view/All/job/GADGET2-portlet/badge/icon)](http://ci.sagrid.ac.za:8080/view/All/job/GADGET2-portlet/)
 GADGET-portlet
 ==============
 
