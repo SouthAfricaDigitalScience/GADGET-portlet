@@ -8,7 +8,7 @@
 #gadget2_legend {
   font: bold; }
 
-#gadget2_label {
+.gadget2_label {
   float: left; }
 
 #labelEquals {
