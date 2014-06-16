@@ -12,3 +12,4 @@ The portlet will provide an interface to the user. The main functionality of the
 
 ![screenshot 1][screenshots/screenshotGadgetInterface.png]
 
+# further comments
