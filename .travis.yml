@@ -9,12 +9,17 @@ cache:
   directories:
     - liferay
 before_install: 
+# First, get Liferay and configure the application server
   - wget 'https://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.1.2%20GA3/liferay-portal-glassfish-6.1.2-ce-ga3-20130816114619181.zip/download' -O liferay.zip
   - mkdir liferay
   - unzip -o liferay.zip -d liferay
   - export LIFERAY_HOME=liferay/liferay-portal-6.1.2-ce-ga3
   - ls -lht $LIFERAY_HOME/*
   - chmod +x liferay/liferay-portal-6.1.2-ce-ga3/glassfish-3.1.2.2/bin/*
+# Get the SDK
+  - wget 'https://downloads.sourceforge.net/project/lportal/Liferay%20Portal/6.1.2%20GA3/liferay-plugins-sdk-6.1.1-20130816114619181.zip?r=http%3A%2F%2Fwww.liferay.com%2Fdownloads%2Fliferay-portal%2Favailable-releases&ts=1403009833&use_mirror=garr' -O liferay-plugins-sdk.zip
+  - unzip -o liferay-plugins.sdk -d liferay-plugins
+  - cp travis/build.travis.properties liferay-plugins/liferay-plugins-sdk-6.1.1
   - wget 'http://sourceforge.net/projects/ctsciencegtwys/files/catania-grid-engine/1.5.8/Liferay6.1/GridEngine_v1.5.8.zip/download' -O GridEngine.zip
   - unzip -o GridEngine.zip -d gridengine
   - mv gridengine/GridEngine_v1.5.8/GridEngineLogConfig.xml $LIFERAY_HOME/glassfish-3.1.2.2/domains/domain1/config
@@ -30,7 +35,8 @@ before_script:
   - mysql -u root scripts/config_liferay_database
   - wget 'http://sourceforge.net/projects/ctsciencegtwys/files/catania-grid-engine/1.5.8/Database/UsersTrackingDB.sql/download' -O UsersTrackingDB.sql
   - mysql -u root < UsersTrackingDB/UsersTrackingDB.sql 
-  - cd liferay/liferay-portal-6.1.2-ce-ga3/glassfish-3.1.2.2/portlets/
+  - mkdir -p liferay-plugins/liferay-plugins-sdk-6.1.1/portlets/GADGET-portlet
+  - cd liferay-plugins/liferay-plugins-sdk-6.1.1/portlets/GADGET-portlet
 install: 
   - ant deploy
 notifications:
