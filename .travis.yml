@@ -21,7 +21,6 @@ before_install:
 before_script:
   - mysql -u root scripts/config_liferay_database
 install: 
-  - ant install-deps
   - ant deploy
 notifications:
   email:
