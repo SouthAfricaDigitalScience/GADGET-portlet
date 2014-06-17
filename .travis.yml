@@ -11,12 +11,12 @@ cache:
 before_install: 
   - wget 'https://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.1.2%20GA3/liferay-portal-glassfish-6.1.2-ce-ga3-20130816114619181.zip/download' -O liferay.zip
   - mkdir liferay
-  - unzip liferay.zip -d liferay
+  - unzip -o liferay.zip -d liferay
   - export LIFERAY_HOME=liferay/liferay-portal-6.1.2-ce-ga3
   - ls -lht $LIFERAY_HOME/*
   - chmod +x liferay/liferay-portal-6.1.2-ce-ga3/glassfish-3.1.2.2/bin/*
   - wget 'http://sourceforge.net/projects/ctsciencegtwys/files/catania-grid-engine/1.5.8/Liferay6.1/GridEngine_v1.5.8.zip/download' -O GridEngine.zip
-  - unzip GridEngine.zip -d gridengine
+  - unzip -o GridEngine.zip -d gridengine
   - mv gridengine/GridEngine_v1.5.8/GridEngineLogConfig.xml $LIFERAY_HOME/glassfish-3.1.2.2/domains/domain1/config
   - mv gridengine/GridEngine_v1.5.8/* $LIFERAY_HOME/glassfish-3.1.2.2/domains/domain1/lib
   - unzip -d gridengine GridEngine.zip
