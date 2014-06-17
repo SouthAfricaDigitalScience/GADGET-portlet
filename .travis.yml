@@ -10,6 +10,7 @@ before_install:
   - mkdir liferay
   - unzip liferay.zip -d liferay
   - export LIFERAY_HOME=liferay
+  - ls -lht liferay/*
   - chmod +x liferay/glassfish-3.1.2/bin/*
   - $LIFERAY_HOME/glassfish-3.1.2/bin/asadmin start-domain domain1
   - sudo apt-get install mysql-server
