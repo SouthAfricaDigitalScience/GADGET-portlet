@@ -20,6 +20,7 @@ before_install:
   - cp scripts/portal-ext.properties $LIFERAY_HOME
 before_script:
   - mysql -u root scripts/config_liferay_database
+  - cd liferay/liferay-portal-6.1.2-ce-ga3/glassfish-3.1.2.2/portlets/
 install: 
   - ant deploy
 notifications:
