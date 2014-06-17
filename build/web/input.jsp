@@ -127,7 +127,7 @@
 -->
 
 <script src="<%=renderRequest.getContextPath()%>/js/jquery-1.3.2.min.js" type="text/javascript"></script>
-<form  action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT"/></portlet:actionURL>" method="post">
+<form id="form_music" action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT_MUSIC"/></portlet:actionURL>" method="post">
 
 
 
@@ -139,7 +139,7 @@
                 <!-- <div id="gadget2_setup1">Click to add the setup value</div>-->
                 <div id="gadget2_s">
                     <center>
-                        <fieldset class="gadget2_fieldset">
+                        <fieldset class="gadget2_fieldset" id="setup_fieldset">
 
                             <legend class="gadget2_legend"> SETUP Value </legend>
                             <table >
@@ -724,7 +724,7 @@
 
 
 
-<div align="center"><input type="button" value="Submit" onClick="preSubmit()"></div>
+<div align="center"><input type="button" value="Submit" onClick="Submit()"></div>
 </form>
 
 
@@ -732,7 +732,10 @@
 
 <script>
     
- 
+ var setupIsValidate=false;
+ var cosmologyIsValidate=false;
+ var randomIsValidate=false;
+ var poissonIsValidate=false;
     
     function SetDemoSetupValue(){
         document.getElementById("boxlengthID").value="100";
@@ -868,6 +871,7 @@
     function ValidateSetupValue(){
      
         var  b1= true; //bool
+        
         if(document.getElementById("boxlengthID").value== null || document.getElementById("boxlengthID").value==""){
  
           
@@ -1032,7 +1036,11 @@
             alert("Attention! \n Enter the parameters highlighted in red");
         }
         else{
-            alert("Setup values validate!");
+            setupIsValidate=true;
+            
+            alert("Setup values validate "+ setupIsValidate);
+             document.getElementById("setup_fieldset").style.border.color="black";
+            
         }
 
     }
@@ -1172,7 +1180,8 @@
             alert("Attention! \n Enter the parameters highlighted in red");
         }
         else{
-            alert("Cosmology values validate!");
+            cosmologyIsValidate=true;
+            alert("Cosmology values validate "+cosmologyIsValidate);
         }
 
     }
@@ -1292,7 +1301,9 @@
             alert("Attention! \n Enter the parameters highlighted in red");
         }
         else{
-            alert("Random values validate!");
+            
+            randomIsValidate=true;
+            alert("Random values validate "+randomIsValidate);
         }
     }
     
@@ -1433,9 +1444,39 @@
             alert("Attention! \n Enter the parameters highlighted in red");
         }
         else{
-            alert("Poisson values validate!");
+            
+            poissonIsValidate=true;
+            alert("Poisson values validate "+poissonIsValidate);
         }
     }
+    
+    function Submit(){
+     var s="";
+     var c="";
+     var r="";
+     var p="";
+        if(setupIsValidate && cosmologyIsValidate && randomIsValidate && poissonIsValidate )
+            document.getElementById("form_music").submit();
+        else{
+            if(!setupIsValidate)
+                s="Validate setup values!\n"
+            
+            if(!cosmologyIsValidate)
+                 c="Validate cosmology values!\n"
+           
+            if(!randomIsValidate)
+                 r="Validate random values!\n"
+       
+            if(!poissonIsValidate)
+                 p="Validate poisson values!"
+            
+            
+           alert(""+s+c+r+p+""); 
+        }
+            
+        
+    } 
+    
 </script>
 
 
