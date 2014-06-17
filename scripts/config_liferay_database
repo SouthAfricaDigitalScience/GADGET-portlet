@@ -1,0 +1,3 @@
+CREATE USER 'liferayadmin' IDENTIFIED BY 'liferayadmin';
+CREATE DATABASE lportal;
+GRANT ALL PRIVILEGES ON lportal.* TO 'liferayadmin'@'localhost' IDENTIFIED BY 'liferayadmin';
