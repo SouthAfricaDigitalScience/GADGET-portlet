@@ -17,7 +17,7 @@ before_install:
   - chmod +x liferay/liferay-portal-6.1.2-ce-ga3/glassfish-3.1.2.2/bin/*
   - $LIFERAY_HOME/glassfish-3.1.2.2/bin/asadmin start-domain domain1
   - sudo apt-get install mysql-server
-  - cat <<EOF > $LIFERAY_HOME/portal-ext.properties \ jdbc.default.driverClassName=com.mysql.jdbc.Driver \ jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false \ jdbc.default.username=liferayadmin \ jdbc.default.password=liferayadmin \ EOF
+  - cp scripts/portal-ext.properties $LIFERAY_HOME
 before_script:
   - mysql -u root scripts/config_liferay_database
 install: 
