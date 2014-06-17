@@ -5,6 +5,9 @@ jdk:
   - openjdk6
   - openjdk7
   - oraclejdk7
+cache:
+  directories:
+    - liferay
 before_install: 
   - wget 'https://sourceforge.net/projects/lportal/files/Liferay%20Portal/6.1.2%20GA3/liferay-portal-glassfish-6.1.2-ce-ga3-20130816114619181.zip/download' -O liferay.zip
   - mkdir liferay
@@ -12,9 +15,11 @@ before_install:
   - export LIFERAY_HOME=liferay/liferay-portal-6.1.2-ce-ga3
   - ls -lht $LIFERAY_HOME/*
   - chmod +x liferay/liferay-portal-6.1.2-ce-ga3/glassfish-3.1.2.2/bin/*
-  - $LIFERAY_HOME/glassfish-3.1.2/bin/asadmin start-domain domain1
+  - $LIFERAY_HOME/glassfish-3.1.2.2/bin/asadmin start-domain domain1
   - sudo apt-get install mysql-server
   - cat <<EOF > $LIFERAY_HOME/portal-ext.properties \ jdbc.default.driverClassName=com.mysql.jdbc.Driver \ jdbc.default.url=jdbc:mysql://localhost/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false \ jdbc.default.username=liferayadmin \ jdbc.default.password=liferayadmin \ EOF
+before_script:
+  - mysql -u root scripts/config_liferay_database
 install: 
   - ant install-deps
   - ant deploy
