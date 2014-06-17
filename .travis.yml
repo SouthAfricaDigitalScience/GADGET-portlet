@@ -18,7 +18,7 @@ before_install:
   - wget 'http://sourceforge.net/projects/ctsciencegtwys/files/catania-grid-engine/1.5.8/Liferay6.1/GridEngine_v1.5.8.zip/download' -O GridEngine.zip
   - unzip GridEngine.zip -d gridengine
   - mv gridengine/GridEngine_v1.5.8/GridEngineLogConfig.xml $LIFERAY_HOME/glassfish-3.1.2.2/domains/domain1/config
-  - mv gridnengine/GridEngine_v1.5.8/* $LIFERAY_HOME/glassfish-3.1.2.2/domains/domain1/lib
+  - mv gridengine/GridEngine_v1.5.8/* $LIFERAY_HOME/glassfish-3.1.2.2/domains/domain1/lib
   - unzip -d gridengine GridEngine.zip
   - $LIFERAY_HOME/glassfish-3.1.2.2/bin/asadmin start-domain domain1
   - $LIFERAY_HOME/glassfish-3.1.2/bin/asadmin enable-secure-admin
