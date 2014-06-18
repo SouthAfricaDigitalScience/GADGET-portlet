@@ -610,7 +610,7 @@ public class GADGET_portlet extends GenericPortlet {
         } else {
             appInputGADGET.DOUBLEPRECISION_FFTW = false;
         }
-        if (request.getParameter("SYNCHRONISATION").equals("true")) {
+        if (request.getParameter("SYNCHRONIZATION").equals("true")) {
             appInputGADGET.SYNCHRONIZATION = true;
         } else {
             appInputGADGET.SYNCHRONIZATION = false;
