@@ -121,6 +121,12 @@ public class myFirst_portlet extends GenericPortlet {
         String smoother;
         String laplace_order;
         String grad_order;
+        
+        
+        
+        
+
+                        
 
         public App_Input() {
 
@@ -128,9 +134,53 @@ public class myFirst_portlet extends GenericPortlet {
             omega_m = omega_L = omega_b = H0 = sigma_8 = nspec = transfer = "";
             seed7 = seed8 = seed9 = seed10 = seed11 = seed12 = "";
             fft_fine = accuracy = pre_smooth = post_smooth = smoother = laplace_order = grad_order = "";
+            
+            
         }
     } // App_Input
 
+    class App_InputGADGET{
+            String PERIODIC;
+        String UNEQUALSOFTENINGS;
+        String PEANOHILBERT;
+        String WALLCLOCK;
+        String PMGR;
+        String PLACEHIGHRESREGION;
+        String ENLARGEREGION;
+        String ASMT;
+        String RCUT;
+        String DOUBLEPRECISION;
+        String DOUBLEPRECISION_FFTW;
+        String SYNCHRONIZATION;
+        String FLEXSTEPS;
+        String PSEUDOSYMMETRIC;
+        String NOSTOP_WHEN_BELOW_MINTIMESTEP;
+        String NOPMSTEPADJUSTMENT;
+        String HAVE_HDF5;
+        String OUTPUTPOTENTIAL;
+        String OUTPUTACCELERATION;
+        String OUTPUTCHANGEOFENTROPY;
+        String OUTPUTTIMESTEP;
+        String NOGRAVITY;
+        String NOTREERND;
+        String NOTYPEPREFIX_FFTW;
+        String LONG_XYZ;
+        String TWODIMS;
+        String SPH_BND_PARTICLES;
+        String NOVISCOSITYLIMITER;
+        String COMPUTE_POTENTIAL_ENERGY;
+        String LONGIDS;
+        String ISOTHERMAL;
+        String SELECTIVE_NO_GRAVITY;
+        String FORCETEST;
+        String MAKEGLASS;
+        
+        public App_InputGADGET(){
+            
+            PERIODIC=UNEQUALSOFTENINGS=PEANOHILBERT=WALLCLOCK=PMGR=PLACEHIGHRESREGION=ENLARGEREGION=ASMT=RCUT=DOUBLEPRECISION=DOUBLEPRECISION_FFTW=SYNCHRONIZATION=FLEXSTEPS=PSEUDOSYMMETRIC=NOSTOP_WHEN_BELOW_MINTIMESTEP=NOPMSTEPADJUSTMENT=HAVE_HDF5=OUTPUTPOTENTIAL=OUTPUTACCELERATION=OUTPUTCHANGEOFENTROPY=OUTPUTTIMESTEP=NOGRAVITY=NOTREERND=NOTYPEPREFIX_FFTW=LONG_XYZ=TWODIMS=SPH_BND_PARTICLES=NOVISCOSITYLIMITER=COMPUTE_POTENTIAL_ENERGY=LONGIDS=ISOTHERMAL=SELECTIVE_NO_GRAVITY=FORCETEST=MAKEGLASS="";
+        }
+    }
+    
     class App_Preferences {
 
         String pref_value;
@@ -439,6 +489,10 @@ public class myFirst_portlet extends GenericPortlet {
         appInput.laplace_order = (String) request.getParameter("laplace_order");
         appInput.grad_order = (String) request.getParameter("grad_order");
 
+        
+       
+
+
 
         // Show into the log the taken inputs
         System.out.println(
@@ -484,7 +538,57 @@ public class myFirst_portlet extends GenericPortlet {
                 + LS + "grad_order: '" + appInput.grad_order + "'"
                 + LS);
     } // getInputForm 
+   public void getInputFormGADGET(ActionRequest request, App_InputGADGET appInputGADGET) {
 
+        // Retrieve from the input form the given application values
+
+        
+        
+        /**
+         * ****** RETRIVE INPUT GADGET VALUES*******
+         */
+        appInputGADGET.PERIODIC = (String) request.getParameter("PERIODIC");
+        appInputGADGET.UNEQUALSOFTENINGS = (String) request.getParameter("UNEQUALSOFTENINGS");
+        appInputGADGET.PEANOHILBERT = (String) request.getParameter("PEANOHILBERT");
+        appInputGADGET.WALLCLOCK = (String) request.getParameter("WALLCLOCK");
+        appInputGADGET.PMGR = (String) request.getParameter("PMGR");
+        appInputGADGET.PLACEHIGHRESREGION = (String) request.getParameter("PLACEHIGHRESREGION");
+        appInputGADGET.ENLARGEREGION = (String) request.getParameter("ENLARGEREGION");
+        appInputGADGET.ASMT = (String) request.getParameter("ASMT");
+        appInputGADGET.RCUT = (String) request.getParameter("RCUT");
+        appInputGADGET.DOUBLEPRECISION = (String) request.getParameter("DOUBLEPRECISION");
+        appInputGADGET.DOUBLEPRECISION_FFTW = (String) request.getParameter("DOUBLEPRECISION_FFTW");
+        appInputGADGET.PMGR = (String) request.getParameter("PMGR");
+        appInputGADGET.SYNCHRONIZATION = (String) request.getParameter("SYNCHRONIZATION");
+        appInputGADGET.FLEXSTEPS = (String) request.getParameter("FLEXSTEPS");
+        appInputGADGET.PSEUDOSYMMETRIC = (String) request.getParameter("PSEUDOSYMMETRIC");
+        appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = (String) request.getParameter("NOSTOP_WHEN_BELOW_MINTIMESTEP");
+        appInputGADGET.NOPMSTEPADJUSTMENT = (String) request.getParameter("NOPMSTEPADJUSTMENT");
+        appInputGADGET.HAVE_HDF5 = (String) request.getParameter("HAVE_HDF5");
+        appInputGADGET.OUTPUTPOTENTIAL = (String) request.getParameter("OUTPUTPOTENTIAL");
+        appInputGADGET.OUTPUTACCELERATION = (String) request.getParameter("OUTPUTACCELERATION");
+        appInputGADGET.OUTPUTCHANGEOFENTROPY = (String) request.getParameter("OUTPUTCHANGEOFENTROPY");
+        appInputGADGET.OUTPUTTIMESTEP = (String) request.getParameter("OUTPUTTIMESTEP");
+        appInputGADGET.NOGRAVITY = (String) request.getParameter("NOGRAVITY");
+        appInputGADGET.NOTREERND = (String) request.getParameter("NOTREERND");
+        appInputGADGET.NOTYPEPREFIX_FFTW = (String) request.getParameter("NOTYPEPREFIX_FFTW");
+        appInputGADGET.LONG_XYZ = (String) request.getParameter("LONG_XYZ");
+        appInputGADGET.TWODIMS = (String) request.getParameter("TWODIMS");
+        appInputGADGET.SPH_BND_PARTICLES = (String) request.getParameter("SPH_BND_PARTICLES");
+        appInputGADGET.NOVISCOSITYLIMITER = (String) request.getParameter("NOVISCOSITYLIMITER");
+        appInputGADGET.COMPUTE_POTENTIAL_ENERGY = (String) request.getParameter("COMPUTE_POTENTIAL_ENERGY");
+        appInputGADGET.LONGIDS = (String) request.getParameter("LONGIDS");
+        appInputGADGET.ISOTHERMAL = (String) request.getParameter("ISOTHERMAL");
+        appInputGADGET.SELECTIVE_NO_GRAVITY = (String) request.getParameter("SELECTIVE_NO_GRAVITY");
+        appInputGADGET.FORCETEST = (String) request.getParameter("FORCETEST");
+        appInputGADGET.MAKEGLASS = (String) request.getParameter("MAKEGLASS");
+
+
+
+      
+    } // getInputForm 
+
+    
     public void createMUSICconfigFile(App_Input appInput) {
 
 
@@ -532,6 +636,7 @@ public class myFirst_portlet extends GenericPortlet {
                     + "seed11     = " + appInput.seed11 + "\n"
                     + "seed12     = " + appInput.seed12 + "\n"
                     + "transfer   = " + appInput.transfer + "\n"
+                    + "\n\n\n[output]"
                     + "##generic MUSIC data format (used for testing)\n"
                     + "##requires HDF5 installation and HDF5 enabled in Makefile \n"
                     + "#format         = generic \n"
@@ -587,4 +692,7 @@ public class myFirst_portlet extends GenericPortlet {
             e.printStackTrace();
         }
     }
+    
+    
+    
 } // myFirst_portlet 
