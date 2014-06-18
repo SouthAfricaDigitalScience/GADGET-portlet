@@ -100,7 +100,7 @@
         <div hidden="yes">
             <!-- This block contains the experiment name -->
             <dd>
-                <p>Insert below your <b>job identifyer</b></p>
+                <p>Insert below your <b>job identifer</b></p>
                 <textarea id="jobIdentifierId" rows="1" cols="60%" name="JobIdentifier">multi-infrastructure job description</textarea>
             </dd>	
             <!-- This block contains form buttons: Demo, SUBMIT and Reset values -->
@@ -166,7 +166,7 @@
                     <center>
                         <fieldset class="gadget2_fieldset" id="setup_fieldset">
 
-                            <legend class="gadget2_legend"> SETUP Value </legend>
+                            <legend class="gadget2_legend"> Setup Value </legend>
                             <table >
                                 <tr>
                                     <td id="td_left">   
