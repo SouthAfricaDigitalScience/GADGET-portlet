@@ -1053,13 +1053,6 @@
 
     }
    
-   
-    
-
-
-    
-    
-   
     
     function DemoCosmologyValues(){
         document.getElementById("Omega_mID").value="0.276";
@@ -1176,11 +1169,11 @@
         }
 
         if(bool==false){
-            alert("Attention! \n Enter the parameters highlighted in red");
+            alert("Oops! Seems something went wrong with your values \n Please check the parameters highlighted in red");
         }
         else{
             cosmologyIsValidate=true;
-            alert("Cosmology values validate "+cosmologyIsValidate);
+            alert("Validate Cosmology"+cosmologyIsValidate);
         }
 
         
@@ -1296,7 +1289,7 @@
         else{
 
             randomIsValidate=true;
-            alert("Validate random number generator "+randomIsValidate);
+            alert("Validate random number generator (RNG)"+randomIsValidate);
         }
             
             
