@@ -1041,12 +1041,12 @@
         }
 
         if(b1==false){
-            alert("Attention! \n Enter the parameters highlighted in red");
+            alert("Oops! \n Looks like some values are missing or incorrect... \n Please check the parameters highlighted in red");
         }
         else{
             setupIsValidate=true;
             
-            alert("Setup values validate "+ setupIsValidate);
+            alert("Validate Setup"+ setupIsValidate);
 
         }
 
@@ -1291,12 +1291,12 @@
         }
                    
         if(bool==false){
-            alert("Attention! \n Enter the parameters highlighted in red");
+            alert("Oops ! \n Seems that some of the values you've entered are missing or incorrect. \n Please check the parameters highlighted in red");
         }
         else{
 
             randomIsValidate=true;
-            alert("Random values validate "+randomIsValidate);
+            alert("Validate random number generator "+randomIsValidate);
         }
             
             
@@ -1448,17 +1448,17 @@
             document.getElementById("form_music").submit();
         else{
             if(!setupIsValidate)
-                s="Validate setup values!\n"
+                s="Validate Setup\n"
             
             if(!cosmologyIsValidate)
 
-                 c="Validate cosmology values!\n"
+                 c="Validate Cosmology\n"
            
             if(!randomIsValidate)
-                 r="Validate random values!\n"
+                 r="Validate RNG\n"
        
             if(!poissonIsValidate)
-                 p="Validate poisson values!"
+                 p="Validate Poisson"
             
             
            alert(""+s+c+r+p+""); 
