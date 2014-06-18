@@ -646,7 +646,7 @@ public class GADGET_portlet extends GenericPortlet {
 			appInputGADGET.NOVISCOSITYLIMITER = true;
 		else
 			appInputGADGET.NOVISCOSITYLIMITER = false;
-		if(request.getParameter("COMPUTE_POTENTIAL_ENERGY"))
+		if(request.getParameter("COMPUTE_POTENTIAL_ENERGY").equals("true"))
 			appInputGADGET.COMPUTE_POTENTIAL_ENERGY = true;
 		else
 			appInputGADGET.COMPUTE_POTENTIAL_ENERGY = false;
