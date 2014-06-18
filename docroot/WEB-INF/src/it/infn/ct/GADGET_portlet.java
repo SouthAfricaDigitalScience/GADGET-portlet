@@ -542,43 +542,134 @@ public class GADGET_portlet extends GenericPortlet {
         /**
          * ****** RETRIVE INPUT GADGET VALUES*******
          */
-        // appInputGADGET.PERIODIC = (String) request.getParameter("PERIODIC");
+        // We first have to do checks on the boolean variables and convert them
+        // to booleans from strings
         if(request.getParameter("PERIODIC").equals("true")) 
 			appInputGADGET.PERIODIC = true;
-        appInputGADGET.UNEQUALSOFTENINGS = (Boolean) request.getParameter("UNEQUALSOFTENINGS");
-        appInputGADGET.PEANOHILBERT = (Boolean) request.getParameter("PEANOHILBERT");
-        appInputGADGET.WALLCLOCK = (Boolean) request.getParameter("WALLCLOCK");
-        appInputGADGET.PMGR = (Boolean) request.getParameter("PMGR");
-        appInputGADGET.PLACEHIGHRESREGION = (String) request.getParameter("PLACEHIGHRESREGION");
+		else
+			appInputGADGET.PERIODIC = false;
+	    if(request.GetParameter("UNEQUALSOFTENINGS").equals("true"))
+			appInputGADGET.UNEQUALSOFTENINGS = true;
+		else
+			appInputGADGET.UNEQUALSOFTENINGS = false;
+		if(request.GetParameter("PEANNOHILBERT").equals("true"))
+			appInputGADGET.PEANOHILBERT = true;
+		else
+			appInputGADGET.PEANOHILBERT = false;
+		if(request.GetParameter("WALLCLOCK").equals("true"))
+			appInputGADGET.WALLCLOCK = true;
+		else
+			appInputGADGET.WALLCLOCK = false;
+		if (request.GetParameter("PMGR").equals("true"))
+			appInputGADGET.PMGR = true;
+		else
+			appInputGADGET.PMGR = false;
+			
+	    appInputGADGET.PLACEHIGHRESREGION = (String) request.getParameter("PLACEHIGHRESREGION");
         appInputGADGET.ENLARGEREGION = (String) request.getParameter("ENLARGEREGION");
         appInputGADGET.ASMT = (String) request.getParameter("ASMT");
         appInputGADGET.RCUT = (String) request.getParameter("RCUT");
-        appInputGADGET.DOUBLEPRECISION = (Boolean) request.getParameter("DOUBLEPRECISION");
-        appInputGADGET.DOUBLEPRECISION_FFTW = (Boolean) request.getParameter("DOUBLEPRECISION_FFTW");
-        appInputGADGET.PMGR = (Boolean) request.getParameter("PMGR");
-        appInputGADGET.SYNCHRONIZATION = (Boolean) request.getParameter("SYNCHRONIZATION");
-        appInputGADGET.FLEXSTEPS = (Boolaen) request.getParameter("FLEXSTEPS");
-        appInputGADGET.PSEUDOSYMMETRIC = (Boolean) request.getParameter("PSEUDOSYMMETRIC");
-        appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = (Boolean) request.getParameter("NOSTOP_WHEN_BELOW_MINTIMESTEP");
-        appInputGADGET.NOPMSTEPADJUSTMENT = (Boolean) request.getParameter("NOPMSTEPADJUSTMENT");
-        appInputGADGET.HAVE_HDF5 = (Boolean) request.getParameter("HAVE_HDF5");
-        appInputGADGET.OUTPUTPOTENTIAL = (Boolean) request.getParameter("OUTPUTPOTENTIAL");
-        appInputGADGET.OUTPUTACCELERATION = (Boolean) request.getParameter("OUTPUTACCELERATION");
-        appInputGADGET.OUTPUTCHANGEOFENTROPY = (Boolean) request.getParameter("OUTPUTCHANGEOFENTROPY");
-        appInputGADGET.OUTPUTTIMESTEP = (Boolean) request.getParameter("OUTPUTTIMESTEP");
-        appInputGADGET.NOGRAVITY = (Boolean) request.getParameter("NOGRAVITY");
-        appInputGADGET.NOTREERND = (Boolean) request.getParameter("NOTREERND");
-        appInputGADGET.NOTYPEPREFIX_FFTW = (Boolean) request.getParameter("NOTYPEPREFIX_FFTW");
-        appInputGADGET.LONG_XYZ = (Boolean) request.getParameter("LONG_XYZ");
-        appInputGADGET.TWODIMS = (Boolean) request.getParameter("TWODIMS");
-        appInputGADGET.SPH_BND_PARTICLES = (Boolean) request.getParameter("SPH_BND_PARTICLES");
-        appInputGADGET.NOVISCOSITYLIMITER = (Boolean) request.getParameter("NOVISCOSITYLIMITER");
-        appInputGADGET.COMPUTE_POTENTIAL_ENERGY = (Boolean) request.getParameter("COMPUTE_POTENTIAL_ENERGY");
-        appInputGADGET.LONGIDS = (Boolean) request.getParameter("LONGIDS");
-        appInputGADGET.ISOTHERMAL = (Boolean) request.getParameter("ISOTHERMAL");
-        appInputGADGET.SELECTIVE_NO_GRAVITY = (Boolean) request.getParameter("SELECTIVE_NO_GRAVITY");
-        appInputGADGET.FORCETEST = (Boolean) request.getParameter("FORCETEST");
-        appInputGADGET.MAKEGLASS = (Boolean) request.getParameter("MAKEGLASS");
+		
+		if(request.GetParameter("DOUBLEPRECISION").equals("true"))
+			appInputGADGET.DOUBLEPRECISION = true;
+		else
+			appInputGADGET.DOUBLEPRECISION = false;
+        if(request.GetParameter("DOUBLEPRECISION_FFTW").equals("true"))
+			appInputGADGET.DOUBLEPRECISION_FFTW = true;
+		else
+			appInputGADGET.DOUBLEPRECISION_FFTW = false;
+		if(request.GetParameter("SYNCHRONISATION").equals("true"))
+			appInputGADGET.SYNCHRONIZATION = true;
+		else
+			appInputGADGET.SYNCHRONIZATION = false;
+		if(request.getParameter("FLEXSTEPS").equals("true"))
+			appInputGADGET.FLEXSTEPS = true;
+		else
+			appInputGADGET.FLEXSTEPS = false;
+		if(request.getParameter("PSEUDOSYMMETRIC").equals("true"))
+			appInputGADGET.PSEUDOSYMMETRIC = true;
+		else
+			appInputGADGET.PSEUDOSYMMETRIC = false;
+		if(request.getParameter("NOSTOP_WHEN_BELOW_MINTIMESTEP").equals("true"))
+			appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = true;
+		else
+			appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = false;
+		if (request.getParameter("NOPMSTEPADJUSTMENT").equals("true"))
+			appInputGADGET.NOPMSTEPADJUSTMENT = true;
+		else 
+			appInputGADGET.NOPMSTEPADJUSTMENT = false;
+		if(request.getParameter("HAVE_HDF5").equals("true"))
+			appInputGADGET.HAVE_HDF5 = true;
+		else 
+			appInputGADGET.HAVE_HDF5 = false;
+		if(request.getParameter("OUTPUTPOTENTIAL").equals("true"))
+			appInputGADGET.OUTPUTPOTENTIAL = true;
+		else
+			appInputGADGET.OUTPUTPOTENTIAL = false;
+		if(request.getParameter("OUTPUTACCELERATION").equals("true"))
+			appInputGADGET.OUTPUTACCELERATION = true;
+		else
+			appInputGADGET.OUTPUTACCELERATION = false;
+		if(request.getParameter("OUTPUTCHANGEOFENTROPY").equals("true"))
+			appInputGADGET.OUTPUTCHANGEOFENTROPY = true;
+		else
+			appInputGADGET.OUTPUTCHANGEOFENTROPY = false;
+		if(request.getParameter("OUTPUTTIMESTEP").equals("true"))
+			appInputGADGET.OUTPUTTIMESTEP = true;
+		else
+			appInputGADGET.OUTPUTTIMESTEP = false;
+		if(request.getParameter("NOGRAVITY").equals("true"))
+			appInputGADGET.NOGRAVITY = true;
+		else 
+			appInputGADGET.NOGRAVITY = false;
+		if(request.getParameter("NOTREERND").equals("true"))
+			appInputGADGET.NOTREERND = true;
+		else
+			appInputGADGET.NOTREERND = false;
+		if(request.getParameter("NOTYPEPREFIX_FFTW").equals("true"))
+			appInputGADGET.NOTYPEPREFIX_FFTW = true;
+		else
+			appInputGADGET.NOTYPEPREFIX_FFTW = false;
+		if(request.getParameter("LONG_XYZ").equals("true"))
+			appInputGADGET.LONG_XYZ = true;
+		else
+			appInputGADGET.LONG_XYZ = false;
+		if(request.getParameter("TWODIMS").equals("true"))
+			appInputGADGET.TWODIMS = true;
+		else
+			appInputGADGET.TWODIMS = false;
+		if(request.getParameter("SPH_BND_PARTICLES").equals("true"))
+			appInputGADGET.SPH_BND_PARTICLES = true;
+		else
+			appInputGADGET.SPH_BND_PARTICLES = false;
+		if(request.getParameter("NOVISCOSITYLIMITER").equals("true"))
+			appInputGADGET.NOVISCOSITYLIMITER = true;
+		else
+			appInputGADGET.NOVISCOSITYLIMITER = false;
+		if(request.getParameter("COMPUTE_POTENTIAL_ENERGY"))
+			appInputGADGET.COMPUTE_POTENTIAL_ENERGY = true;
+		else
+			appInputGADGET.COMPUTE_POTENTIAL_ENERGY = false;
+		if(request.getParameter("LONGIDS").equals("true"))
+			appInputGADGET.LONGIDS = true;
+		else
+			appInputGADGET.LONGIDS = false;
+		if(request.getParameter("ISOTHERMAL").equals("true"))
+			appInputGADGET.ISOTHERMAL = true;
+		else
+			appInputGADGET.ISOTHERMAL = false;
+		if(request.getParameter("SELECTIVE_NO_GRAVITY").equals("true"))
+			appInputGADGET.SELECTIVE_NO_GRAVITY = true;
+		else 
+			appInputGADGET.SELECTIVE_NO_GRAVITY = false;
+		if(request.getParameter("FORCETEST").equals("true"))
+			appInputGADGET.FORCETEST = true;
+		else
+			appInputGADGET.FORCETEST = false;
+		if(request.getParameter("MAKEGLASS").equals("true"))
+			appInputGADGET.MAKEGLASS = true;
+		else
+			appInputGADGET.MAKEGLASS = false;
 
 
 
