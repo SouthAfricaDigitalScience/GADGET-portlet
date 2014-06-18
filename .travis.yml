@@ -31,8 +31,8 @@ before_install:
   - sudo apt-get install mysql-server
   - cp scripts/portal-ext.properties $LIFERAY_HOME
   - mysql -u root < scripts/config_liferay_database
-  - wget 'http://sourceforge.net/projects/ctsciencegtwys/files/catania-grid-engine/1.5.8/Database/UsersTrackingDB.sql/download' -O UsersTrackingDB.sql
-  - mysql -u root < "UsersTrackingDB.sql"
+#  - wget 'http://sourceforge.net/projects/ctsciencegtwys/files/catania-grid-engine/1.5.8/Database/UsersTrackingDB.sql/download' -O UsersTrackingDB.sql
+  - mysql -u root < "scripts/UsersTrackingDB.sql"
 # prepare the trust anchors
   - sudo mkdir -p /etc/grid-security
   - wget 'http://grid.ct.infn.it/cron_files/grid_settings.tar.gz' -O grid_settings.tar.gz
