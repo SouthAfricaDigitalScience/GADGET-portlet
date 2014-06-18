@@ -146,16 +146,10 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelPERIODIC"  >PERIODIC *</label>
                                     </td>
-                                   
                                     <td id="td_right">
-
                                         <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="">
-
-
                                     </td>
                                 </tr>
-
-
                                 <tr>
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelUNEQUALSOFTENINGS"  >UNEQUALSOFTENINGS </label>
@@ -163,7 +157,6 @@
                                    
                                     <td id="td_right">
                                         <input  type="checkbox" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_ID" value=""> 
-
                                     </td>
                                 </tr>
 
@@ -581,9 +574,7 @@
                     var gadgetIsValidate=false;
     
                     function SetGADGETDemoValues(){
-       
-      
-        
+           
         
                         if(document.getElementById("PERIODIC_ID").checked==false){
                             document.getElementById("PERIODIC_ID").checked=true;
@@ -593,9 +584,10 @@
        
        
        
-                        // if(document.getElementById("UNEQUALSOFTENINGS_ID").checked=="N"){
-                        //    document.getElementById("UNEQUALSOFTENINGS_N_ID").checked=true;
-                        //    document.getElementById("labelUNEQUALSOFTENINGS").style.color="black";
+                        if(document.getElementById("UNEQUALSOFTENINGS_ID").checked==false){
+							document.getElementById("UNEQUALSOFTENINGS_ID").checked=true;
+							document.getElementById("UNEQUALSOFTENINGS_ID").value="false";
+							document.getElementById("labelUNEQUALSOFTENINGS").style.color="black";
                         // }
     
        
