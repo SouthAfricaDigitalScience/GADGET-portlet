@@ -542,7 +542,9 @@ public class GADGET_portlet extends GenericPortlet {
         /**
          * ****** RETRIVE INPUT GADGET VALUES*******
          */
-        appInputGADGET.PERIODIC = (Boolean) request.getParameter(PERIODIC);
+        // appInputGADGET.PERIODIC = (String) request.getParameter("PERIODIC");
+        if(request.getParameter("PERIODIC").equals("true")) 
+			appInputGADGET.PERIODIC = true;
         appInputGADGET.UNEQUALSOFTENINGS = (Boolean) request.getParameter("UNEQUALSOFTENINGS");
         appInputGADGET.PEANOHILBERT = (Boolean) request.getParameter("PEANOHILBERT");
         appInputGADGET.WALLCLOCK = (Boolean) request.getParameter("WALLCLOCK");

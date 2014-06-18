@@ -150,7 +150,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value=false>
+                                        <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="false">
                                        
                                     </td>
                                 </tr>
