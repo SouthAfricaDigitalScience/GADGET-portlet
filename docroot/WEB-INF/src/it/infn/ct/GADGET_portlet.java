@@ -19,6 +19,7 @@
  * the License.
  *
  * @author <a href="mailto:riccardo.bruno@ct.infn.it">Riccardo Bruno</a>(COMETA)
+ * @author <a href="https://github.com/brucellino">Bruce Becker</a> (CSIR)
  * **************************************************************************
  */
 package it.infn.ct;
@@ -31,7 +32,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.portlet.*;
 
-public class myFirst_portlet extends GenericPortlet {
+public class GADGET_portlet extends GenericPortlet {
 
     // This portlet uses Aciont/Views enumerations in order to 
     // manage the different portlet modes and the corresponding 
@@ -587,4 +588,4 @@ public class myFirst_portlet extends GenericPortlet {
             e.printStackTrace();
         }
     }
-} // myFirst_portlet 
+} // GADGET_portlet 
