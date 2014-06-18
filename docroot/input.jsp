@@ -741,7 +741,7 @@
 
 
 
-<div align="center"><input type="button" value="Submit" onClick="Submit()"></div>
+<div align="center"><input type="button" value="Continue to GADGET configuration" onClick="Submit()"></div>
 </form>
 
 <script>
@@ -1428,12 +1428,12 @@
         
             
         if(bool==false){
-            alert("Attention! \n Enter the parameters highlighted in red");
+            alert("Oops ! \n Something went wrong with the input parameters. \n Please check the parameters highlighted in red");
         }
         else{
             
             poissonIsValidate=true;
-            alert("Poisson values validate "+poissonIsValidate);
+            alert("Validate Poisson "+poissonIsValidate);
         }
     }
     
