@@ -186,7 +186,7 @@
 
                                 <tr>
                                     <td id="td_left">   
-                                        <label class="gadget2_label" id="labelWALLCLOCK"  >WALLCLOCK </label>
+                                        <label class="gadget2_label" id="labelWALLCLOCK">WALLCLOCK </label>
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
@@ -437,14 +437,14 @@
                                 <tr>
 
                                     <td id="td_left">   
-                                        <label class="gadget2_label" id="labelNOGRAVITY"  >NOTREERND </label>
+                                        <label class="gadget2_label" id="labelNOGRAVITY"  >NOGRAVITY </label>
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="NOTREERND" id="NOGRAVITY_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="NOTREERND" id="NOGRAVITY_N_ID" value="N"> N
+                                        <input  type="radio" name="NOGRAVITY" id="NOGRAVITY_Y_ID" value="Y"> Y 
+                                        <input type="radio" name="NOGRAVITY" id="NOGRAVITY_N_ID" value="N"> N
                                     </td>
 
                                 </tr>
@@ -506,7 +506,7 @@
                                     </td>
 
                                 </tr>
-                                
+
                                 <tr>
 
                                     <td id="td_left">   
@@ -521,7 +521,7 @@
                                     </td>
 
                                 </tr>
-                                
+
                                 <tr>
 
                                     <td id="td_left">   
@@ -603,8 +603,8 @@
                                     </td>
                                     <td id="td_right">
                                         <input class="gadget2_textbox" id="FORCETESTID" name="FORCETEST" type="text" value=""/>
-                                        
-                                       
+
+
                                     </td>
 
                                 </tr>
@@ -623,8 +623,8 @@
 
                                 </tr>
                                 <tr>
-                                    <td colspan="3" align="center"><input type="button" value="Demo" onclick="SetGADGETDemoValue()">
-                                        <input type="button" value="Reset" onclick="ResetGADGETValue()">
+                                    <td colspan="3" align="center"><input type="button" value="Demo" onclick="SetGADGETDemoValues()">
+                                        <input type="button" value="Reset" onclick="ResetGADGETValues()">
                                         <input type="button" value="Validate Random" onclick="ValidateGADGETValues()">
                                     </td>
 
@@ -643,10 +643,10 @@
                 </form>
 
                 <script>
-                    var valuesIsValidate=false;
-
+                 
+                    var gadgetIsValidate=false;
     
-                    function SetGADGETDemoValue(){
+                    function SetGADGETDemoValues(){
        
       
         
@@ -712,7 +712,7 @@
                             document.getElementById("FLEXSTEPS_Y_ID").checked=true;
                             document.getElementById("labelFLEXSTEPS").style.color="black";
                         }
-        
+      
                         if(document.getElementById("PSEUDOSYMMETRIC_N_ID").value=="N"){
                             document.getElementById("PSEUDOSYMMETRIC_N_ID").checked=true;
                             document.getElementById("labelPSEUDOSYMMETRIC").style.color="black";
@@ -734,6 +734,8 @@
                             document.getElementById("OUTPUTPOTENTIAL_N_ID").checked=true;
                             document.getElementById("labelOUTPUTPOTENTIAL").style.color="black";
                         }
+                        
+                        
                         if(document.getElementById("OUTPUTACCELERATION_N_ID").value=="N"){
                             document.getElementById("OUTPUTACCELERATION_N_ID").checked=true;
                             document.getElementById("labelOUTPUTACCELERATION").style.color="black";
@@ -752,6 +754,9 @@
                             document.getElementById("NOGRAVITY_N_ID").checked=true;
                             document.getElementById("labelNOGRAVITY").style.color="black";
                         }
+                        
+                  
+                         
                         if(document.getElementById("NOTREERND_N_ID").value=="N"){
                             document.getElementById("NOTREERND_N_ID").checked=true;
                             document.getElementById("labelNOTREERND").style.color="black";
@@ -774,7 +779,7 @@
                         }
                         
                         
-                        
+                
                         
                         if(document.getElementById("NOVISCOSITYLIMITER_N_ID").value=="N"){
                             document.getElementById("NOVISCOSITYLIMITER_N_ID").checked=true;
@@ -808,13 +813,223 @@
                             document.getElementById("MAKEGLASS_N_ID").checked=true;
                             document.getElementById("labelMAKEGLASS").style.color="black";
                         }
-        
-                       
-        
 
-        
       
                     }
+                    
+                    
+                    function ResetGADGETValues(){
+        
+              
+                         
+                       
+                        document.getElementById("PERIODIC_Y_ID").checked=false;
+                        document.getElementById("PERIODIC_N_ID").checked=false;
+                            
+                            
+                        document.getElementById("UNEQUALSOFTENINGS_Y_ID").checked=false;
+                        document.getElementById("UNEQUALSOFTENINGS_N_ID").checked=false;
+                            
+                        document.getElementById("PEANOHILBERT_Y_ID").checked=false;
+                        document.getElementById("PEANOHILBERT_N_ID").checked=false;
+                       
+                        document.getElementById("WALLCLOCK_Y_ID").checked=false;
+                        document.getElementById("WALLCLOCK_N_ID").checked=false;
+                    
+                            
+                            
+                      
+                        document.getElementById("PMGRID_Y_ID").checked=false;
+                        document.getElementById("PMGRID_N_ID").checked=false;
+        
+                        document.getElementById("PLACEHIGHRESREGIONID").value="";
+                            
+                        document.getElementById("ENLARGEREGIONID").value="";
+                            
+                        document.getElementById("ASMTHID").value="";
+                             
+                        document.getElementById("RCUTID").value="";
+                            
+                           
+                      
+                        document.getElementById("DOUBLEPRECISION_N_ID").checked=false;
+                        document.getElementById("DOUBLEPRECISION_Y_ID").checked=false;
+        
+                      
+                        document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").checked=false;
+                        document.getElementById("DOUBLEPRECISION_FFTW_N_ID").checked=false;
+        
+                      
+                      
+                        document.getElementById("SYNCHRONIZATIONID").checked=false;
+                            
+                      
+                              
+                        document.getElementById("FLEXSTEPS_Y_ID").checked=false;
+                        document.getElementById("FLEXSTEPS_N_ID").checked=false;
+                         
+                        document.getElementById("PSEUDOSYMMETRIC_Y_ID").checked=false;
+                        document.getElementById("PSEUDOSYMMETRIC_N_ID").checked=false;
+                        
+                        document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_Y_ID").checked=false;
+                        document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_N_ID").checked=false;
+                        
+                        document.getElementById("NOPMSTEPADJUSTMENT_Y_ID").checked=false;
+                        document.getElementById("NOPMSTEPADJUSTMENT_N_ID").checked=false;
+                        
+                        document.getElementById("HAVE_HDF5_Y_ID").checked=false;
+                        document.getElementById("HAVE_HDF5_N_ID").checked=false;
+                      
+                        
+                        document.getElementById("OUTPUTPOTENTIAL_Y_ID").checked=false;
+                        document.getElementById("OUTPUTPOTENTIAL_N_ID").checked=false;
+                        
+                        document.getElementById("OUTPUTACCELERATION_Y_ID").checked=false;
+                        document.getElementById("OUTPUTACCELERATION_N_ID").checked=false;
+                        
+                        document.getElementById("OUTPUTCHANGEOFENTROPY_Y_ID").checked=false;
+                        document.getElementById("OUTPUTCHANGEOFENTROPY_N_ID").checked=false;
+                        
+                        document.getElementById("OUTPUTTIMESTEP_Y_ID").checked=false;
+                        document.getElementById("OUTPUTTIMESTEP_N_ID").checked=false;
+                        
+                        document.getElementById("NOGRAVITY_Y_ID").checked=false;
+                        document.getElementById("NOGRAVITY_N_ID").checked=false;
+                      
+                      
+                              
+                        document.getElementById("NOTREERND_Y_ID").checked=false;
+                        document.getElementById("NOTREERND_N_ID").checked=false;
+                        
+                        document.getElementById("NOTYPEPREFIX_FFTW_Y_ID").checked=false;
+                        document.getElementById("NOTYPEPREFIX_FFTW_N_ID").checked=false;
+                        
+                        document.getElementById("LONG_XYZ_Y_ID").checked=false;
+                        document.getElementById("LONG_XYZ_N_ID").checked=false;
+                        
+                        document.getElementById("TWODIMS_Y_ID").checked=false;
+                        document.getElementById("TWODIMS_N_ID").checked=false;
+                        
+                        document.getElementById("SPH_BND_PARTICLES_Y_ID").checked=false;
+                        document.getElementById("SPH_BND_PARTICLES_N_ID").checked=false;
+                        
+                        
+                        
+                        document.getElementById("NOVISCOSITYLIMITER_N_ID").checked=false;
+                        document.getElementById("NOVISCOSITYLIMITER_N_ID").checked=false;
+                        
+                        document.getElementById("COMPUTE_POTENTIAL_ENERGY_Y_ID").checked=false;
+                        document.getElementById("COMPUTE_POTENTIAL_ENERGY_Y_ID").checked=false;
+                        
+                        document.getElementById("LONGIDS_Y_ID").checked=false;
+                        document.getElementById("LONGIDS_Y_ID").checked=false;
+                        
+                        document.getElementById("ISOTHERMAL_N_ID").checked=false;
+                        document.getElementById("ISOTHERMAL_N_ID").checked=false;
+                        
+                        document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").checked=false;
+                        document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").checked=false;
+                        
+                        document.getElementById("FORCETESTID").value="";
+                       
+                        document.getElementById("MAKEGLASS_Y_ID").checked=false;
+                        document.getElementById("MAKEGLASS_N_ID").checked=false;
+                        
+                           
+                      
+                       
+        
+                      
+                      
+        
+                    }                
+                    function ValidateGADGETValues(){
+                          
+                         
+                         
+                         
+                        var  bool= true; //bool
+
+        
+                        if( document.getElementById("HAVE_HDF5_Y_ID").checked== false &&  document.getElementById("HAVE_HDF5_N_ID").checked== false){
+                            document.getElementById("labelHAVE_HDF5").style.color="red";
+                            bool=false;
+                            document.getElementById("HAVE_HDF5_Y_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelHAVE_HDF5").style.color="black";
+            
+                        }
+        
+                        if( document.getElementById("FLEXSTEPS_Y_ID").checked== false &&  document.getElementById("FLEXSTEPS_N_ID").checked== false){
+                            document.getElementById("labelFLEXSTEPS").style.color="red";
+                            bool=false;
+                            document.getElementById("FLEXSTEPS_Y_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelFLEXSTEPS").style.color="black";
+            
+                        }
+                        
+                        
+                        if( document.getElementById("DOUBLEPRECISION_N_ID").checked== false &&  document.getElementById("DOUBLEPRECISION_Y_ID").checked== false){
+                            document.getElementById("labelDOUBLEPRECISION").style.color="red";
+                            bool=false;
+                            document.getElementById("DOUBLEPRECISION_Y_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelDOUBLEPRECISION").style.color="black";
+            
+                        }
+                        
+                        if( document.getElementById("DOUBLEPRECISION_FFTW_N_ID").checked== false &&  document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").checked== false){
+                            document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="red";
+                            bool=false;
+                            document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="black";
+            
+                        }
+                        if( document.getElementById("PMGRID_N_ID").checked== false &&  document.getElementById("PMGRID_Y_ID").checked== false){
+                            document.getElementById("labelPMGRID").style.color="red";
+                            bool=false;
+                            document.getElementById("PMGRID_Y_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelPMGRID").style.color="black";
+            
+                        }
+                        if( document.getElementById("PERIODIC_N_ID").checked== false &&  document.getElementById("PERIODIC_Y_ID").checked== false){
+                            document.getElementById("labelPERIODIC").style.color="red";
+                            bool=false;
+                            document.getElementById("PERIODIC_Y_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelPERIODIC").style.color="black";
+            
+                        }
+        
+            
+                        if(bool==false){
+                            alert("Attention! \n Enter the parameters highlighted in red");
+                        }
+                        else{
+            
+                            gadgetIsValidate=true;
+                            alert("Poisson values validate "+poissonIsValidate);
+                        }
+                    }
+    
+    
+                          
+                       
+                         
+         
+        
+                      
+                         
+                     
                 </script>
 
 

@@ -100,7 +100,7 @@
         <div hidden="yes">
             <!-- This block contains the experiment name -->
             <dd>
-                <p>Insert below your <b>job identifyer</b></p>
+                <p>Insert below your <b>job identifer</b></p>
                 <textarea id="jobIdentifierId" rows="1" cols="60%" name="JobIdentifier">multi-infrastructure job description</textarea>
             </dd>	
             <!-- This block contains form buttons: Demo, SUBMIT and Reset values -->
@@ -166,7 +166,7 @@
                     <center>
                         <fieldset class="gadget2_fieldset" id="setup_fieldset">
 
-                            <legend class="gadget2_legend"> SETUP Value </legend>
+                            <legend class="gadget2_legend"> Setup Value </legend>
                             <table >
                                 <tr>
                                     <td id="td_left">   
@@ -741,7 +741,7 @@
 
 
 
-<div align="center"><input type="button" value="Submit" onClick="Submit()"></div>
+<div align="center"><input type="button" value="Continue to GADGET configuration" onClick="Submit()"></div>
 </form>
 
 <script>
@@ -1041,24 +1041,17 @@
         }
 
         if(b1==false){
-            alert("Attention! \n Enter the parameters highlighted in red");
+            alert("Oops! \n Looks like some values are missing or incorrect... \n Please check the parameters highlighted in red");
         }
         else{
             setupIsValidate=true;
             
-            alert("Setup values validate "+ setupIsValidate);
+            alert("Validate Setup"+ setupIsValidate);
 
         }
 
 
     }
-   
-   
-    
-
-
-    
-    
    
     
     function DemoCosmologyValues(){
@@ -1082,6 +1075,7 @@
         
         document.getElementById("transferID").value="eisenstein";
         document.getElementById("transferLabelID").style.color="black";
+        
         
     }
     function ResetCosmologyValues(){
@@ -1176,11 +1170,11 @@
         }
 
         if(bool==false){
-            alert("Attention! \n Enter the parameters highlighted in red");
+            alert("Oops! Seems something went wrong with your values \n Please check the parameters highlighted in red");
         }
         else{
             cosmologyIsValidate=true;
-            alert("Cosmology values validate "+cosmologyIsValidate);
+            alert("Validate Cosmology"+cosmologyIsValidate);
         }
 
         
@@ -1291,12 +1285,12 @@
         }
                    
         if(bool==false){
-            alert("Attention! \n Enter the parameters highlighted in red");
+            alert("Oops ! \n Seems that some of the values you've entered are missing or incorrect. \n Please check the parameters highlighted in red");
         }
         else{
 
             randomIsValidate=true;
-            alert("Random values validate "+randomIsValidate);
+            alert("Validate random number generator (RNG)"+randomIsValidate);
         }
             
             
@@ -1428,12 +1422,12 @@
         
             
         if(bool==false){
-            alert("Attention! \n Enter the parameters highlighted in red");
+            alert("Oops ! \n Something went wrong with the input parameters. \n Please check the parameters highlighted in red");
         }
         else{
             
             poissonIsValidate=true;
-            alert("Poisson values validate "+poissonIsValidate);
+            alert("Validate Poisson "+poissonIsValidate);
         }
     }
     
@@ -1448,17 +1442,17 @@
             document.getElementById("form_music").submit();
         else{
             if(!setupIsValidate)
-                s="Validate setup values!\n"
+                s="Validate Setup\n"
             
             if(!cosmologyIsValidate)
 
-                 c="Validate cosmology values!\n"
+                 c="Validate Cosmology\n"
            
             if(!randomIsValidate)
-                 r="Validate random values!\n"
+                 r="Validate RNG\n"
        
             if(!poissonIsValidate)
-                 p="Validate poisson values!"
+                 p="Validate Poisson"
             
             
            alert(""+s+c+r+p+""); 

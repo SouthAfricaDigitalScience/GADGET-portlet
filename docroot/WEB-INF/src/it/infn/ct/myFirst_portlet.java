@@ -566,7 +566,7 @@ public class myFirst_portlet extends GenericPortlet {
 
 
             // String inputSandbox=appServerPath+"WEB-INF/job/"+file;
-            File file = new File(appServerPath + "/WEB-INF/job/magic.conf");
+            File file = new File(appServerPath + "/WEB-INF/job/music.conf");
 
 
             // if file doesnt exists, then create it
