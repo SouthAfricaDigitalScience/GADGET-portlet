@@ -1012,12 +1012,12 @@
         
             
                         if(bool==false){
-                            alert("Attention! \n Enter the parameters highlighted in red");
+                             alert("Oops ! \n Something went wrong with the input parameters. \n Please check the parameters highlighted in red");
                         }
                         else{
             
                             gadgetIsValidate=true;
-                            alert("Poisson values validate "+poissonIsValidate);
+                            alert("Validate GADGET "+gadgetIsValidate);
                         }
                     }
     
