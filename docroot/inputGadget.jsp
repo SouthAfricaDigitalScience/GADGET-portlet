@@ -823,9 +823,7 @@
               
                          
                        
-                        document.getElementById("PERIODIC_Y_ID").checked=false;
-                        document.getElementById("PERIODIC_N_ID").checked=false;
-                            
+                        document.getElementById("PERIODIC_ID").checked=false;                            
                             
                         document.getElementById("UNEQUALSOFTENINGS_Y_ID").checked=false;
                         document.getElementById("UNEQUALSOFTENINGS_N_ID").checked=false;
@@ -1000,10 +998,10 @@
                             document.getElementById("labelPMGRID").style.color="black";
             
                         }
-                        if( document.getElementById("PERIODIC_N_ID").checked== false &&  document.getElementById("PERIODIC_Y_ID").checked== false){
+                        if(  document.getElementById("PERIODIC_ID").checked== false){
                             document.getElementById("labelPERIODIC").style.color="red";
                             bool=false;
-                            document.getElementById("PERIODIC_Y_ID").focus();
+                            document.getElementById("PERIODIC_ID").focus();
                         }
                         else{
                             document.getElementById("labelPERIODIC").style.color="black";
