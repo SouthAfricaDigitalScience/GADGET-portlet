@@ -123,12 +123,6 @@ public class GADGET_portlet extends GenericPortlet {
         String laplace_order;
         String grad_order;
         
-        
-        
-        
-
-                        
-
         public App_Input() {
 
             boxlength = zstart = levelmin = levelmin_TF = levelmax = padding = overlap = ref_center = ref_extent = ref_offset = align_top = baryons = use_2LPT = periodic_TF = "";
@@ -136,12 +130,11 @@ public class GADGET_portlet extends GenericPortlet {
             seed7 = seed8 = seed9 = seed10 = seed11 = seed12 = "";
             fft_fine = accuracy = pre_smooth = post_smooth = smoother = laplace_order = grad_order = "";
             
-            
         }
     } // App_Input
 
     class App_InputGADGET{
-            boolean PERIODIC;
+        boolean PERIODIC;
         boolean UNEQUALSOFTENINGS;
         boolean PEANOHILBERT;
         boolean WALLCLOCK;
@@ -604,12 +597,10 @@ public class GADGET_portlet extends GenericPortlet {
 
         try {
 
-            System.out.println("sono dentro createGADGETMakefile ");
+            System.out.println("sono dentro createMUSICconf ");
 
             String content = ""
-                    if(PERIODIC)
-                    + "OPT   +=  -DPERIODIC "
-                    
+//                    + "OPT   +=  -DPERIODIC "
                     + "[setup]\n"
                     + "boxlength     = " + appInput.boxlength + "\n"
                     + "zstart        = " + appInput.zstart + "\n"
