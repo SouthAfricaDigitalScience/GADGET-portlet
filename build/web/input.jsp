@@ -38,26 +38,51 @@
   java.util.Date date = new java.util.Date();
 %>
 
+<script type="text/javascript">
+
+    //Script for SlideShow
+    var i = 0; var path = new Array(); 
+    // LIST OF IMAGES 
+    path[0] = "<%=renderRequest.getContextPath()%>/images/img_1.jpg"; 
+    path[1] = "<%=renderRequest.getContextPath()%>/images/img_2.jpg"; 
+    path[2] = "<%=renderRequest.getContextPath()%>/images/img_3.jpg"; 
+    path[3] = "<%=renderRequest.getContextPath()%>/images/img_4.jpg"; 
+    path[4] = "<%=renderRequest.getContextPath()%>/images/img_5.jpg"; 
+    path[5] = "<%=renderRequest.getContextPath()%>/images/img_6.jpg"; 
+
+    function swapImage(){
+        document.slide.src = path[i]; 
+        if(i < path.length - 1) i++; 
+        else i = 0; 
+        setTimeout("swapImage()",3000); 
+    } 
+
+</script>
+
 <%
 // Below the descriptive area of the GATE web form 
 %>
 <table>
     <tr>
         <td valign="top">
-            <img align="left" style="padding:10px 10px;" src="<%=renderRequest.getContextPath()%>/images/AppLogo.jpg" width="80%"/>
+
+
+            <img onload="swapImage();" src="<%=renderRequest.getContextPath()%>/images/img_1.jpg" width="0" heigh="0"/>
+            <img align="left" style="padding:10px 10px;" name="slide" src="<%=renderRequest.getContextPath()%>/images/img_1.jpg" width="220" height="140"/>
         </td>
         <td>
-            <!--This is an example portlet!
-             <p><b>Exchange data between jsp page and java codeeee</b></p>-->
+           <!--This is an example portlet!
+            <p><b>Exchange data between jsp page and java codeeee</b></p>-->
+           
+           <p style="font-size: small"> 
+               GADGET is a freely available code for cosmological N-body/SPH<br/> 
+               simulations on massively parallel computers with distributed memory.<br/> 
+               GADGET uses an explicit communication model that is implemented<br/>
+               with the standardized MPI communication interface. <br/>
+               The code can be run on essentially all supercomputer systems presently in use,<br/>
+               including clusters of workstations or individual PCs. 
+           </p>
 
-            <p style="font-size: small"> 
-                GADGET is a freely available code for cosmological N-body/SPH simulations <br> 
-                on massively parallel computers with distributed memory.<br> 
-                GADGET uses an explicit communication model that is implemented<br>
-                with the standardized MPI communication interface. <br>
-                The code can be run on essentially all supercomputer systems presently in use,<br>
-                including clusters of workstations or individual PCs.  
-            </p>
         </td>
     <tr>
 </table>
@@ -353,11 +378,6 @@
                                 </tr>
                             </table>
 
-
-
-
-
-
                         </fieldset>
                     </center>
                 </div>
@@ -478,7 +498,6 @@
 
 
 
-
                         </fieldset>
                     </center>
 
@@ -520,12 +539,14 @@
                                 <tr >
                                     <td id="td_left">
                                         <label class="gadget2_label" id="seed9LabelID">seed[9]</label> 
+
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
 
                                     </td>
                                     <td id="td_right">
+
                                         <input  class="gadget2_textbox" id="seed9ID" name="seed9" type="text" value=""/></dt>
                                     </td>
                                 </tr>
@@ -535,6 +556,7 @@
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
+
 
                                     </td>
                                     <td id="td_right">
@@ -548,6 +570,7 @@
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
 
+
                                     </td>
                                     <td id="td_right">
                                         <input  class="gadget2_textbox" id="seed11ID" name="seed11" type="text" value=""/>
@@ -556,17 +579,18 @@
                                 <tr>
                                     <td id="td_left">
                                         <label class="gadget2_label" id="seed12LabelID">seed[12]</label>
+
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
 
                                     </td>
                                     <td id="td_right">
+
                                         <input class="gadget2_textbox" id="seed12ID" name="seed12" type="text" value=""/>
+
                                     </td>
                                 </tr>
-
-
 
                                 <tr>
                                     <td colspan="3" align="center"><input type="button" value="Demo" onclick="DemoRandomValues()">
@@ -576,10 +600,6 @@
                                     <td colspan="3"  align="center"><input type="button" value="Validate Random" onclick="ValidateRandomValues()"></td>
                                 </tr>
                             </table>
-
-
-
-
 
 
                         </fieldset>
@@ -593,10 +613,7 @@
                 <div id="gadget2_poisson">
                     <center>
                         <fieldset class="gadget2_poisson">
-
-
-
-                            <legend class="gadget2_legend"> POISSON Value </legend>
+                           <legend class="gadget2_legend"> POISSON Value </legend>
 
                             <table>
 
@@ -727,17 +744,17 @@
 <div align="center"><input type="button" value="Submit" onClick="Submit()"></div>
 </form>
 
-
-
-
 <script>
     
- var setupIsValidate=false;
- var cosmologyIsValidate=false;
- var randomIsValidate=false;
- var poissonIsValidate=false;
+
+    var setupIsValidate=false;
+    var cosmologyIsValidate=false;
+    var randomIsValidate=false;
+    var poissonIsValidate=false;
+
     
     function SetDemoSetupValue(){
+       
         document.getElementById("boxlengthID").value="100";
         document.getElementById("labelBoxlengthID").style.color="black";
         
@@ -870,168 +887,159 @@
     }
     function ValidateSetupValue(){
      
+
         var  b1= true; //bool
         
-        if(document.getElementById("boxlengthID").value== null || document.getElementById("boxlengthID").value==""){
- 
-          
-            document.getElementById("boxlengthID").value="";
-            document.getElementById("labelBoxlengthID").style.color="red";
-            b1=false;
-        }
-        else{
-            document.getElementById("labelBoxlengthID").style.color="black";
-            //type control param and range control param
-        }
         
-        
-        if(document.getElementById("zstartID").value== null || document.getElementById("zstartID").value==""){
- 
-          
-            document.getElementById("zstartID").value="";
-            document.getElementById("zstartLabelID").style.color="red";
-            b1=false;
-        }
-        else{
-            document.getElementById("zstartLabelID").style.color="black";
-        }
-        
-        if(document.getElementById("levelminID").value== null || document.getElementById("levelminID").value==""){
- 
-          
-            document.getElementById("levelminID").value="";
-            document.getElementById("levelminLabelID").style.color="red";
-            b1=false;
-        }
-        else{
-            document.getElementById("levelminLabelID").style.color="black";
-        }
-        if(document.getElementById("levelmin_TFID").value== null || document.getElementById("levelmin_TFID").value==""){
- 
-          
-            document.getElementById("levelmin_TFID").value="";
-            document.getElementById("levelmin_TFLabelID").style.color="red";
-            b1=false;
-        }
-        else{
-            document.getElementById("levelmin_TFLabelID").style.color="black";
-        }
-        
-        if(document.getElementById("levelmaxID").value== null || document.getElementById("levelmaxID").value==""){
- 
-          
-            document.getElementById("levelmaxID").value="";
-            document.getElementById("levelmaxLabelID").style.color="red";
-            b1=false;
-        }
-        else{
-            document.getElementById("levelmaxLabelID").style.color="black";
-        }
-        if(document.getElementById("paddingID").value== null || document.getElementById("paddingID").value==""){
- 
-          
-            document.getElementById("paddingID").value="";
-            document.getElementById("paddingLabelID").style.color="red";
-            b1=false;
-        } 
-        else{
-            document.getElementById("paddingLabelID").style.color="black";
-        }
-        if(document.getElementById("overlapID").value== null || document.getElementById("overlapID").value==""){
- 
-          
-            document.getElementById("overlapID").value="";
-            document.getElementById("overlapLabelID").style.color="red";
-            b1=false;
-        } else{
-            document.getElementById("overlapLabelID").style.color="black";
-        }
+            
 
-        
-        if(document.getElementById("ref_centerID").value== null || document.getElementById("ref_centerID").value==""){
- 
-          
-            document.getElementById("ref_centerID").value="";
-            document.getElementById("ref_centerLabelID").style.color="red";
+        if(document.getElementById("periodic_TF_Y_ID").checked==false && document.getElementById("periodic_TF_N_ID").checked==false){
+            document.getElementById("periodic_TF_LabelID").style.color="red";
+
             b1=false;
-       
-        }else{
-            document.getElementById("ref_centerLabelID").style.color="black";
-        }
-        if(document.getElementById("ref_extentID").value== null || document.getElementById("ref_extentID").value==""){
- 
-          
-            document.getElementById("ref_extentID").value="";
-            document.getElementById("ref_extentLabelID").style.color="red";
-            b1=false;
-       
-        }else{
-            document.getElementById("ref_extentLabelID").style.color="black";
-        }
-        
-        if(document.getElementById("ref_offsetID").value== null || document.getElementById("ref_offsetID").value==""){
- 
-          
-            document.getElementById("ref_offsetID").value="";
-            document.getElementById("ref_offsetLabelID").style.color="red";
-            b1=false;
-       
-        }else{
-            document.getElementById("ref_extentLabelID").style.color="black";
-        }
-        
-        
-        if(document.getElementById("align_top_N_ID").checked==false && document.getElementById("align_top_Y_ID").checked==false){
-          
-            document.getElementById("align_top_LabelID").style.color="red";
-            b1=false;
+            document.getElementById("periodic_TF_Y_ID").focus();
         }
         else{
-            document.getElementById("align_top_LabelID").style.color="black";
-        }
-        
-       
-       
-       
-        if(document.getElementById("use_2LPT_N_ID").checked==false && document.getElementById("use_2LPT_Y_ID").checked==false){
-            document.getElementById("use_2LPT_LabelID").style.color="red";
-            b1=false;
-        }
-        else{
-            document.getElementById("use_2LPT_LabelID").style.color="black";
-        }
-        
-        
-    
-       
-        if(document.getElementById("baryons_N_ID").checked==false && document.getElementById("baryons_Y_ID").checked==false){ 
-            document.getElementById("baryons_LabelID").style.color="red";
-            b1=false;
-        }
-        else{
-            document.getElementById("baryons_LabelID").style.color="black";
+            document.getElementById("periodic_TF_LabelID").style.color="black";
         }
         //type control param and range control param
-        
-       
+
         if(document.getElementById("use_LLA_N_ID").checked==false && document.getElementById("use_LLA_Y_ID").checked==false){
             document.getElementById("use_LLA_LabelID").style.color="red";
             b1=false;    
+            document.getElementById("use_LLA_Y_ID").focus();
         }
         else{
             document.getElementById("use_LLA_LabelID").style.color="black";
         }
         //type control param and range control param 
-       
-        if(document.getElementById("periodic_TF_Y_ID").checked==false && document.getElementById("periodic_TF_N_ID").checked==false){
-            document.getElementById("periodic_TF_LabelID").style.color="red";
+
+        if(document.getElementById("use_2LPT_N_ID").checked==false && document.getElementById("use_2LPT_Y_ID").checked==false){
+            document.getElementById("use_2LPT_LabelID").style.color="red";
             b1=false;
+            document.getElementById("use_2LPT_Y_ID").focus();
         }
         else{
-            document.getElementById("periodic_TF_LabelID").style.color="black";
+            document.getElementById("use_2LPT_LabelID").style.color="black";
         }
-        //type control param and range control param 
-            
+
+        if(document.getElementById("baryons_N_ID").checked==false && document.getElementById("baryons_Y_ID").checked==false){ 
+            document.getElementById("baryons_LabelID").style.color="red";
+            b1=false;
+            document.getElementById("baryons_Y_ID").focus();
+        }
+        else{
+            document.getElementById("baryons_LabelID").style.color="black";
+        }
+        //type control param and range control param
+
+        if(document.getElementById("align_top_N_ID").checked==false && document.getElementById("align_top_Y_ID").checked==false){
+            document.getElementById("align_top_LabelID").style.color="red";
+            b1=false;
+            document.getElementById("align_top_Y_ID").focus();
+        }
+        else{
+            document.getElementById("align_top_LabelID").style.color="black";
+        }
+
+        if(document.getElementById("ref_offsetID").value== null || document.getElementById("ref_offsetID").value==""){
+            document.getElementById("ref_offsetID").value="";
+            document.getElementById("ref_offsetLabelID").style.color="red";
+            b1=false;
+            document.getElementById("ref_offsetID").focus();       
+        }else{
+            document.getElementById("ref_offsetLabelID").style.color="black";
+        }
+
+        if(document.getElementById("ref_extentID").value== null || document.getElementById("ref_extentID").value==""){
+            document.getElementById("ref_extentID").value="";
+            document.getElementById("ref_extentLabelID").style.color="red";
+            b1=false;
+            document.getElementById("ref_extentID").focus();
+       
+        }else{
+            document.getElementById("ref_extentLabelID").style.color="black";
+        }        
+
+        if(document.getElementById("ref_centerID").value== null || document.getElementById("ref_centerID").value==""){
+            document.getElementById("ref_centerID").value="";
+            document.getElementById("ref_centerLabelID").style.color="red";
+            b1=false;
+            document.getElementById("ref_centerID").focus();
+        }else{
+            document.getElementById("ref_centerLabelID").style.color="black";
+        }
+
+        if(document.getElementById("overlapID").value== null || document.getElementById("overlapID").value==""){
+            document.getElementById("overlapID").value="";
+            document.getElementById("overlapLabelID").style.color="red";
+            b1=false;
+            document.getElementById("overlapID").focus();
+        } else{
+            document.getElementById("overlapLabelID").style.color="black";
+        }
+
+        if(document.getElementById("paddingID").value== null || document.getElementById("paddingID").value==""){
+            document.getElementById("paddingID").value="";
+            document.getElementById("paddingLabelID").style.color="red";
+            b1=false;
+            document.getElementById("paddingID").focus();
+        } 
+        else{
+            document.getElementById("paddingLabelID").style.color="black";
+        }
+
+        if(document.getElementById("levelmaxID").value== null || document.getElementById("levelmaxID").value==""){
+            document.getElementById("levelmaxID").value="";
+            document.getElementById("levelmaxLabelID").style.color="red";
+            b1=false;
+            document.getElementById("levelmaxID").focus();
+        }
+        else{
+            document.getElementById("levelmaxLabelID").style.color="black";
+        }
+
+        if(document.getElementById("levelmin_TFID").value== null || document.getElementById("levelmin_TFID").value==""){
+            document.getElementById("levelmin_TFID").value="";
+            document.getElementById("levelmin_TFLabelID").style.color="red";
+            b1=false;
+            document.getElementById("levelmin_TFID").focus();
+        }
+        else{
+            document.getElementById("levelmin_TFLabelID").style.color="black";
+        }
+        
+        if(document.getElementById("levelminID").value== null || document.getElementById("levelminID").value==""){
+            document.getElementById("levelminID").value="";
+            document.getElementById("levelminLabelID").style.color="red";
+            b1=false;
+            document.getElementById("levelminID").focus();
+        }
+        else{
+            document.getElementById("levelminLabelID").style.color="black";
+        }
+
+        if(document.getElementById("zstartID").value== null || document.getElementById("zstartID").value==""){
+            document.getElementById("zstartID").value="";
+            document.getElementById("zstartLabelID").style.color="red";
+            b1=false;
+            document.getElementById("zstartID").focus();
+        }
+        else{
+            document.getElementById("zstartLabelID").style.color="black";
+        }        
+
+        if(document.getElementById("boxlengthID").value== null || document.getElementById("boxlengthID").value==""){
+            document.getElementById("boxlengthID").value="";
+            document.getElementById("labelBoxlengthID").style.color="red";
+            b1=false;
+            document.getElementById("boxlengthID").focus();
+        }
+        else{
+            document.getElementById("labelBoxlengthID").style.color="black";
+            //type control param and range control param
+        }
+
         if(b1==false){
             alert("Attention! \n Enter the parameters highlighted in red");
         }
@@ -1039,13 +1047,13 @@
             setupIsValidate=true;
             
             alert("Setup values validate "+ setupIsValidate);
-             document.getElementById("setup_fieldset").style.border.color="black";
-            
+
         }
 
+
     }
-    
-    
+   
+   
     
 
 
@@ -1096,86 +1104,77 @@
     
     function ValidateCosmologyValues(){
         var  bool= true; //bool
+
+        if(document.getElementById("transferID").value== null || document.getElementById("transferID").value==""){
+            document.getElementById("transferID").value="";
+            document.getElementById("transferLabelID").style.color="red";
+            bool=false;
+            document.getElementById("transferID").focus();
+        } else{
+            document.getElementById("transferLabelID").style.color="black";
+        }
+
+        if(document.getElementById("nspecID").value== null || document.getElementById("nspecID").value==""){
+            document.getElementById("nspecID").value="";
+            document.getElementById("nspecLabelID").style.color="red";
+            bool=false;
+            document.getElementById("nspecID").focus();
+        } 
+        else{
+            document.getElementById("nspecLabelID").style.color="black";
+        }
+
+        if(document.getElementById("sigma_8ID").value== null || document.getElementById("sigma_8ID").value==""){
+            document.getElementById("sigma_8ID").value="";
+            document.getElementById("sigma_8LabelID").style.color="red";
+            bool=false;
+            document.getElementById("sigma_8ID").focus();
+        }
+        else{
+            document.getElementById("sigma_8LabelID").style.color="black";
+        }
+
+        if(document.getElementById("H0ID").value== null || document.getElementById("H0ID").value==""){
+            document.getElementById("H0ID").value="";
+            document.getElementById("H0LabelID").style.color="red";
+            bool=false;
+            document.getElementById("H0ID").focus();
+        }
+        else{
+            document.getElementById("H0LabelID").style.color="black";
+        }
+
+        if(document.getElementById("Omega_bID").value== null || document.getElementById("Omega_bID").value==""){
+            document.getElementById("Omega_bID").value="";
+            document.getElementById("Omega_bLabelID").style.color="red";
+            bool=false;
+            document.getElementById("Omega_bID").focus();
+        }
+        else{
+            document.getElementById("Omega_bLabelID").style.color="black";
+        }
+
+        if(document.getElementById("Omega_LID").value== null || document.getElementById("Omega_LID").value==""){
+            document.getElementById("Omega_LID").value="";
+            document.getElementById("Omega_LlabelID").style.color="red";
+            bool=false;
+            document.getElementById("Omega_LID").focus();
+        }
+        else{
+            document.getElementById("Omega_LlabelID").style.color="black";
+        }
+
         if(document.getElementById("Omega_mID").value== null || document.getElementById("Omega_mID").value==""){
- 
-          
             document.getElementById("Omega_mID").value="";
             document.getElementById("Omega_mLabelID").style.color="red";
             bool=false;
+            document.getElementById("Omega_mID").focus();
         }
         else{
             document.getElementById("Omega_mLabelID").style.color="black";
             //type control param and range control param
         }
-        
-        
-        if(document.getElementById("Omega_LID").value== null || document.getElementById("Omega_LID").value==""){
- 
-          
-            document.getElementById("Omega_LID").value="";
-            document.getElementById("Omega_LlabelID").style.color="red";
-            bool=false;
-        }
-        else{
-            document.getElementById("Omega_LlabelID").style.color="black";
-        }
-        
-        if(document.getElementById("Omega_bID").value== null || document.getElementById("Omega_bID").value==""){
- 
-          
-            document.getElementById("Omega_bID").value="";
-            document.getElementById("Omega_bLabelID").style.color="red";
-            bool=false;
-        }
-        else{
-            document.getElementById("Omega_bLabelID").style.color="black";
-        }
-        
-        if(document.getElementById("H0ID").value== null || document.getElementById("H0ID").value==""){
- 
-          
-            document.getElementById("H0ID").value="";
-            document.getElementById("H0LabelID").style.color="red";
-            bool=false;
-        }
-        else{
-            document.getElementById("H0LabelID").style.color="black";
-        }
-        
-        if(document.getElementById("sigma_8ID").value== null || document.getElementById("sigma_8ID").value==""){
- 
-          
-            document.getElementById("sigma_8ID").value="";
-            document.getElementById("sigma_8LabelID").style.color="red";
-            bool=false;
-        }
-        else{
-            document.getElementById("sigma_8LabelID").style.color="black";
-        }
-        if(document.getElementById("nspecID").value== null || document.getElementById("nspecID").value==""){
- 
-          
-            document.getElementById("nspecID").value="";
-            document.getElementById("nspecLabelID").style.color="red";
-            bool=false;
-        } 
-        else{
-            document.getElementById("nspecLabelID").style.color="black";
-        }
-        if(document.getElementById("transferID").value== null || document.getElementById("transferID").value==""){
- 
-          
-            document.getElementById("transferID").value="";
-            document.getElementById("transferLabelID").style.color="red";
-            bool=false;
-        } else{
-            document.getElementById("transferLabelID").style.color="black";
-        }
 
-        
-      
-        
-            
         if(bool==false){
             alert("Attention! \n Enter the parameters highlighted in red");
         }
@@ -1184,7 +1183,11 @@
             alert("Cosmology values validate "+cosmologyIsValidate);
         }
 
+        
+        
     }
+    
+
 
 
     function DemoRandomValues(){
@@ -1224,87 +1227,80 @@
         document.getElementById("seed12LabelID").style.color="black";
     }
     function ValidateRandomValues(){
-        var  bool= true; //bool
-        if(document.getElementById("seed7ID").value== null || document.getElementById("seed7ID").value==""){
- 
-          
-            document.getElementById("seed7ID").value="";
-            document.getElementById("seed7LabelID").style.color="red";
-            bool=false;
-        }
-        else{
-            document.getElementById("seed7LabelID").style.color="black";
-            //type control param and range control param
-        }
-        
-        
-        if(document.getElementById("seed8ID").value== null || document.getElementById("seed8ID").value==""){
- 
-          
-            document.getElementById("seed8ID").value="";
-            document.getElementById("seed8LabelID").style.color="red";
-            bool=false;
-        }
-        else{
-            document.getElementById("seed8LabelID").style.color="black";
-        }
-        
-        if(document.getElementById("seed9ID").value== null || document.getElementById("seed9ID").value==""){
- 
-          
-            document.getElementById("seed9ID").value="";
-            document.getElementById("seed9LabelID").style.color="red";
-            bool=false;
-        }
-        else{
-            document.getElementById("seed9LabelID").style.color="black";
-        }
-        
-        if(document.getElementById("seed10ID").value== null || document.getElementById("seed10ID").value==""){
- 
-          
-            document.getElementById("seed10ID").value="";
-            document.getElementById("seed10LabelID").style.color="red";
-            bool=false;
-        }
-        else{
-            document.getElementById("seed10LabelID").style.color="black";
-        }
-        
-        if(document.getElementById("seed11ID").value== null || document.getElementById("seed11ID").value==""){
- 
-          
-            document.getElementById("seed11ID").value="";
-            document.getElementById("seed11LabelID").style.color="red";
-            bool=false;
-        }
-        else{
-            document.getElementById("seed11LabelID").style.color="black";
-        }
+        var  bool= true; //bool              
+
         if(document.getElementById("seed12ID").value== null || document.getElementById("seed12ID").value==""){
- 
-          
             document.getElementById("seed12ID").value="";
             document.getElementById("seed12LabelID").style.color="red";
             bool=false;
+            document.getElementById("seed12ID").focus();
         } 
         else{
             document.getElementById("seed12LabelID").style.color="black";
         }
         
+        if(document.getElementById("seed11ID").value== null || document.getElementById("seed11ID").value==""){
+            document.getElementById("seed11ID").value="";
+            document.getElementById("seed11LabelID").style.color="red";
+            bool=false;
+            document.getElementById("seed11ID").focus();
+        }
+        else{
+            document.getElementById("seed11LabelID").style.color="black";
+        }
+        
+        if(document.getElementById("seed10ID").value== null || document.getElementById("seed10ID").value==""){
+            document.getElementById("seed10ID").value="";
+            document.getElementById("seed10LabelID").style.color="red";
+            bool=false;
+            document.getElementById("seed10ID").focus();
+        }
+        else{
+            document.getElementById("seed10LabelID").style.color="black";
+        }
+        
+        if(document.getElementById("seed9ID").value== null || document.getElementById("seed9ID").value==""){
+            document.getElementById("seed9ID").value="";
+            document.getElementById("seed9LabelID").style.color="red";
+            bool=false;
+            document.getElementById("seed9ID").focus();
+        }
+        else{
+            document.getElementById("seed9LabelID").style.color="black";
+        }
 
-        
-      
-        
-            
+        if(document.getElementById("seed8ID").value== null || document.getElementById("seed8ID").value==""){
+            document.getElementById("seed8ID").value="";
+            document.getElementById("seed8LabelID").style.color="red";
+            bool=false;
+            document.getElementById("seed8ID").focus();
+        }
+        else{
+            document.getElementById("seed8LabelID").style.color="black";
+        }
+
+        if(document.getElementById("seed7ID").value== null || document.getElementById("seed7ID").value==""){
+            document.getElementById("seed7ID").value="";
+            document.getElementById("seed7LabelID").style.color="red";
+            bool=false;
+            document.getElementById("seed7ID").focus();
+        }
+        else{
+            document.getElementById("seed7LabelID").style.color="black";
+            //type control param and range control param
+        }
+                   
         if(bool==false){
             alert("Attention! \n Enter the parameters highlighted in red");
         }
         else{
-            
+
             randomIsValidate=true;
             alert("Random values validate "+randomIsValidate);
         }
+            
+            
+        
     }
     
 
@@ -1359,85 +1355,76 @@
     
     function ValidatePoissonValues(){
         var  bool= true; //bool
-        if(document.getElementById("fft_fine_N_ID").checked== false && document.getElementById("fft_fine_Y_ID").checked== false){
- 
-            document.getElementById("fft_fineLabelID").style.color="red";
+
+        if(document.getElementById("grad_orderID").value== null || document.getElementById("grad_orderID").value==""){
+            document.getElementById("grad_orderID").value="";
+            document.getElementById("grad_orderLabelID").style.color="red";
             bool=false;
+            document.getElementById("grad_orderID").focus();
+        } 
+        else{
+            document.getElementById("grad_orderLabelID").style.color="black";
+        }
+
+        if(document.getElementById("laplace_orderID").value== null || document.getElementById("laplace_orderID").value==""){
+            document.getElementById("laplace_orderID").value="";
+            document.getElementById("laplace_orderLabelID").style.color="red";
+            bool=false;
+            document.getElementById("laplace_orderID").focus();
+        } 
+        else{
+            document.getElementById("laplace_orderLabelID").style.color="black";
+        }
+
+        if(document.getElementById("smootherID").value== null || document.getElementById("smootherID").value==""){
+            document.getElementById("smootherID").value="";
+            document.getElementById("smootherLabelID").style.color="red";
+            bool=false;
+            document.getElementById("smootherID").focus();
         }
         else{
-            document.getElementById("fft_fineLabelID").style.color="black";
-            //type control param and range control param
+            document.getElementById("smootherLabelID").style.color="black";
         }
-        
-        
-        if(document.getElementById("accuracyID").value== null || document.getElementById("accuracyID").value==""){
- 
-          
-            document.getElementById("accuracyID").value="";
-            document.getElementById("accuracyLabelID").style.color="red";
+
+        if(document.getElementById("post_smoothID").value== null || document.getElementById("post_smoothID").value==""){
+            document.getElementById("post_smoothID").value="";
+            document.getElementById("post_smoothLabelID").style.color="red";
             bool=false;
+            document.getElementById("post_smoothID").focus();
         }
         else{
-            document.getElementById("accuracyLabelID").style.color="black";
+            document.getElementById("post_smoothLabelID").style.color="black";
         }
-        
+
         if(document.getElementById("pre_smoothID").value== null || document.getElementById("pre_smoothID").value==""){
- 
-          
             document.getElementById("pre_smoothID").value="";
             document.getElementById("pre_smoothLabelID").style.color="red";
             bool=false;
+            document.getElementById("pre_smoothID").focus();
         }
         else{
             document.getElementById("pre_smoothLabelID").style.color="black";
         }
         
-        if(document.getElementById("post_smoothID").value== null || document.getElementById("post_smoothID").value==""){
- 
-          
-            document.getElementById("post_smoothID").value="";
-            document.getElementById("post_smoothLabelID").style.color="red";
+        if(document.getElementById("accuracyID").value== null || document.getElementById("accuracyID").value==""){
+            document.getElementById("accuracyID").value="";
+            document.getElementById("accuracyLabelID").style.color="red";
             bool=false;
+            document.getElementById("accuracyID").focus();
         }
         else{
-            document.getElementById("post_smoothLabelID").style.color="black";
+            document.getElementById("accuracyLabelID").style.color="black";
         }
         
-        if(document.getElementById("smootherID").value== null || document.getElementById("smootherID").value==""){
- 
-          
-            document.getElementById("smootherID").value="";
-            document.getElementById("smootherLabelID").style.color="red";
+        if(document.getElementById("fft_fine_N_ID").checked== false && document.getElementById("fft_fine_Y_ID").checked== false){
+            document.getElementById("fft_fineLabelID").style.color="red";
             bool=false;
+            document.getElementById("fft_fine_Y_ID").focus();
         }
         else{
-            document.getElementById("smootherLabelID").style.color="black";
+            document.getElementById("fft_fineLabelID").style.color="black";
+            //type control param and range control param
         }
-        if(document.getElementById("laplace_orderID").value== null || document.getElementById("laplace_orderID").value==""){
- 
-          
-            document.getElementById("laplace_orderID").value="";
-            document.getElementById("laplace_orderLabelID").style.color="red";
-            bool=false;
-        } 
-        else{
-            document.getElementById("laplace_orderLabelID").style.color="black";
-        }
-        
-        if(document.getElementById("grad_orderID").value== null || document.getElementById("grad_orderID").value==""){
- 
-          
-            document.getElementById("grad_orderID").value="";
-            document.getElementById("grad_orderLabelID").style.color="red";
-            bool=false;
-        } 
-        else{
-            document.getElementById("grad_orderLabelID").style.color="black";
-        }
-        
-
-        
-      
         
             
         if(bool==false){
@@ -1451,10 +1438,12 @@
     }
     
     function Submit(){
-     var s="";
-     var c="";
-     var r="";
-     var p="";
+
+        var s="";
+        var c="";
+        var r="";
+        var p="";
+
         if(setupIsValidate && cosmologyIsValidate && randomIsValidate && poissonIsValidate )
             document.getElementById("form_music").submit();
         else{
@@ -1462,6 +1451,7 @@
                 s="Validate setup values!\n"
             
             if(!cosmologyIsValidate)
+
                  c="Validate cosmology values!\n"
            
             if(!randomIsValidate)
@@ -1472,12 +1462,16 @@
             
             
            alert(""+s+c+r+p+""); 
+
         }
             
         
     } 
     
 </script>
+
+
+
 
 
 
