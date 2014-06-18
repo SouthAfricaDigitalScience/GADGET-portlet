@@ -141,44 +141,45 @@ public class GADGET_portlet extends GenericPortlet {
     } // App_Input
 
     class App_InputGADGET{
-            String PERIODIC;
-        String UNEQUALSOFTENINGS;
-        String PEANOHILBERT;
-        String WALLCLOCK;
-        String PMGR;
+            boolean PERIODIC;
+        boolean UNEQUALSOFTENINGS;
+        boolean PEANOHILBERT;
+        boolean WALLCLOCK;
+        boolean PMGR;
         String PLACEHIGHRESREGION;
         String ENLARGEREGION;
         String ASMT;
         String RCUT;
-        String DOUBLEPRECISION;
-        String DOUBLEPRECISION_FFTW;
-        String SYNCHRONIZATION;
-        String FLEXSTEPS;
-        String PSEUDOSYMMETRIC;
-        String NOSTOP_WHEN_BELOW_MINTIMESTEP;
-        String NOPMSTEPADJUSTMENT;
-        String HAVE_HDF5;
-        String OUTPUTPOTENTIAL;
-        String OUTPUTACCELERATION;
-        String OUTPUTCHANGEOFENTROPY;
-        String OUTPUTTIMESTEP;
-        String NOGRAVITY;
-        String NOTREERND;
-        String NOTYPEPREFIX_FFTW;
-        String LONG_XYZ;
-        String TWODIMS;
-        String SPH_BND_PARTICLES;
-        String NOVISCOSITYLIMITER;
-        String COMPUTE_POTENTIAL_ENERGY;
-        String LONGIDS;
-        String ISOTHERMAL;
-        String SELECTIVE_NO_GRAVITY;
-        String FORCETEST;
-        String MAKEGLASS;
+        boolean DOUBLEPRECISION;
+        boolean DOUBLEPRECISION_FFTW;
+        boolean SYNCHRONIZATION;
+        boolean FLEXSTEPS;
+        boolean PSEUDOSYMMETRIC;
+        boolean NOSTOP_WHEN_BELOW_MINTIMESTEP;
+        boolean NOPMSTEPADJUSTMENT;
+        boolean HAVE_HDF5;
+        boolean OUTPUTPOTENTIAL;
+        boolean OUTPUTACCELERATION;
+        boolean OUTPUTCHANGEOFENTROPY;
+        boolean OUTPUTTIMESTEP;
+        boolean NOGRAVITY;
+        boolean NOTREERND;
+        boolean NOTYPEPREFIX_FFTW;
+        boolean LONG_XYZ;
+        boolean TWODIMS;
+        boolean SPH_BND_PARTICLES;
+        boolean NOVISCOSITYLIMITER;
+        boolean COMPUTE_POTENTIAL_ENERGY;
+        boolean LONGIDS;
+        boolean ISOTHERMAL;
+        boolean SELECTIVE_NO_GRAVITY;
+        boolean FORCETEST;
+        boolean MAKEGLASS;
         
         public App_InputGADGET(){
             
-            PERIODIC=UNEQUALSOFTENINGS=PEANOHILBERT=WALLCLOCK=PMGR=PLACEHIGHRESREGION=ENLARGEREGION=ASMT=RCUT=DOUBLEPRECISION=DOUBLEPRECISION_FFTW=SYNCHRONIZATION=FLEXSTEPS=PSEUDOSYMMETRIC=NOSTOP_WHEN_BELOW_MINTIMESTEP=NOPMSTEPADJUSTMENT=HAVE_HDF5=OUTPUTPOTENTIAL=OUTPUTACCELERATION=OUTPUTCHANGEOFENTROPY=OUTPUTTIMESTEP=NOGRAVITY=NOTREERND=NOTYPEPREFIX_FFTW=LONG_XYZ=TWODIMS=SPH_BND_PARTICLES=NOVISCOSITYLIMITER=COMPUTE_POTENTIAL_ENERGY=LONGIDS=ISOTHERMAL=SELECTIVE_NO_GRAVITY=FORCETEST=MAKEGLASS="";
+            PERIODIC=UNEQUALSOFTENINGS=PEANOHILBERT=WALLCLOCK=PMGR=DOUBLEPRECISION=DOUBLEPRECISION_FFTW=SYNCHRONIZATION=FLEXSTEPS=PSEUDOSYMMETRIC=NOSTOP_WHEN_BELOW_MINTIMESTEP=NOPMSTEPADJUSTMENT=HAVE_HDF5=OUTPUTPOTENTIAL=OUTPUTACCELERATION=OUTPUTCHANGEOFENTROPY=OUTPUTTIMESTEP=NOGRAVITY=NOTREERND=NOTYPEPREFIX_FFTW=LONG_XYZ=TWODIMS=SPH_BND_PARTICLES=NOVISCOSITYLIMITER=COMPUTE_POTENTIAL_ENERGY=LONGIDS=ISOTHERMAL=SELECTIVE_NO_GRAVITY=FORCETEST=MAKEGLASS=false;
+            PLACEHIGHRESREGION=ENLARGEREGION=ASMT=RCUT="";
         }
     }
     
@@ -548,7 +549,7 @@ public class GADGET_portlet extends GenericPortlet {
         /**
          * ****** RETRIVE INPUT GADGET VALUES*******
          */
-        appInputGADGET.PERIODIC = (String) request.getParameter("PERIODIC");
+        appInputGADGET.PERIODIC = (Boolean) request.getParameter("PERIODIC");
         appInputGADGET.UNEQUALSOFTENINGS = (String) request.getParameter("UNEQUALSOFTENINGS");
         appInputGADGET.PEANOHILBERT = (String) request.getParameter("PEANOHILBERT");
         appInputGADGET.WALLCLOCK = (String) request.getParameter("WALLCLOCK");
@@ -603,9 +604,12 @@ public class GADGET_portlet extends GenericPortlet {
 
         try {
 
-            System.out.println("sono dentro createMUSICconfigFile ");
+            System.out.println("sono dentro createGADGETMakefile ");
 
             String content = ""
+                    if(PERIODIC)
+                    + "OPT   +=  -DPERIODIC "
+                    
                     + "[setup]\n"
                     + "boxlength     = " + appInput.boxlength + "\n"
                     + "zstart        = " + appInput.zstart + "\n"
