@@ -147,14 +147,11 @@
                                         <label class="gadget2_label" id="labelPERIODIC"  >PERIODIC *</label>
                                     </td>
                                     <td id="td_right">
-<<<<<<< HEAD
+
 
                                         <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="false">
 
 
-=======
-                                        <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="">
->>>>>>> d2e6338325ca988bbb06bff0badf4b5f2197c2e1
                                     </td>
                                 </tr>
                                 <tr>
@@ -163,12 +160,10 @@
                                     </td>
                                    
                                     <td id="td_right">
-<<<<<<< HEAD
+
                                         <input  type="checkbox" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_ID" value="false"> 
 
-=======
-                                        <input  type="checkbox" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_ID" value=""> 
->>>>>>> d2e6338325ca988bbb06bff0badf4b5f2197c2e1
+
                                     </td>
                                 </tr>
 
