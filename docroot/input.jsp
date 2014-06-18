@@ -1076,6 +1076,7 @@
         document.getElementById("transferID").value="eisenstein";
         document.getElementById("transferLabelID").style.color="black";
         
+        
     }
     function ResetCosmologyValues(){
         document.getElementById("Omega_mID").value="";
