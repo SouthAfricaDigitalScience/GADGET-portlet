@@ -548,19 +548,19 @@ public class GADGET_portlet extends GenericPortlet {
 			appInputGADGET.PERIODIC = true;
 		else
 			appInputGADGET.PERIODIC = false;
-	    if(request.GetParameter("UNEQUALSOFTENINGS").equals("true"))
+	    if(request.getParameter("UNEQUALSOFTENINGS").equals("true"))
 			appInputGADGET.UNEQUALSOFTENINGS = true;
 		else
 			appInputGADGET.UNEQUALSOFTENINGS = false;
-		if(request.GetParameter("PEANNOHILBERT").equals("true"))
+		if(request.getParameter("PEANNOHILBERT").equals("true"))
 			appInputGADGET.PEANOHILBERT = true;
 		else
 			appInputGADGET.PEANOHILBERT = false;
-		if(request.GetParameter("WALLCLOCK").equals("true"))
+		if(request.getParameter("WALLCLOCK").equals("true"))
 			appInputGADGET.WALLCLOCK = true;
 		else
 			appInputGADGET.WALLCLOCK = false;
-		if (request.GetParameter("PMGR").equals("true"))
+		if (request.getParameter("PMGR").equals("true"))
 			appInputGADGET.PMGR = true;
 		else
 			appInputGADGET.PMGR = false;
@@ -570,15 +570,15 @@ public class GADGET_portlet extends GenericPortlet {
         appInputGADGET.ASMT = (String) request.getParameter("ASMT");
         appInputGADGET.RCUT = (String) request.getParameter("RCUT");
 		
-		if(request.GetParameter("DOUBLEPRECISION").equals("true"))
+		if(request.getParameter("DOUBLEPRECISION").equals("true"))
 			appInputGADGET.DOUBLEPRECISION = true;
 		else
 			appInputGADGET.DOUBLEPRECISION = false;
-        if(request.GetParameter("DOUBLEPRECISION_FFTW").equals("true"))
+        if(request.getParameter("DOUBLEPRECISION_FFTW").equals("true"))
 			appInputGADGET.DOUBLEPRECISION_FFTW = true;
 		else
 			appInputGADGET.DOUBLEPRECISION_FFTW = false;
-		if(request.GetParameter("SYNCHRONISATION").equals("true"))
+		if(request.getParameter("SYNCHRONISATION").equals("true"))
 			appInputGADGET.SYNCHRONIZATION = true;
 		else
 			appInputGADGET.SYNCHRONIZATION = false;
