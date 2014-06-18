@@ -200,22 +200,7 @@
                                 <tr>
 
                                     <td id="td_left">   
-                                        <label class="gadget2_label" id="labelWALLCLOCK"  >WALLCLOCK </label>
-                                    </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
-                                    <td id="td_right">
-                                        <input  type="radio" name="WALLCLOCK" id="WALLCLOCK_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="WALLCLOCK" id="WALLCLOCK_N_ID" value="N"> N
-                                    </td>
-
-                                </tr>
-                                
-                                <tr>
-                                    
-                                    <td id="td_left">   
-                                        <label class="gadget2_label" id="labelPMGRID"  >PMGRID </label>
+                                        <label class="gadget2_label" id="labelPMGRID"  >PMGRID * </label>
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
@@ -224,7 +209,7 @@
                                         <input  type="radio" name="PMGRID" id="PMGRID_Y_ID" value="Y"> Y 
                                         <input type="radio" name="PMGRID" id="PMGRID_N_ID" value="N"> N
                                     </td>
-                                        
+
                                 </tr>
                                 <tr>
 
@@ -235,7 +220,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                       <input class="gadget2_textbox" id="PLACEHIGHRESREGIONID" name="PLACEHIGHRESREGION" type="text" value=""/>
+                                        <input class="gadget2_textbox" id="PLACEHIGHRESREGIONID" name="PLACEHIGHRESREGION" type="text" value=""/>
                                     </td>
 
                                 </tr>
@@ -281,13 +266,13 @@
                                 <tr>
 
                                     <td id="td_left">   
-                                        <label class="gadget2_label" id="labelDOUBLEPRECISION"  >DOUBLEPRECISION </label>
+                                        <label class="gadget2_label" id="labelDOUBLEPRECISION"  >DOUBLEPRECISION *</label>
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                         <input  type="radio" name="DOUBLEPRECISION" id="DOUBLEPRECISION_Y_ID" value="Y"> Y 
+                                        <input  type="radio" name="DOUBLEPRECISION" id="DOUBLEPRECISION_Y_ID" value="Y"> Y 
                                         <input type="radio" name="DOUBLEPRECISION" id="DOUBLEPRECISION_N_ID" value="N"> N
                                     </td>
 
@@ -295,18 +280,18 @@
                                 <tr>
 
                                     <td id="td_left">   
-                                        <label class="gadget2_label" id="labelDOUBLEPRECISION_FFTW"  >DOUBLEPRECISION_FFTW </label>
+                                        <label class="gadget2_label" id="labelDOUBLEPRECISION_FFTW"  >DOUBLEPRECISION_FFTW *</label>
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="DDOUBLEPRECISION_FFTW" id="DDOUBLEPRECISION_FFTW_Y_ID" value="Y"> Y 
+                                        <input  type="radio" name="DOUBLEPRECISION_FFTW" id="DOUBLEPRECISION_FFTW_Y_ID" value="Y"> Y 
                                         <input type="radio" name="DOUBLEPRECISION_FFTW" id="DOUBLEPRECISION_FFTW_N_ID" value="N"> N
                                     </td>
 
                                 </tr>
-                                
+
                                 <tr>
 
                                     <td id="td_left">   
@@ -317,22 +302,22 @@
                                     </td>
                                     <td id="td_right">
                                         <input  type="checkbox" name="SYNCHRONIZATION" id="SYNCHRONIZATIONID" value="">  
-                                       
-                                        
+
+
                                     </td>
 
                                 </tr>
                                 <tr>
 
                                     <td id="td_left">   
-                                        <label class="gadget2_label" id="labelFLEXSTEPS"  >FLEXSTEPS </label>
+                                        <label class="gadget2_label" id="labelFLEXSTEPS"  >FLEXSTEPS *</label>
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
                                         <input  type="radio" name="FLEXSTEPS" id="FLEXSTEPS_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="FLEXSTEPS" id="FLEXSTEPS_Y_ID" value="N"> N
+                                        <input type="radio" name="FLEXSTEPS" id="FLEXSTEPS_N_ID" value="N"> N
                                     </td>
 
                                 </tr>
@@ -350,7 +335,7 @@
                                     </td>
 
                                 </tr>
-                                   <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOSTOP_WHEN_BELOW_MINTIMESTEP"  >NOSTOP_WHEN_BELOW_MINTIMESTEP </label>
@@ -364,7 +349,7 @@
                                     </td>
 
                                 </tr>
-                                 <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOPMSTEPADJUSTMENT"  >NOPMSTEPADJUSTMENT </label>
@@ -378,10 +363,10 @@
                                     </td>
 
                                 </tr>
-                                 <tr>
+                                <tr>
 
                                     <td id="td_left">   
-                                        <label class="gadget2_label" id="labelHAVE_HDF5"  >HAVE_HDF5 </label>
+                                        <label class="gadget2_label" id="labelHAVE_HDF5"  >HAVE_HDF5 * </label>
                                     </td>
                                     <td id="td_center">
                                         <label id="labelEquals">= </label>
@@ -392,8 +377,8 @@
                                     </td>
 
                                 </tr>
-                                
-                                     <tr>
+
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelOUTPUTPOTENTIAL"  >OUTPUTPOTENTIAL </label>
@@ -407,7 +392,7 @@
                                     </td>
 
                                 </tr>
-                                     <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelOUTPUTACCELERATION"  >OUTPUTACCELERATION </label>
@@ -421,7 +406,7 @@
                                     </td>
 
                                 </tr>
-                                     <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelOUTPUTCHANGEOFENTROPY"  >OUTPUTCHANGEOFENTROPY </label>
@@ -435,7 +420,7 @@
                                     </td>
 
                                 </tr>
-                                 <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelOUTPUTTIMESTEP"  >OUTPUTTIMESTEP </label>
@@ -449,7 +434,7 @@
                                     </td>
 
                                 </tr>
-                                 <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOGRAVITY"  >NOTREERND </label>
@@ -463,8 +448,8 @@
                                     </td>
 
                                 </tr>
-                                
-                                 <tr>
+
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOTREERND"  >NOTREERND </label>
@@ -478,7 +463,7 @@
                                     </td>
 
                                 </tr>
-                                
+
                                 <tr>
 
                                     <td id="td_left">   
@@ -493,7 +478,7 @@
                                     </td>
 
                                 </tr>
-                                    <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelLONG_XYZ"  > LONG_X/Y/Z </label>
@@ -507,7 +492,7 @@
                                     </td>
 
                                 </tr>
-                                 <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelTWODIMS"  > TWODIMS </label>
@@ -521,7 +506,23 @@
                                     </td>
 
                                 </tr>
-                                   <tr>
+                                
+                                <tr>
+
+                                    <td id="td_left">   
+                                        <label class="gadget2_label" id="labelSPH_BND_PARTICLES"  > SPH_BND_PARTICLES </label>
+                                    </td>
+                                    <td id="td_center">
+                                        <label id="labelEquals">= </label>
+                                    </td>
+                                    <td id="td_right">
+                                        <input  type="radio" name="SPH_BND_PARTICLES" id="SPH_BND_PARTICLES_Y_ID" value="Y"> Y 
+                                        <input type="radio" name="SPH_BND_PARTICLES" id="SPH_BND_PARTICLES_N_ID" value="N"> N
+                                    </td>
+
+                                </tr>
+                                
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOVISCOSITYLIMITER"  > NOVISCOSITYLIMITER </label>
@@ -535,7 +536,7 @@
                                     </td>
 
                                 </tr>
-                                     <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelCOMPUTE_POTENTIAL_ENERGY"  > COMPUTE_POTENTIAL_ENERGY </label>
@@ -549,7 +550,7 @@
                                     </td>
 
                                 </tr>
-                                     <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelLONGIDS"  > LONGIDS </label>
@@ -563,7 +564,7 @@
                                     </td>
 
                                 </tr>
-                                 <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelISOTHERMAL"  > ISOTHERMAL </label>
@@ -591,7 +592,7 @@
                                     </td>
 
                                 </tr>
-                     
+
                                 <tr>
 
                                     <td id="td_left">   
@@ -601,12 +602,13 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="FORCETEST" id="FORCETEST_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="FORCETEST" id="FORCETEST_N_ID" value="N"> N
+                                        <input class="gadget2_textbox" id="FORCETESTID" name="FORCETEST" type="text" value=""/>
+                                        
+                                       
                                     </td>
 
                                 </tr>
-                               <tr>
+                                <tr>
 
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelMAKEGLASS"  > MAKEGLASS </label>
@@ -621,14 +623,14 @@
 
                                 </tr>
                                 <tr>
-                                    <td colspan="3" align="center"><input type="button" value="Demo" onclick="DemoValues()">
-                                        <input type="button" value="Reset" onclick="ResetValues()">
-                                        <input type="button" value="Validate Random" onclick="ValidateValues()">
+                                    <td colspan="3" align="center"><input type="button" value="Demo" onclick="SetGADGETDemoValue()">
+                                        <input type="button" value="Reset" onclick="ResetGADGETValue()">
+                                        <input type="button" value="Validate Random" onclick="ValidateGADGETValues()">
                                     </td>
-                                      
+
                                 </tr>
-                              
-                                
+
+
                             </table>
                         </fieldset>
                     </center>
@@ -640,7 +642,180 @@
                 <div align="center"><input type="button" value="Submit" onClick="SubmitGadgetParam()"></div>
                 </form>
 
+                <script>
+                    var valuesIsValidate=false;
+
+    
+                    function SetGADGETDemoValue(){
+       
+      
+        
+        
+                        if(document.getElementById("PERIODIC_Y_ID").value=="Y"){
+                            document.getElementById("PERIODIC_Y_ID").checked=true;
+                            document.getElementById("labelPERIODIC").style.color="black";
+                        }
+       
+       
+       
+                        if(document.getElementById("UNEQUALSOFTENINGS_N_ID").value=="N"){
+                            document.getElementById("UNEQUALSOFTENINGS_N_ID").checked=true;
+                            document.getElementById("labelUNEQUALSOFTENINGS").style.color="black";
+                        }
+    
+       
+                        if(document.getElementById("PEANOHILBERT_Y_ID").value=="Y"){
+                            document.getElementById("PEANOHILBERT_Y_ID").checked=true;
+                            document.getElementById("labelPEANOHILBERT").style.color="black";
+                        }
+                        if(document.getElementById("WALLCLOCK_N_ID").value=="N"){
+                            document.getElementById("WALLCLOCK_N_ID").checked=true;
+                            document.getElementById("labelWALLCLOCK").style.color="black";
+                        }
+       
+       
+                        if(document.getElementById("PMGRID_Y_ID").value=="Y"){
+                            document.getElementById("PMGRID_Y_ID").checked=true;
+                            document.getElementById("labelPMGRID").style.color="black";
+                        }
+       
+       
+                        document.getElementById("PLACEHIGHRESREGIONID").value="19";
+                        document.getElementById("labelPLACEHIGHRESREGION").style.color="black";
+        
+                        document.getElementById("ENLARGEREGIONID").value="1.1";
+                        document.getElementById("labelENLARGEREGION").style.color="black";
+        
+        
+                        document.getElementById("ASMTHID").value="1.25";
+                        document.getElementById("labelASMTH").style.color="black";
+        
+                        document.getElementById("RCUTID").value="4.5";
+                        document.getElementById("labelRCUT").style.color="black";
+        
+                        if(document.getElementById("DOUBLEPRECISION_Y_ID").value=="Y"){
+                            document.getElementById("DOUBLEPRECISION_Y_ID").checked=true;
+                            document.getElementById("labelDOUBLEPRECISION").style.color="black";
+                        }
+                        if(document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").value=="Y"){
+                            document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").checked=true;
+                            document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="black";
+                        }
+        
+                        if(document.getElementById("SYNCHRONIZATIONID").checked==true){
+                            document.getElementById("SYNCHRONIZATIONID").value=true;
+                            document.getElementById("labelSYNCHRONIZATION").style.color="black";
+                        }
+        
+        
+                        if(document.getElementById("FLEXSTEPS_Y_ID").value=="Y"){
+                            document.getElementById("FLEXSTEPS_Y_ID").checked=true;
+                            document.getElementById("labelFLEXSTEPS").style.color="black";
+                        }
+        
+                        if(document.getElementById("PSEUDOSYMMETRIC_N_ID").value=="N"){
+                            document.getElementById("PSEUDOSYMMETRIC_N_ID").checked=true;
+                            document.getElementById("labelPSEUDOSYMMETRIC").style.color="black";
+                        }
+                        if(document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_N_ID").value=="N"){
+                            document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_N_ID").checked=true;
+                            document.getElementById("labelNOSTOP_WHEN_BELOW_MINTIMESTEP").style.color="black";
+                        }
+        
+                        if(document.getElementById("NOPMSTEPADJUSTMENT_N_ID").value=="N"){
+                            document.getElementById("NOPMSTEPADJUSTMENT_N_ID").checked=true;
+                            document.getElementById("labelNOPMSTEPADJUSTMENT").style.color="black";
+                        }
+                        if(document.getElementById("HAVE_HDF5_N_ID").value=="N"){
+                            document.getElementById("HAVE_HDF5_N_ID").checked=true;
+                            document.getElementById("labelHAVE_HDF5").style.color="black";
+                        }
+                        if(document.getElementById("OUTPUTPOTENTIAL_N_ID").value=="N"){
+                            document.getElementById("OUTPUTPOTENTIAL_N_ID").checked=true;
+                            document.getElementById("labelOUTPUTPOTENTIAL").style.color="black";
+                        }
+                        if(document.getElementById("OUTPUTACCELERATION_N_ID").value=="N"){
+                            document.getElementById("OUTPUTACCELERATION_N_ID").checked=true;
+                            document.getElementById("labelOUTPUTACCELERATION").style.color="black";
+                        }
+                        if(document.getElementById("OUTPUTCHANGEOFENTROPY_N_ID").value=="N"){
+                            document.getElementById("OUTPUTCHANGEOFENTROPY_N_ID").checked=true;
+                            document.getElementById("labelOUTPUTCHANGEOFENTROPY").style.color="black";
+                        }
+                        
+                        if(document.getElementById("OUTPUTTIMESTEP_N_ID").value=="N"){
+                            document.getElementById("OUTPUTTIMESTEP_N_ID").checked=true;
+                            document.getElementById("labelOUTPUTTIMESTEP").style.color="black";
+                        }
+                      
+                        if(document.getElementById("NOGRAVITY_N_ID").value=="N"){
+                            document.getElementById("NOGRAVITY_N_ID").checked=true;
+                            document.getElementById("labelNOGRAVITY").style.color="black";
+                        }
+                        if(document.getElementById("NOTREERND_N_ID").value=="N"){
+                            document.getElementById("NOTREERND_N_ID").checked=true;
+                            document.getElementById("labelNOTREERND").style.color="black";
+                        }
+                        if(document.getElementById("NOTYPEPREFIX_FFTW_N_ID").value=="N"){
+                            document.getElementById("NOTYPEPREFIX_FFTW_N_ID").checked=true;
+                            document.getElementById("labelNOTYPEPREFIX_FFTW").style.color="black";
+                        }
+                        if(document.getElementById("LONG_XYZ_N_ID").value=="N"){
+                            document.getElementById("LONG_XYZ_N_ID").checked=true;
+                            document.getElementById("labelLONG_XYZ").style.color="black";
+                        }
+                        if(document.getElementById("TWODIMS_N_ID").value=="N"){
+                            document.getElementById("TWODIMS_N_ID").checked=true;
+                            document.getElementById("labelTWODIMS").style.color="black";
+                        }
+                        if(document.getElementById("SPH_BND_PARTICLES_N_ID").value=="N"){
+                            document.getElementById("SPH_BND_PARTICLES_N_ID").checked=true;
+                            document.getElementById("labelSPH_BND_PARTICLES").style.color="black";
+                        }
+                        
+                        
+                        
+                        
+                        if(document.getElementById("NOVISCOSITYLIMITER_N_ID").value=="N"){
+                            document.getElementById("NOVISCOSITYLIMITER_N_ID").checked=true;
+                            document.getElementById("labelNOVISCOSITYLIMITER").style.color="black";
+                        }
+                        if(document.getElementById("COMPUTE_POTENTIAL_ENERGY_Y_ID").value=="Y"){
+                            document.getElementById("COMPUTE_POTENTIAL_ENERGY_Y_ID").checked=true;
+                            document.getElementById("labelCOMPUTE_POTENTIAL_ENERGY").style.color="black";
+                        }
+                        
+                        if(document.getElementById("LONGIDS_Y_ID").value=="Y"){
+                            document.getElementById("LONGIDS_Y_ID").checked=true;
+                            document.getElementById("labelLONGIDS").style.color="black";
+                        }
+                        
+                        if(document.getElementById("ISOTHERMAL_N_ID").value=="N"){
+                            document.getElementById("ISOTHERMAL_N_ID").checked=true;
+                            document.getElementById("labelISOTHERMAL").style.color="black";
+                        }
+                        if(document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").value=="N"){
+                            document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").checked=true;
+                            document.getElementById("labelSELECTIVE_NO_GRAVITY").style.color="black";
+                        }
+                  
+        
+        
+                        document.getElementById("FORCETESTID").value="0";
+                        document.getElementById("labelFORCETEST").style.color="black";
+                        
+                        if(document.getElementById("MAKEGLASS_N_ID").value=="N"){
+                            document.getElementById("MAKEGLASS_N_ID").checked=true;
+                            document.getElementById("labelMAKEGLASS").style.color="black";
+                        }
+        
+                       
+        
+
+        
+      
+                    }
+                </script>
 
 
 
-               
