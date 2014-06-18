@@ -141,7 +141,7 @@ public class GADGET_portlet extends GenericPortlet {
         boolean UNEQUALSOFTENINGS;
         boolean PEANOHILBERT;
         boolean WALLCLOCK;
-        boolean PMGR;
+        boolean PMGRID;
         String PLACEHIGHRESREGION;
         String ENLARGEREGION;
         String ASMT;
@@ -172,11 +172,11 @@ public class GADGET_portlet extends GenericPortlet {
         boolean FORCETEST;
         boolean MAKEGLASS;
 
-        public App_InputGADGET() {
-
-
-            PERIODIC = UNEQUALSOFTENINGS = PEANOHILBERT = WALLCLOCK = PMGR = DOUBLEPRECISION = DOUBLEPRECISION_FFTW = SYNCHRONIZATION = FLEXSTEPS = PSEUDOSYMMETRIC = NOSTOP_WHEN_BELOW_MINTIMESTEP = NOPMSTEPADJUSTMENT = HAVE_HDF5 = OUTPUTPOTENTIAL = OUTPUTACCELERATION = OUTPUTCHANGEOFENTROPY = OUTPUTTIMESTEP = NOGRAVITY = NOTREERND = NOTYPEPREFIX_FFTW = LONG_XYZ = TWODIMS = SPH_BND_PARTICLES = NOVISCOSITYLIMITER = COMPUTE_POTENTIAL_ENERGY = LONGIDS = ISOTHERMAL = SELECTIVE_NO_GRAVITY = FORCETEST = MAKEGLASS = false;
-            PLACEHIGHRESREGION = ENLARGEREGION = ASMT = RCUT = "";
+        
+        public App_InputGADGET(){
+            
+            PERIODIC=UNEQUALSOFTENINGS=PEANOHILBERT=WALLCLOCK=PMGRID=DOUBLEPRECISION=DOUBLEPRECISION_FFTW=SYNCHRONIZATION=FLEXSTEPS=PSEUDOSYMMETRIC=NOSTOP_WHEN_BELOW_MINTIMESTEP=NOPMSTEPADJUSTMENT=HAVE_HDF5=OUTPUTPOTENTIAL=OUTPUTACCELERATION=OUTPUTCHANGEOFENTROPY=OUTPUTTIMESTEP=NOGRAVITY=NOTREERND=NOTYPEPREFIX_FFTW=LONG_XYZ=TWODIMS=SPH_BND_PARTICLES=NOVISCOSITYLIMITER=COMPUTE_POTENTIAL_ENERGY=LONGIDS=ISOTHERMAL=SELECTIVE_NO_GRAVITY=FORCETEST=MAKEGLASS=false;
+            PLACEHIGHRESREGION=ENLARGEREGION=ASMT=RCUT="";
 
         }
     }
@@ -571,38 +571,30 @@ public class GADGET_portlet extends GenericPortlet {
          */
         // We first have to do checks on the boolean variables and convert them
         // to booleans from strings
-        if (request.getParameter("PERIODIC").equals("true")) {
-            appInputGADGET.PERIODIC = true;
-        } else {
-            appInputGADGET.PERIODIC = false;
-        }
 
 
-        System.out.println("ERRORE=>>> " + request.getParameter("UNEQUALSOFTENINGS"));
-         System.out.println("ERRORE2=>>> " + request.getParameter("PEANOHILBERT"));
-
-        if (request.getParameter("UNEQUALSOFTENINGS").equals("true")) {
-            appInputGADGET.UNEQUALSOFTENINGS = true;
-        } else {
-            appInputGADGET.UNEQUALSOFTENINGS = false;
-        }
-        if (request.getParameter("PEANOHILBERT").equals("true")) {
-            appInputGADGET.PEANOHILBERT = true;
-        } else {
-            appInputGADGET.PEANOHILBERT = false;
-        }
-        if (request.getParameter("WALLCLOCK").equals("true")) {
-            appInputGADGET.WALLCLOCK = true;
-        } else {
-            appInputGADGET.WALLCLOCK = false;
-        }
-        if (request.getParameter("PMGR").equals("true")) {
-            appInputGADGET.PMGR = true;
-        } else {
-            appInputGADGET.PMGR = false;
-        }
-
-        appInputGADGET.PLACEHIGHRESREGION = (String) request.getParameter("PLACEHIGHRESREGION");
+        if(request.getParameter("PERIODIC").equals("true")) 
+			appInputGADGET.PERIODIC = true;
+		else
+			appInputGADGET.PERIODIC = false;
+	    if(request.getParameter("UNEQUALSOFTENINGS").equals("true"))
+			appInputGADGET.UNEQUALSOFTENINGS = true;
+		else
+			appInputGADGET.UNEQUALSOFTENINGS = false;
+		if(request.getParameter("PEANOHILBERT").equals("true"))
+			appInputGADGET.PEANOHILBERT = true;
+		else
+			appInputGADGET.PEANOHILBERT = false;
+		if(request.getParameter("WALLCLOCK").equals("true"))
+			appInputGADGET.WALLCLOCK = true;
+		else
+			appInputGADGET.WALLCLOCK = false;
+		if (request.getParameter("PMGRID").equals("true"))
+			appInputGADGET.PMGRID = true;
+		else
+			appInputGADGET.PMGRID = false;
+			
+	    appInputGADGET.PLACEHIGHRESREGION = (String) request.getParameter("PLACEHIGHRESREGION");
 
         appInputGADGET.ENLARGEREGION = (String) request.getParameter("ENLARGEREGION");
         appInputGADGET.ASMT = (String) request.getParameter("ASMT");

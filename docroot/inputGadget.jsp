@@ -146,28 +146,29 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelPERIODIC"  >PERIODIC *</label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
                                     <td id="td_right">
+<<<<<<< HEAD
 
                                         <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="false">
 
 
+=======
+                                        <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="">
+>>>>>>> d2e6338325ca988bbb06bff0badf4b5f2197c2e1
                                     </td>
                                 </tr>
-
-
                                 <tr>
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelUNEQUALSOFTENINGS"  >UNEQUALSOFTENINGS </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
+<<<<<<< HEAD
                                         <input  type="checkbox" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_ID" value="false"> 
 
+=======
+                                        <input  type="checkbox" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_ID" value=""> 
+>>>>>>> d2e6338325ca988bbb06bff0badf4b5f2197c2e1
                                     </td>
                                 </tr>
 
@@ -176,9 +177,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelPEANOHILBERT"  >PEANOHILBERT </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="PEANOHILBERT" id="PEANOHILBERT_ID" value="false"> 
 
@@ -190,9 +189,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelWALLCLOCK">WALLCLOCK </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="WALLCLOCK" id="WALLCLOCK_ID" value="lase"> 
 
@@ -204,9 +201,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelPMGRID"  >PMGRID * </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="PMGRID" id="PMGRID_ID" value="false"> 
 
@@ -218,9 +213,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelPLACEHIGHRESREGION"  >PLACEHIGHRESREGION </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input class="gadget2_textbox" id="PLACEHIGHRESREGIONID" name="PLACEHIGHRESREGION" type="text" value=""/>
                                     </td>
@@ -231,9 +224,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelENLARGEREGION"  >ENLARGEREGION </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input class="gadget2_textbox" id="ENLARGEREGIONID" name="ENLARGEREGION" type="text" value=""/>
                                     </td>
@@ -244,9 +235,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelASMTH"  >ASMTH </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input class="gadget2_textbox" id="ASMTHID" name="ASMTH" type="text" value="false"/>
                                     </td>
@@ -257,9 +246,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelRCUT"  >RCUT </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input class="gadget2_textbox" id="RCUTID" name="RCUT" type="text" value="false"/>
                                     </td>
@@ -270,9 +257,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelDOUBLEPRECISION"  >DOUBLEPRECISION *</label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="DOUBLEPRECISION" id="DOUBLEPRECISION_ID" value="false"> 
 
@@ -284,9 +269,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelDOUBLEPRECISION_FFTW"  >DOUBLEPRECISION_FFTW *</label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="DOUBLEPRECISION_FFTW" id="DOUBLEPRECISION_FFTW_ID" value="false"> 
 
@@ -299,9 +282,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelSYNCHRONIZATION"  >SYNCHRONIZATION </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="SYNCHRONIZATION" id="SYNCHRONIZATION_ID" value="false">  
 
@@ -314,9 +295,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelFLEXSTEPS"  >FLEXSTEPS *</label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="FLEXSTEPS" id="FLEXSTEPS_ID" value="">  
 
@@ -328,9 +307,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelPSEUDOSYMMETRIC"  >PSEUDOSYMMETRIC </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="PSEUDOSYMMETRIC" id="PSEUDOSYMMETRIC_ID" value="false">
 
@@ -342,9 +319,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOSTOP_WHEN_BELOW_MINTIMESTEP"  >NOSTOP_WHEN_BELOW_MINTIMESTEP </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="NOSTOP_WHEN_BELOW_MINTIMESTEP" id="NOSTOP_WHEN_BELOW_MINTIMESTEP_ID" value=""> 
 
@@ -356,9 +331,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOPMSTEPADJUSTMENT"  >NOPMSTEPADJUSTMENT </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="NOPMSTEPADJUSTMENT" id="NOPMSTEPADJUSTMENT_ID" value="false">
 
@@ -370,9 +343,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelHAVE_HDF5"  >HAVE_HDF5 * </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="HAVE_HDF5" id="HAVE_HDF5_ID" value="">
 
@@ -385,9 +356,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelOUTPUTPOTENTIAL"  >OUTPUTPOTENTIAL </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="OUTPUTPOTENTIAL" id="OUTPUTPOTENTIAL_ID" value="false"> 
 
@@ -399,9 +368,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelOUTPUTACCELERATION"  >OUTPUTACCELERATION </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="OUTPUTACCELERATION" id="OUTPUTACCELERATION_ID" value="false">  
 
@@ -413,9 +380,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelOUTPUTCHANGEOFENTROPY"  >OUTPUTCHANGEOFENTROPY </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="OUTPUTCHANGEOFENTROPY" id="OUTPUTCHANGEOFENTROPY_ID" value="false">  
 
@@ -427,9 +392,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelOUTPUTTIMESTEP"  >OUTPUTTIMESTEP </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="OUTPUTTIMESTEP" id="OUTPUTTIMESTEP_ID" value="false"> 
 
@@ -441,9 +404,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOGRAVITY"  >NOGRAVITY </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="NOGRAVITY" id="NOGRAVITY_ID" value="false">  
 
@@ -456,9 +417,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOTREERND"  >NOTREERND </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="NOTREERND" id="NOTREERND_ID" value="false"> 
 
@@ -471,9 +430,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOTYPEPREFIX_FFTW"  >NOTYPEPREFIX_FFTW </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="NOTYPEPREFIX_FFTW" id="NOTYPEPREFIX_FFTW_ID" value="false"> 
 
@@ -485,9 +442,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelLONG_XYZ"  > LONG_X/Y/Z </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="LONG_XYZ" id="LONG_XYZ_ID" value="false"> 
 
@@ -499,9 +454,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelTWODIMS"  > TWODIMS </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="TWODIMS" id="TWODIMS_ID" value="false">
 
@@ -514,9 +467,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelSPH_BND_PARTICLES"  > SPH_BND_PARTICLES </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="SPH_BND_PARTICLES" id="SPH_BND_PARTICLES_ID" value="false"> 
 
@@ -529,9 +480,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelNOVISCOSITYLIMITER"  > NOVISCOSITYLIMITER </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="NOVISCOSITYLIMITER" id="NOVISCOSITYLIMITER_ID" value="false"> 
 
@@ -543,9 +492,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelCOMPUTE_POTENTIAL_ENERGY"  > COMPUTE_POTENTIAL_ENERGY </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="COMPUTE_POTENTIAL_ENERGY" id="COMPUTE_POTENTIAL_ENERGY_ID" value="false">  
 
@@ -557,9 +504,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelLONGIDS"  > LONGIDS </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="LONGIDS" id="LONGIDS_ID" value="false"> 
 
@@ -571,9 +516,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelISOTHERMAL"  > ISOTHERMAL </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="ISOTHERMAL" id="ISOTHERMAL_ID" value="false"> 
 
@@ -585,9 +528,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelSELECTIVE_NO_GRAVITY"  > SELECTIVE_NO_GRAVITY </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="SELECTIVE_NO_GRAVITY" id="SELECTIVE_NO_GRAVITY_ID" value="false">  
 
@@ -600,9 +541,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelFORCETEST"  > FORCETEST </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input class="gadget2_textbox" id="FORCETESTID" name="FORCETEST" type="text" value=""/>
 
@@ -615,9 +554,7 @@
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelMAKEGLASS"  > MAKEGLASS </label>
                                     </td>
-                                    <td id="td_center">
-                                        <label id="labelEquals">= </label>
-                                    </td>
+                                   
                                     <td id="td_right">
                                         <input  type="checkbox" name="MAKEGLASS" id="MAKEGLASS_ID" value="false">
 
@@ -649,9 +586,7 @@
                     var gadgetIsValidate=false;
     
                     function SetGADGETDemoValues(){
-       
-      
-        
+           
         
                         if(document.getElementById("PERIODIC_ID").checked==false){
                             document.getElementById("PERIODIC_ID").checked=true;
@@ -661,11 +596,13 @@
        
        
        
+
                          if(document.getElementById("UNEQUALSOFTENINGS_ID").checked==false){
                             document.getElementById("UNEQUALSOFTENINGS_ID").checked=false;
                             document.getElementById("UNEQUALSOFTENINGS_ID").value="false";
                             document.getElementById("labelUNEQUALSOFTENINGS").style.color="black";
                          }
+
     
        
                         if(document.getElementById("PEANOHILBERT_ID").checked==false){
