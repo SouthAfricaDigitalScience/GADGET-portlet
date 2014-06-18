@@ -126,7 +126,7 @@
 -->
 
 <script src="<%=renderRequest.getContextPath()%>/js/jquery-1.3.2.min.js" type="text/javascript"></script>
-<form id="form_music" action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT_GADGET"/></portlet:actionURL>" method="post">
+<form id="form_gadget" action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT_GADGET"/></portlet:actionURL>" method="post">
 
 
 
@@ -150,8 +150,10 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="false">
-                                       
+
+                                        <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="">
+
+
                                     </td>
                                 </tr>
 
@@ -164,8 +166,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_N_ID" value="N"> N
+                                        <input  type="checkbox" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_ID" value=""> 
+
                                     </td>
                                 </tr>
 
@@ -178,8 +180,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="PEANOHILBERT" id="PEANOHILBERT_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="PEANOHILBERT" id="PEANOHILBERT_N_ID" value="N"> N
+                                        <input  type="checkbox" name="PEANOHILBERT" id="PEANOHILBERT_ID" value=""> 
+
                                     </td>
                                 </tr>
 
@@ -192,8 +194,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="WALLCLOCK" id="WALLCLOCK_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="WALLCLOCK" id="WALLCLOCK_N_ID" value="N"> N
+                                        <input  type="checkbox" name="WALLCLOCK" id="WALLCLOCK_ID" value=""> 
+
                                     </td>
                                 </tr>
 
@@ -206,8 +208,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="PMGRID" id="PMGRID_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="PMGRID" id="PMGRID_N_ID" value="N"> N
+                                        <input  type="checkbox" name="PMGRID" id="PMGRID_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -272,8 +274,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="DOUBLEPRECISION" id="DOUBLEPRECISION_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="DOUBLEPRECISION" id="DOUBLEPRECISION_N_ID" value="N"> N
+                                        <input  type="checkbox" name="DOUBLEPRECISION" id="DOUBLEPRECISION_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -286,8 +288,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="DOUBLEPRECISION_FFTW" id="DOUBLEPRECISION_FFTW_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="DOUBLEPRECISION_FFTW" id="DOUBLEPRECISION_FFTW_N_ID" value="N"> N
+                                        <input  type="checkbox" name="DOUBLEPRECISION_FFTW" id="DOUBLEPRECISION_FFTW_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -301,7 +303,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="SYNCHRONIZATION" id="SYNCHRONIZATIONID" value="">  
+                                        <input  type="checkbox" name="SYNCHRONIZATION" id="SYNCHRONIZATION_ID" value="">  
 
 
                                     </td>
@@ -316,8 +318,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="FLEXSTEPS" id="FLEXSTEPS_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="FLEXSTEPS" id="FLEXSTEPS_N_ID" value="N"> N
+                                        <input  type="checkbox" name="FLEXSTEPS" id="FLEXSTEPS_ID" value="">  
+
                                     </td>
 
                                 </tr>
@@ -330,8 +332,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="PSEUDOSYMMETRIC" id="PSEUDOSYMMETRIC_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="PSEUDOSYMMETRIC" id="PSEUDOSYMMETRIC_N_ID" value="N"> N
+                                        <input  type="checkbox" name="PSEUDOSYMMETRIC" id="PSEUDOSYMMETRIC_ID" value="">
+
                                     </td>
 
                                 </tr>
@@ -344,8 +346,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="NOSTOP_WHEN_BELOW_MINTIMESTEP" id="NOSTOP_WHEN_BELOW_MINTIMESTEP_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="NOSTOP_WHEN_BELOW_MINTIMESTEP" id="NOSTOP_WHEN_BELOW_MINTIMESTEP_N_ID" value="N"> N
+                                        <input  type="checkbox" name="NOSTOP_WHEN_BELOW_MINTIMESTEP" id="NOSTOP_WHEN_BELOW_MINTIMESTEP_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -358,8 +360,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="NOPMSTEPADJUSTMENT" id="NOPMSTEPADJUSTMENT_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="NOPMSTEPADJUSTMENT" id="NOPMSTEPADJUSTMENT_N_ID" value="N"> N
+                                        <input  type="checkbox" name="NOPMSTEPADJUSTMENT" id="NOPMSTEPADJUSTMENT_ID" value="">
+
                                     </td>
 
                                 </tr>
@@ -372,8 +374,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="HAVE_HDF5" id="HAVE_HDF5_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="HAVE_HDF5" id="HAVE_HDF5_N_ID" value="N"> N
+                                        <input  type="checkbox" name="HAVE_HDF5" id="HAVE_HDF5_ID" value="">
+
                                     </td>
 
                                 </tr>
@@ -387,8 +389,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="OUTPUTPOTENTIAL" id="OUTPUTPOTENTIAL_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="OUTPUTPOTENTIAL" id="OUTPUTPOTENTIAL_N_ID" value="N"> N
+                                        <input  type="checkbox" name="OUTPUTPOTENTIAL" id="OUTPUTPOTENTIAL_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -401,8 +403,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="OUTPUTACCELERATION" id="OUTPUTACCELERATION_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="OUTPUTACCELERATION" id="OUTPUTACCELERATION_N_ID" value="N"> N
+                                        <input  type="checkbox" name="OUTPUTACCELERATION" id="OUTPUTACCELERATION_ID" value="">  
+
                                     </td>
 
                                 </tr>
@@ -415,8 +417,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="OUTPUTCHANGEOFENTROPY" id="OUTPUTCHANGEOFENTROPY_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="OUTPUTCHANGEOFENTROPY" id="OUTPUTCHANGEOFENTROPY_N_ID" value="N"> N
+                                        <input  type="checkbox" name="OUTPUTCHANGEOFENTROPY" id="OUTPUTCHANGEOFENTROPY_ID" value="">  
+
                                     </td>
 
                                 </tr>
@@ -429,8 +431,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="OUTPUTTIMESTEP" id="OUTPUTTIMESTEP_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="OUTPUTTIMESTEP" id="OUTPUTTIMESTEP_N_ID" value="N"> N
+                                        <input  type="checkbox" name="OUTPUTTIMESTEP" id="OUTPUTTIMESTEP_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -443,8 +445,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="NOGRAVITY" id="NOGRAVITY_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="NOGRAVITY" id="NOGRAVITY_N_ID" value="N"> N
+                                        <input  type="checkbox" name="NOGRAVITY" id="NOGRAVITY_ID" value="">  
+
                                     </td>
 
                                 </tr>
@@ -458,8 +460,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="NOTREERND" id="NOTREERND_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="NOTREERND" id="NOTREERND_N_ID" value="N"> N
+                                        <input  type="checkbox" name="NOTREERND" id="NOTREERND_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -473,8 +475,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="NOTYPEPREFIX_FFTW" id="NOTYPEPREFIX_FFTW_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="NOTYPEPREFIX_FFTW" id="NOTYPEPREFIX_FFTW_N_ID" value="N"> N
+                                        <input  type="checkbox" name="NOTYPEPREFIX_FFTW" id="NOTYPEPREFIX_FFTW_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -487,8 +489,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="LONG_XYZ" id="LONG_XYZ_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="LONG_XYZ" id="LONG_XYZ_N_ID" value="N"> N
+                                        <input  type="checkbox" name="LONG_XYZ" id="LONG_XYZ_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -501,8 +503,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="TWODIMS" id="TWODIMS_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="TWODIMS" id="TWODIMS_N_ID" value="N"> N
+                                        <input  type="checkbox" name="TWODIMS" id="TWODIMS_ID" value="">
+
                                     </td>
 
                                 </tr>
@@ -516,8 +518,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="SPH_BND_PARTICLES" id="SPH_BND_PARTICLES_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="SPH_BND_PARTICLES" id="SPH_BND_PARTICLES_N_ID" value="N"> N
+                                        <input  type="checkbox" name="SPH_BND_PARTICLES" id="SPH_BND_PARTICLES_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -531,8 +533,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="NOVISCOSITYLIMITER" id="NOVISCOSITYLIMITER_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="NOVISCOSITYLIMITER" id="NOVISCOSITYLIMITER_N_ID" value="N"> N
+                                        <input  type="checkbox" name="NOVISCOSITYLIMITER" id="NOVISCOSITYLIMITER_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -545,8 +547,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="COMPUTE_POTENTIAL_ENERGY" id="COMPUTE_POTENTIAL_ENERGY_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="COMPUTE_POTENTIAL_ENERGY" id="COMPUTE_POTENTIAL_ENERGY_N_ID" value="N"> N
+                                        <input  type="checkbox" name="COMPUTE_POTENTIAL_ENERGY" id="COMPUTE_POTENTIAL_ENERGY_ID" value="">  
+
                                     </td>
 
                                 </tr>
@@ -559,8 +561,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="LONGIDS" id="LONGIDS_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="LONGIDS" id="LONGIDS_N_ID" value="N"> N
+                                        <input  type="checkbox" name="LONGIDS" id="LONGIDS_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -573,8 +575,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="ISOTHERMAL" id="ISOTHERMAL_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="ISOTHERMAL" id="ISOTHERMAL_N_ID" value="N"> N
+                                        <input  type="checkbox" name="ISOTHERMAL" id="ISOTHERMAL_ID" value=""> 
+
                                     </td>
 
                                 </tr>
@@ -587,8 +589,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="SELECTIVE_NO_GRAVITY" id="SELECTIVE_NO_GRAVITY_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="SELECTIVE_NO_GRAVITY" id="SELECTIVE_NO_GRAVITY_N_ID" value="N"> N
+                                        <input  type="checkbox" name="SELECTIVE_NO_GRAVITY" id="SELECTIVE_NO_GRAVITY_ID" value="">  
+
                                     </td>
 
                                 </tr>
@@ -617,8 +619,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="MAKEGLASS" id="MAKEGLASS_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="MAKEGLASS" id="MAKEGLASS_N_ID" value="N"> N
+                                        <input  type="checkbox" name="MAKEGLASS" id="MAKEGLASS_ID" value="">
+
                                     </td>
 
                                 </tr>
@@ -651,31 +653,36 @@
       
         
         
-                        if(document.getElementById("PERIODIC_ID").value==false){
+                        if(document.getElementById("PERIODIC_ID").checked==false){
                             document.getElementById("PERIODIC_ID").checked=true;
+                            document.getElementById("PERIODIC_ID").value="true";
                             document.getElementById("labelPERIODIC").style.color="black";
                         }
        
        
        
-                        if(document.getElementById("UNEQUALSOFTENINGS_N_ID").value=="N"){
-                            document.getElementById("UNEQUALSOFTENINGS_N_ID").checked=true;
-                            document.getElementById("labelUNEQUALSOFTENINGS").style.color="black";
-                        }
+                        // if(document.getElementById("UNEQUALSOFTENINGS_ID").checked=="N"){
+                        //    document.getElementById("UNEQUALSOFTENINGS_N_ID").checked=true;
+                        //    document.getElementById("labelUNEQUALSOFTENINGS").style.color="black";
+                        // }
     
        
-                        if(document.getElementById("PEANOHILBERT_Y_ID").value=="Y"){
-                            document.getElementById("PEANOHILBERT_Y_ID").checked=true;
+                        if(document.getElementById("PEANOHILBERT_ID").checked==false){
+                            document.getElementById("PEANOHILBERT_ID").checked=true;
+                            document.getElementById("PEANOHILBERT_ID").value="true";
                             document.getElementById("labelPEANOHILBERT").style.color="black";
                         }
-                        if(document.getElementById("WALLCLOCK_N_ID").value=="N"){
-                            document.getElementById("WALLCLOCK_N_ID").checked=true;
-                            document.getElementById("labelWALLCLOCK").style.color="black";
-                        }
+                    
+                    
+                        // if(document.getElementById("WALLCLOCK_N_ID").value=="N"){
+                        //     document.getElementById("WALLCLOCK_N_ID").checked=true;
+                        //     document.getElementById("labelWALLCLOCK").style.color="black";
+                        // }
        
        
-                        if(document.getElementById("PMGRID_Y_ID").value=="Y"){
-                            document.getElementById("PMGRID_Y_ID").checked=true;
+                        if(document.getElementById("PMGRID_ID").checked==false){
+                            document.getElementById("PMGRID_ID").checked=true;
+                            document.getElementById("PMGRID_ID").value=="true"
                             document.getElementById("labelPMGRID").style.color="black";
                         }
        
@@ -693,129 +700,135 @@
                         document.getElementById("RCUTID").value="4.5";
                         document.getElementById("labelRCUT").style.color="black";
         
-                        if(document.getElementById("DOUBLEPRECISION_Y_ID").value=="Y"){
-                            document.getElementById("DOUBLEPRECISION_Y_ID").checked=true;
+                        if(document.getElementById("DOUBLEPRECISION_ID").checked==false){
+                            document.getElementById("DOUBLEPRECISION_ID").checked=true;
+                            document.getElementById("DOUBLEPRECISION_ID").value="true";
                             document.getElementById("labelDOUBLEPRECISION").style.color="black";
                         }
-                        if(document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").value=="Y"){
-                            document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").checked=true;
+                        if(document.getElementById("DOUBLEPRECISION_FFTW_ID").checked==false){
+                            document.getElementById("DOUBLEPRECISION_FFTW_ID").checked=true;
+                            document.getElementById("DOUBLEPRECISION_FFTW_ID").value="true";
                             document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="black";
                         }
         
-                        if(document.getElementById("SYNCHRONIZATIONID").checked==true){
-                            document.getElementById("SYNCHRONIZATIONID").value=true;
-                            document.getElementById("labelSYNCHRONIZATION").style.color="black";
-                        }
+                        //if(document.getElementById("SYNCHRONIZATIONID").checked==true){
+                        //    document.getElementById("SYNCHRONIZATIONID").value=true;
+                        //    document.getElementById("labelSYNCHRONIZATION").style.color="black";
+                        //}
         
         
-                        if(document.getElementById("FLEXSTEPS_Y_ID").value=="Y"){
-                            document.getElementById("FLEXSTEPS_Y_ID").checked=true;
-                            document.getElementById("labelFLEXSTEPS").style.color="black";
-                        }
+                        // if(document.getElementById("FLEXSTEPS_ID").checked==false){
+                        //     document.getElementById("FLEXSTEPS_ID").checked=true;
+                        //     document.getElementById("FLEXSTEPS_ID").value="true";
+                        //     document.getElementById("labelFLEXSTEPS").style.color="black";
+                        // }
       
-                        if(document.getElementById("PSEUDOSYMMETRIC_N_ID").value=="N"){
-                            document.getElementById("PSEUDOSYMMETRIC_N_ID").checked=true;
-                            document.getElementById("labelPSEUDOSYMMETRIC").style.color="black";
-                        }
-                        if(document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_N_ID").value=="N"){
-                            document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_N_ID").checked=true;
-                            document.getElementById("labelNOSTOP_WHEN_BELOW_MINTIMESTEP").style.color="black";
-                        }
-        
-                        if(document.getElementById("NOPMSTEPADJUSTMENT_N_ID").value=="N"){
-                            document.getElementById("NOPMSTEPADJUSTMENT_N_ID").checked=true;
-                            document.getElementById("labelNOPMSTEPADJUSTMENT").style.color="black";
-                        }
-                        if(document.getElementById("HAVE_HDF5_N_ID").value=="N"){
-                            document.getElementById("HAVE_HDF5_N_ID").checked=true;
+                        //                    if(document.getElementById("PSEUDOSYMMETRIC_ID").value=="N"){
+                        //                        document.getElementById("PSEUDOSYMMETRIC_ID").checked=true;
+                        //                        document.getElementById("labelPSEUDOSYMMETRIC").style.color="black";
+                        //                    }
+                        //                    if(document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").value=="N"){
+                        //                        document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").checked=true;
+                        //                        document.getElementById("labelNOSTOP_WHEN_BELOW_MINTIMESTEP").style.color="black";
+                        //                    }
+                        //        
+                        //                    if(document.getElementById("NOPMSTEPADJUSTMENT_ID").value=="N"){
+                        //                        document.getElementById("NOPMSTEPADJUSTMENT_ID").checked=true;
+                        //                        document.getElementById("labelNOPMSTEPADJUSTMENT").style.color="black";
+                        //                    }
+                        if(document.getElementById("HAVE_HDF5_ID").checked==false){
+                            document.getElementById("HAVE_HDF5_ID").checked=true;
+                            document.getElementById("HAVE_HDF5_ID").value="true";
                             document.getElementById("labelHAVE_HDF5").style.color="black";
                         }
-                        if(document.getElementById("OUTPUTPOTENTIAL_N_ID").value=="N"){
-                            document.getElementById("OUTPUTPOTENTIAL_N_ID").checked=true;
-                            document.getElementById("labelOUTPUTPOTENTIAL").style.color="black";
-                        }
+                        //                    if(document.getElementById("OUTPUTPOTENTIAL_ID").value=="N"){
+                        //                        document.getElementById("OUTPUTPOTENTIAL_ID").checked=true;
+                        //                        document.getElementById("labelOUTPUTPOTENTIAL").style.color="black";
+                        //                    }
                         
+                        //                        
+                        //                    if(document.getElementById("OUTPUTACCELERATION_ID").value=="N"){
+                        //                        document.getElementById("OUTPUTACCELERATION_ID").checked=true;
+                        //                        document.getElementById("labelOUTPUTACCELERATION").style.color="black";
+                        //                    }
+                        //                    if(document.getElementById("OUTPUTCHANGEOFENTROPY_ID").value=="N"){
+                        //                        document.getElementById("OUTPUTCHANGEOFENTROPY_ID").checked=true;
+                        //                        document.getElementById("labelOUTPUTCHANGEOFENTROPY").style.color="black";
+                        //                    }
+                        //                        
+                        //                    if(document.getElementById("OUTPUTTIMESTEP_ID").value=="N"){
+                        //                        document.getElementById("OUTPUTTIMESTEP_ID").checked=true;
+                        //                        document.getElementById("labelOUTPUTTIMESTEP").style.color="black";
+                        //                    }
+                        //                      
+                        //                    if(document.getElementById("NOGRAVITY_ID").value=="N"){
+                        //                        document.getElementById("NOGRAVITY_ID").checked=true;
+                        //                        document.getElementById("labelNOGRAVITY").style.color="black";
+                        //                    }
+                        //                        
+                        //                  
+                        //                         
+                        //                    if(document.getElementById("NOTREERND_ID").value=="N"){
+                        //                        document.getElementById("NOTREERND_ID").checked=true;
+                        //                        document.getElementById("labelNOTREERND").style.color="black";
+                        //                    }
+                        //                    if(document.getElementById("NOTYPEPREFIX_FFTW_N_ID").value=="N"){
+                        //                        document.getElementById("NOTYPEPREFIX_FFTW_N_ID").checked=true;
+                        //                        document.getElementById("labelNOTYPEPREFIX_FFTW").style.color="black";
+                        //                    }
+                        //                    if(document.getElementById("LONG_XYZ_N_ID").value=="N"){
+                        //                        document.getElementById("LONG_XYZ_N_ID").checked=true;
+                        //                        document.getElementById("labelLONG_XYZ").style.color="black";
+                        //                    }
+                        //                    if(document.getElementById("TWODIMS_N_ID").value=="N"){
+                        //                        document.getElementById("TWODIMS_N_ID").checked=true;
+                        //                        document.getElementById("labelTWODIMS").style.color="black";
+                        //                    }
+                        //                    if(document.getElementById("SPH_BND_PARTICLES_N_ID").value=="N"){
+                        //                        document.getElementById("SPH_BND_PARTICLES_N_ID").checked=true;
+                        //                        document.getElementById("labelSPH_BND_PARTICLES").style.color="black";
+                        //                    }
+                        //                        
+                        //                        
+                        //                
+                        //                        
+                        //                    if(document.getElementById("NOVISCOSITYLIMITER_N_ID").value=="N"){
+                        //                        document.getElementById("NOVISCOSITYLIMITER_N_ID").checked=true;
+                        //                        document.getElementById("labelNOVISCOSITYLIMITER").style.color="black";
+                    }
+                    if(document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").checked==false){
+                        document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").checked=true;
+                        document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").value="true";
+                        document.getElementById("labelCOMPUTE_POTENTIAL_ENERGY").style.color="black";
+                    }
                         
-                        if(document.getElementById("OUTPUTACCELERATION_N_ID").value=="N"){
-                            document.getElementById("OUTPUTACCELERATION_N_ID").checked=true;
-                            document.getElementById("labelOUTPUTACCELERATION").style.color="black";
-                        }
-                        if(document.getElementById("OUTPUTCHANGEOFENTROPY_N_ID").value=="N"){
-                            document.getElementById("OUTPUTCHANGEOFENTROPY_N_ID").checked=true;
-                            document.getElementById("labelOUTPUTCHANGEOFENTROPY").style.color="black";
-                        }
+                    if(document.getElementById("LONGIDS_ID").checked==false){
+                        document.getElementById("LONGIDS_ID").checked=true;
+                        document.getElementById("LONGIDS_ID").value="true";
+                        document.getElementById("labelLONGIDS").style.color="black";
+                    }
                         
-                        if(document.getElementById("OUTPUTTIMESTEP_N_ID").value=="N"){
-                            document.getElementById("OUTPUTTIMESTEP_N_ID").checked=true;
-                            document.getElementById("labelOUTPUTTIMESTEP").style.color="black";
-                        }
-                      
-                        if(document.getElementById("NOGRAVITY_N_ID").value=="N"){
-                            document.getElementById("NOGRAVITY_N_ID").checked=true;
-                            document.getElementById("labelNOGRAVITY").style.color="black";
-                        }
-                        
-                  
-                         
-                        if(document.getElementById("NOTREERND_N_ID").value=="N"){
-                            document.getElementById("NOTREERND_N_ID").checked=true;
-                            document.getElementById("labelNOTREERND").style.color="black";
-                        }
-                        if(document.getElementById("NOTYPEPREFIX_FFTW_N_ID").value=="N"){
-                            document.getElementById("NOTYPEPREFIX_FFTW_N_ID").checked=true;
-                            document.getElementById("labelNOTYPEPREFIX_FFTW").style.color="black";
-                        }
-                        if(document.getElementById("LONG_XYZ_N_ID").value=="N"){
-                            document.getElementById("LONG_XYZ_N_ID").checked=true;
-                            document.getElementById("labelLONG_XYZ").style.color="black";
-                        }
-                        if(document.getElementById("TWODIMS_N_ID").value=="N"){
-                            document.getElementById("TWODIMS_N_ID").checked=true;
-                            document.getElementById("labelTWODIMS").style.color="black";
-                        }
-                        if(document.getElementById("SPH_BND_PARTICLES_N_ID").value=="N"){
-                            document.getElementById("SPH_BND_PARTICLES_N_ID").checked=true;
-                            document.getElementById("labelSPH_BND_PARTICLES").style.color="black";
-                        }
-                        
-                        
-                
-                        
-                        if(document.getElementById("NOVISCOSITYLIMITER_N_ID").value=="N"){
-                            document.getElementById("NOVISCOSITYLIMITER_N_ID").checked=true;
-                            document.getElementById("labelNOVISCOSITYLIMITER").style.color="black";
-                        }
-                        if(document.getElementById("COMPUTE_POTENTIAL_ENERGY_Y_ID").value=="Y"){
-                            document.getElementById("COMPUTE_POTENTIAL_ENERGY_Y_ID").checked=true;
-                            document.getElementById("labelCOMPUTE_POTENTIAL_ENERGY").style.color="black";
-                        }
-                        
-                        if(document.getElementById("LONGIDS_Y_ID").value=="Y"){
-                            document.getElementById("LONGIDS_Y_ID").checked=true;
-                            document.getElementById("labelLONGIDS").style.color="black";
-                        }
-                        
-                        if(document.getElementById("ISOTHERMAL_N_ID").value=="N"){
-                            document.getElementById("ISOTHERMAL_N_ID").checked=true;
-                            document.getElementById("labelISOTHERMAL").style.color="black";
-                        }
-                        if(document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").value=="N"){
-                            document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").checked=true;
-                            document.getElementById("labelSELECTIVE_NO_GRAVITY").style.color="black";
-                        }
+                    //                    if(document.getElementById("ISOTHERMAL_N_ID").value=="N"){
+                    //                        document.getElementById("ISOTHERMAL_N_ID").checked=true;
+                    //                        document.getElementById("labelISOTHERMAL").style.color="black";
+                    //                    }
+                    //                    if(document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").value=="N"){
+                    //                        document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").checked=true;
+                    //                        document.getElementById("labelSELECTIVE_NO_GRAVITY").style.color="black";
+                    //                    }
                   
         
         
-                        document.getElementById("FORCETESTID").value="0";
-                        document.getElementById("labelFORCETEST").style.color="black";
+                    document.getElementById("FORCETESTID").value="0";
+                    document.getElementById("labelFORCETEST").style.color="black";
                         
-                        if(document.getElementById("MAKEGLASS_N_ID").value=="N"){
-                            document.getElementById("MAKEGLASS_N_ID").checked=true;
-                            document.getElementById("labelMAKEGLASS").style.color="black";
-                        }
+                    //                    if(document.getElementById("MAKEGLASS_N_ID").value=="N"){
+                    //                        document.getElementById("MAKEGLASS_N_ID").checked=true;
+                    //                        document.getElementById("labelMAKEGLASS").style.color="black";
+                    //                    }
 
       
-                    }
+                
                     
                     
                     function ResetGADGETValues(){
@@ -825,20 +838,17 @@
                        
                         document.getElementById("PERIODIC_ID").checked=false;                            
                             
-                        document.getElementById("UNEQUALSOFTENINGS_Y_ID").checked=false;
-                        document.getElementById("UNEQUALSOFTENINGS_N_ID").checked=false;
-                            
-                        document.getElementById("PEANOHILBERT_Y_ID").checked=false;
-                        document.getElementById("PEANOHILBERT_N_ID").checked=false;
-                       
-                        document.getElementById("WALLCLOCK_Y_ID").checked=false;
-                        document.getElementById("WALLCLOCK_N_ID").checked=false;
+                        document.getElementById("UNEQUALSOFTENINGS_ID").checked=false;
                     
                             
-                            
+                        document.getElementById("PEANOHILBERT_ID").checked=false;
+                    
+                       
+                        document.getElementById("WALLCLOCK_ID").checked=false;
+                    
                       
-                        document.getElementById("PMGRID_Y_ID").checked=false;
-                        document.getElementById("PMGRID_N_ID").checked=false;
+                        document.getElementById("PMGRID_ID").checked=false;
+                    
         
                         document.getElementById("PLACEHIGHRESREGIONID").value="";
                             
@@ -850,96 +860,86 @@
                             
                            
                       
-                        document.getElementById("DOUBLEPRECISION_N_ID").checked=false;
-                        document.getElementById("DOUBLEPRECISION_Y_ID").checked=false;
+                        document.getElementById("DOUBLEPRECISION_ID").checked=false;
+                    
         
                       
-                        document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").checked=false;
-                        document.getElementById("DOUBLEPRECISION_FFTW_N_ID").checked=false;
+                        document.getElementById("DOUBLEPRECISION_FFTW_ID").checked=false;
+                    
         
                       
                       
-                        document.getElementById("SYNCHRONIZATIONID").checked=false;
+                        document.getElementById("SYNCHRONIZATION_ID").checked=false;
                             
                       
                               
-                        document.getElementById("FLEXSTEPS_Y_ID").checked=false;
-                        document.getElementById("FLEXSTEPS_N_ID").checked=false;
+                        document.getElementById("FLEXSTEPS_ID").checked=false;
+                    
                          
-                        document.getElementById("PSEUDOSYMMETRIC_Y_ID").checked=false;
-                        document.getElementById("PSEUDOSYMMETRIC_N_ID").checked=false;
+                        document.getElementById("PSEUDOSYMMETRIC_ID").checked=false;
+                    
                         
-                        document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_Y_ID").checked=false;
-                        document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_N_ID").checked=false;
+                        document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").checked=false;
+                    
                         
-                        document.getElementById("NOPMSTEPADJUSTMENT_Y_ID").checked=false;
-                        document.getElementById("NOPMSTEPADJUSTMENT_N_ID").checked=false;
+                        document.getElementById("NOPMSTEPADJUSTMENT_ID").checked=false;
+                    
                         
-                        document.getElementById("HAVE_HDF5_Y_ID").checked=false;
-                        document.getElementById("HAVE_HDF5_N_ID").checked=false;
+                        document.getElementById("HAVE_HDF5_ID").checked=false;
+                    
                       
                         
-                        document.getElementById("OUTPUTPOTENTIAL_Y_ID").checked=false;
-                        document.getElementById("OUTPUTPOTENTIAL_N_ID").checked=false;
+                        document.getElementById("OUTPUTPOTENTIAL_ID").checked=false;
+                    
                         
-                        document.getElementById("OUTPUTACCELERATION_Y_ID").checked=false;
-                        document.getElementById("OUTPUTACCELERATION_N_ID").checked=false;
+                        document.getElementById("OUTPUTACCELERATION_ID").checked=false;
+                    
                         
-                        document.getElementById("OUTPUTCHANGEOFENTROPY_Y_ID").checked=false;
-                        document.getElementById("OUTPUTCHANGEOFENTROPY_N_ID").checked=false;
+                        document.getElementById("OUTPUTCHANGEOFENTROPY_ID").checked=false;
+                    
                         
-                        document.getElementById("OUTPUTTIMESTEP_Y_ID").checked=false;
-                        document.getElementById("OUTPUTTIMESTEP_N_ID").checked=false;
+                        document.getElementById("OUTPUTTIMESTEP_ID").checked=false;
+                    
                         
-                        document.getElementById("NOGRAVITY_Y_ID").checked=false;
-                        document.getElementById("NOGRAVITY_N_ID").checked=false;
+                        document.getElementById("NOGRAVITY_ID").checked=false;
+                    
                       
                       
                               
-                        document.getElementById("NOTREERND_Y_ID").checked=false;
-                        document.getElementById("NOTREERND_N_ID").checked=false;
+                        document.getElementById("NOTREERND_ID").checked=false;
+                    
                         
-                        document.getElementById("NOTYPEPREFIX_FFTW_Y_ID").checked=false;
-                        document.getElementById("NOTYPEPREFIX_FFTW_N_ID").checked=false;
+                        document.getElementById("NOTYPEPREFIX_FFTW_ID").checked=false;
+                    
                         
-                        document.getElementById("LONG_XYZ_Y_ID").checked=false;
-                        document.getElementById("LONG_XYZ_N_ID").checked=false;
+                        document.getElementById("LONG_XYZ_ID").checked=false;
+                    
                         
-                        document.getElementById("TWODIMS_Y_ID").checked=false;
-                        document.getElementById("TWODIMS_N_ID").checked=false;
+                        document.getElementById("TWODIMS_ID").checked=false;
+                    
                         
-                        document.getElementById("SPH_BND_PARTICLES_Y_ID").checked=false;
-                        document.getElementById("SPH_BND_PARTICLES_N_ID").checked=false;
+                        document.getElementById("SPH_BND_PARTICLES_ID").checked=false;
+                    
                         
+                    
+                        document.getElementById("NOVISCOSITYLIMITER_ID").checked=false;
                         
+                        document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").checked=false;
+                    
                         
-                        document.getElementById("NOVISCOSITYLIMITER_N_ID").checked=false;
-                        document.getElementById("NOVISCOSITYLIMITER_N_ID").checked=false;
+                        document.getElementById("LONGIDS_ID").checked=false;
+                    
                         
-                        document.getElementById("COMPUTE_POTENTIAL_ENERGY_Y_ID").checked=false;
-                        document.getElementById("COMPUTE_POTENTIAL_ENERGY_Y_ID").checked=false;
+                        document.getElementById("ISOTHERMAL_ID").checked=false;
+                    
                         
-                        document.getElementById("LONGIDS_Y_ID").checked=false;
-                        document.getElementById("LONGIDS_Y_ID").checked=false;
-                        
-                        document.getElementById("ISOTHERMAL_N_ID").checked=false;
-                        document.getElementById("ISOTHERMAL_N_ID").checked=false;
-                        
-                        document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").checked=false;
-                        document.getElementById("SELECTIVE_NO_GRAVITY_N_ID").checked=false;
+                        document.getElementById("SELECTIVE_NO_GRAVITY_ID").checked=false;
+                    
                         
                         document.getElementById("FORCETESTID").value="";
                        
-                        document.getElementById("MAKEGLASS_Y_ID").checked=false;
-                        document.getElementById("MAKEGLASS_N_ID").checked=false;
-                        
-                           
-                      
-                       
-        
-                      
-                      
-        
+                        document.getElementById("MAKEGLASS_ID").checked=false;
+            
                     }                
                     function ValidateGADGETValues(){
                           
@@ -949,20 +949,20 @@
                         var  bool= true; //bool
 
         
-                        if( document.getElementById("HAVE_HDF5_Y_ID").checked== false &&  document.getElementById("HAVE_HDF5_N_ID").checked== false){
+                        if( document.getElementById("HAVE_HDF5_ID").checked== false) {
                             document.getElementById("labelHAVE_HDF5").style.color="red";
                             bool=false;
-                            document.getElementById("HAVE_HDF5_Y_ID").focus();
+                            document.getElementById("HAVE_HDF5_ID").focus();
                         }
                         else{
                             document.getElementById("labelHAVE_HDF5").style.color="black";
             
                         }
         
-                        if( document.getElementById("FLEXSTEPS_Y_ID").checked== false &&  document.getElementById("FLEXSTEPS_N_ID").checked== false){
+                        if( document.getElementById("FLEXSTEPS_ID").checked== false ){
                             document.getElementById("labelFLEXSTEPS").style.color="red";
                             bool=false;
-                            document.getElementById("FLEXSTEPS_Y_ID").focus();
+                            document.getElementById("FLEXSTEPS_ID").focus();
                         }
                         else{
                             document.getElementById("labelFLEXSTEPS").style.color="black";
@@ -970,47 +970,48 @@
                         }
                         
                         
-                        if( document.getElementById("DOUBLEPRECISION_N_ID").checked== false &&  document.getElementById("DOUBLEPRECISION_Y_ID").checked== false){
+                        if( document.getElementById("DOUBLEPRECISION_ID").checked== false){
                             document.getElementById("labelDOUBLEPRECISION").style.color="red";
                             bool=false;
-                            document.getElementById("DOUBLEPRECISION_Y_ID").focus();
+                            document.getElementById("DOUBLEPRECISION_ID").focus();
                         }
                         else{
                             document.getElementById("labelDOUBLEPRECISION").style.color="black";
             
                         }
                         
-                        if( document.getElementById("DOUBLEPRECISION_FFTW_N_ID").checked== false &&  document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").checked== false){
+                        if( document.getElementById("DOUBLEPRECISION_FFTW_ID").checked== false){
                             document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="red";
                             bool=false;
-                            document.getElementById("DOUBLEPRECISION_FFTW_Y_ID").focus();
+                            document.getElementById("DOUBLEPRECISION_FFTW_ID").focus();
                         }
                         else{
                             document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="black";
             
                         }
-                        if( document.getElementById("PMGRID_N_ID").checked== false &&  document.getElementById("PMGRID_Y_ID").checked== false){
+                        if( document.getElementById("PMGRID_ID").checked== false){
                             document.getElementById("labelPMGRID").style.color="red";
                             bool=false;
-                            document.getElementById("PMGRID_Y_ID").focus();
+                            document.getElementById("PMGRID_ID").focus();
                         }
                         else{
                             document.getElementById("labelPMGRID").style.color="black";
             
                         }
-                        if(  document.getElementById("PERIODIC_ID").checked== false){
+                        if(document.getElementById("PERIODIC_ID").checked==false){
                             document.getElementById("labelPERIODIC").style.color="red";
                             bool=false;
                             document.getElementById("PERIODIC_ID").focus();
                         }
                         else{
+                            
                             document.getElementById("labelPERIODIC").style.color="black";
             
                         }
         
             
                         if(bool==false){
-                             alert("Oops ! \n Something went wrong with the input parameters. \n Please check the parameters highlighted in red");
+                            alert("Oops ! \n Something went wrong with the input parameters. \n Please check the parameters highlighted in red");
                         }
                         else{
             
@@ -1019,7 +1020,187 @@
                         }
                     }
     
-    
+                    function SubmitGadgetParam(){
+                        if(document.getElementById("PERIODIC_ID").checked==false)
+                            document.getElementById("PERIODIC_ID").value="false";
+                        else
+                            document.getElementById("PERIODIC_ID").value="true";
+     
+                        if(document.getElementById("UNEQUALSOFTENINGS_ID").checked==false)
+                            document.getElementById("UNEQUALSOFTENINGS_ID").value="false";
+                        else
+                            document.getElementById("UNEQUALSOFTENINGS_ID").value="true";
+                    
+                    
+                        if(document.getElementById("PEANOHILBERT_ID").checked==false)
+                            document.getElementById("PEANOHILBERT_ID").value="false";
+                        else
+                            document.getElementById("PEANOHILBERT_ID").value="true";
+                
+                        if(document.getElementById("WALLCLOCK_ID").checked==false)
+                            document.getElementById("WALLCLOCK_ID").value="false";
+                        else
+                            document.getElementById("WALLCLOCK_ID").value="true";        
+                   
+                        if(document.getElementById("PMGRID_ID").checked==false)
+                            document.getElementById("PMGRID_ID").value="false";
+                        else
+                            document.getElementById("PMGRID_ID").value="true";  
+                    
+                    
+                        if(document.getElementById("DOUBLEPRECISION_ID").checked==false)
+                            document.getElementById("DOUBLEPRECISION_ID").value="false";
+                        else
+                            document.getElementById("DOUBLEPRECISION_ID").value="true"; 
+                    
+                        if(document.getElementById("DOUBLEPRECISION_FFTW_ID").checked==false)
+                            document.getElementById("DOUBLEPRECISION_FFTW_ID").value="false";
+                        else
+                            document.getElementById("DOUBLEPRECISION_FFTW_ID").value="true";   
+                            
+                           
+                        if(document.getElementById("SYNCHRONIZATION_ID").checked==false)
+                            document.getElementById("SYNCHRONIZATION_ID").value="false";
+                        else
+                            document.getElementById("SYNCHRONIZATION_ID").value="true";   
+                             
+                        if(document.getElementById("FLEXSTEPS_ID").checked==false)
+                            document.getElementById("FLEXSTEPS_ID").value="false";
+                        else
+                            document.getElementById("FLEXSTEPS_ID").value="true";     
+        
+                      
+                       if(document.getElementById("PSEUDOSYMMETRIC_ID").checked==false)
+                            document.getElementById("PSEUDOSYMMETRIC_ID").value="false";
+                        else
+                            document.getElementById("PSEUDOSYMMETRIC_ID").value="true";  
+                   
+                            
+                    if(document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").checked==false)
+                            document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").value="false";
+                        else
+                            document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").value="true";  
+                      
+                              
+                    if(document.getElementById("NOPMSTEPADJUSTMENT_ID").checked==false)
+                            document.getElementById("NOPMSTEPADJUSTMENT_ID").value="false";
+                        else
+                            document.getElementById("NOPMSTEPADJUSTMENT_ID").value="true";      
+                    
+                         
+                        
+                   if(document.getElementById("HAVE_HDF5_ID").checked==false)
+                            document.getElementById("HAVE_HDF5_ID").value="false";
+                        else
+                            document.getElementById("HAVE_HDF5_ID").value="true";   
+                        
+                     
+                    
+                         if(document.getElementById("OUTPUTPOTENTIAL_ID").checked==false)
+                            document.getElementById("OUTPUTPOTENTIAL_ID").value="false";
+                        else
+                            document.getElementById("OUTPUTPOTENTIAL_ID").value="true";   
+                        
+                        
+                    
+                    
+                         if(document.getElementById("OUTPUTACCELERATION_ID").checked==false)
+                            document.getElementById("OUTPUTACCELERATION_ID").value="false";
+                        else
+                            document.getElementById("OUTPUTACCELERATION_ID").value="true"; 
+                        
+                        
+                         if(document.getElementById("OUTPUTCHANGEOFENTROPY_ID").checked==false)
+                            document.getElementById("OUTPUTCHANGEOFENTROPY_ID").value="false";
+                        else
+                            document.getElementById("OUTPUTCHANGEOFENTROPY_ID").value="true";      
+                      
+                        
+                        
+                          if(document.getElementById("OUTPUTTIMESTEP_ID").checked==false)
+                            document.getElementById("OUTPUTTIMESTEP_ID").value="false";
+                        else
+                            document.getElementById("OUTPUTTIMESTEP_ID").value="true";   
+                        
+                           if(document.getElementById("NOGRAVITY_ID").checked==false)
+                            document.getElementById("NOGRAVITY_ID").value="false";
+                        else
+                            document.getElementById("NOGRAVITY_ID").value="true"; 
+                    
+                        
+                      if(document.getElementById("NOTREERND_ID").checked==false)
+                            document.getElementById("NOTREERND_ID").value="false";
+                        else
+                            document.getElementById("NOTREERND_ID").value="true"; 
+                    
+                         if(document.getElementById("NOTYPEPREFIX_FFTW_ID").checked==false)
+                            document.getElementById("NOTYPEPREFIX_FFTW_ID").value="false";
+                        else
+                            document.getElementById("NOTYPEPREFIX_FFTW_ID").value="true"; 
+                        
+                    
+                          if(document.getElementById("LONG_XYZ_ID").checked==false)
+                            document.getElementById("LONG_XYZ_ID").value="false";
+                        else
+                            document.getElementById("LONG_XYZ_ID").value="true"; 
+                        
+                         if(document.getElementById("TWODIMS_ID").checked==false)
+                            document.getElementById("TWODIMS_ID").value="false";
+                        else
+                            document.getElementById("TWODIMS_ID").value="true"; 
+                        
+                    
+                       if(document.getElementById("SPH_BND_PARTICLES_ID").checked==false)
+                            document.getElementById("SPH_BND_PARTICLES_ID").value="false";
+                        else
+                            document.getElementById("SPH_BND_PARTICLES_ID").value="true"; 
+                        
+                      
+                        if(document.getElementById("NOVISCOSITYLIMITER_ID").checked==false)
+                            document.getElementById("NOVISCOSITYLIMITER_ID").value="false";
+                        else
+                            document.getElementById("NOVISCOSITYLIMITER_ID").value="true"; 
+                              
+                        
+                     if(document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").checked==false)
+                            document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").value="false";
+                        else
+                            document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").value="true"; 
+                        
+                        
+                       
+                     if(document.getElementById("LONGIDS_ID").checked==false)
+                            document.getElementById("LONGIDS_ID").value="false";
+                        else
+                            document.getElementById("LONGIDS_ID").value="true"; 
+                        
+                     
+                          if(document.getElementById("ISOTHERMAL_ID").checked==false)
+                            document.getElementById("ISOTHERMAL_ID").value="false";
+                        else
+                            document.getElementById("ISOTHERMAL_ID").value="true"; 
+                        
+                    
+                          if(document.getElementById("SELECTIVE_NO_GRAVITY_ID").checked==false)
+                            document.getElementById("SELECTIVE_NO_GRAVITY_ID").value="false";
+                        else
+                            document.getElementById("SELECTIVE_NO_GRAVITY_ID").value="true";   
+                        
+                    
+                        
+                         if(document.getElementById("MAKEGLASS_ID").checked==false)
+                            document.getElementById("MAKEGLASS_ID").value="false";
+                        else
+                            document.getElementById("MAKEGLASS_ID").value="true";
+                    
+                        
+                        
+                    
+     
+     
+         
+                        document.getElementById("form_gadget").submit();
+                    }
                           
                        
                          
