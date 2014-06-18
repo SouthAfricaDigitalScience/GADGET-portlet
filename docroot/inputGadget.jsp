@@ -66,7 +66,7 @@
     <dl>	
         <!-- This block contains: label, file input and textarea for GATE Macro file -->
         <dd>		
-            <p><b>Application' input file</b> <input type="file" name="file_inputFile" id="upload_inputFileId" accept="*.*" onchange="uploadInputFile()"/></p>
+            <p><b>Application input file</b> <input type="file" name="file_inputFile" id="upload_inputFileId" accept="*.*" onchange="uploadInputFile()"/></p>
             <div hidden="yes">
                 <textarea id="inputFileId" rows="20" cols="100%" name="inputFile">Insert here your text file, or upload a file</textarea>
             </div>
@@ -150,8 +150,8 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="radio" name="PERIODIC" id="PERIODIC_Y_ID" value="Y"> Y 
-                                        <input type="radio" name="PERIODIC" id="PERIODIC_N_ID" value="N"> N
+                                        <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value=false>
+                                       
                                     </td>
                                 </tr>
 
@@ -651,8 +651,8 @@
       
         
         
-                        if(document.getElementById("PERIODIC_Y_ID").value=="Y"){
-                            document.getElementById("PERIODIC_Y_ID").checked=true;
+                        if(document.getElementById("PERIODIC_ID").value==false){
+                            document.getElementById("PERIODIC_ID").checked=true;
                             document.getElementById("labelPERIODIC").style.color="black";
                         }
        
