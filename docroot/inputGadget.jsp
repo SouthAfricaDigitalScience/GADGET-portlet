@@ -151,7 +151,7 @@
                                     </td>
                                     <td id="td_right">
 
-                                        <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="">
+                                        <input  type="checkbox" name="PERIODIC" id="PERIODIC_ID" value="false">
 
 
                                     </td>
@@ -166,7 +166,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_ID" value=""> 
+                                        <input  type="checkbox" name="UNEQUALSOFTENINGS" id="UNEQUALSOFTENINGS_ID" value="false"> 
 
                                     </td>
                                 </tr>
@@ -180,7 +180,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="PEANOHILBERT" id="PEANOHILBERT_ID" value=""> 
+                                        <input  type="checkbox" name="PEANOHILBERT" id="PEANOHILBERT_ID" value="false"> 
 
                                     </td>
                                 </tr>
@@ -194,7 +194,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="WALLCLOCK" id="WALLCLOCK_ID" value=""> 
+                                        <input  type="checkbox" name="WALLCLOCK" id="WALLCLOCK_ID" value="lase"> 
 
                                     </td>
                                 </tr>
@@ -208,7 +208,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="PMGRID" id="PMGRID_ID" value=""> 
+                                        <input  type="checkbox" name="PMGRID" id="PMGRID_ID" value="false"> 
 
                                     </td>
 
@@ -248,7 +248,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input class="gadget2_textbox" id="ASMTHID" name="ASMTH" type="text" value=""/>
+                                        <input class="gadget2_textbox" id="ASMTHID" name="ASMTH" type="text" value="false"/>
                                     </td>
 
                                 </tr>
@@ -261,7 +261,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input class="gadget2_textbox" id="RCUTID" name="RCUT" type="text" value=""/>
+                                        <input class="gadget2_textbox" id="RCUTID" name="RCUT" type="text" value="false"/>
                                     </td>
 
                                 </tr>
@@ -274,7 +274,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="DOUBLEPRECISION" id="DOUBLEPRECISION_ID" value=""> 
+                                        <input  type="checkbox" name="DOUBLEPRECISION" id="DOUBLEPRECISION_ID" value="false"> 
 
                                     </td>
 
@@ -288,7 +288,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="DOUBLEPRECISION_FFTW" id="DOUBLEPRECISION_FFTW_ID" value=""> 
+                                        <input  type="checkbox" name="DOUBLEPRECISION_FFTW" id="DOUBLEPRECISION_FFTW_ID" value="false"> 
 
                                     </td>
 
@@ -303,7 +303,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="SYNCHRONIZATION" id="SYNCHRONIZATION_ID" value="">  
+                                        <input  type="checkbox" name="SYNCHRONIZATION" id="SYNCHRONIZATION_ID" value="false">  
 
 
                                     </td>
@@ -332,7 +332,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="PSEUDOSYMMETRIC" id="PSEUDOSYMMETRIC_ID" value="">
+                                        <input  type="checkbox" name="PSEUDOSYMMETRIC" id="PSEUDOSYMMETRIC_ID" value="false">
 
                                     </td>
 
@@ -360,7 +360,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="NOPMSTEPADJUSTMENT" id="NOPMSTEPADJUSTMENT_ID" value="">
+                                        <input  type="checkbox" name="NOPMSTEPADJUSTMENT" id="NOPMSTEPADJUSTMENT_ID" value="false">
 
                                     </td>
 
@@ -389,7 +389,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="OUTPUTPOTENTIAL" id="OUTPUTPOTENTIAL_ID" value=""> 
+                                        <input  type="checkbox" name="OUTPUTPOTENTIAL" id="OUTPUTPOTENTIAL_ID" value="false"> 
 
                                     </td>
 
@@ -403,7 +403,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="OUTPUTACCELERATION" id="OUTPUTACCELERATION_ID" value="">  
+                                        <input  type="checkbox" name="OUTPUTACCELERATION" id="OUTPUTACCELERATION_ID" value="false">  
 
                                     </td>
 
@@ -417,7 +417,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="OUTPUTCHANGEOFENTROPY" id="OUTPUTCHANGEOFENTROPY_ID" value="">  
+                                        <input  type="checkbox" name="OUTPUTCHANGEOFENTROPY" id="OUTPUTCHANGEOFENTROPY_ID" value="false">  
 
                                     </td>
 
@@ -431,7 +431,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="OUTPUTTIMESTEP" id="OUTPUTTIMESTEP_ID" value=""> 
+                                        <input  type="checkbox" name="OUTPUTTIMESTEP" id="OUTPUTTIMESTEP_ID" value="false"> 
 
                                     </td>
 
@@ -445,7 +445,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="NOGRAVITY" id="NOGRAVITY_ID" value="">  
+                                        <input  type="checkbox" name="NOGRAVITY" id="NOGRAVITY_ID" value="false">  
 
                                     </td>
 
@@ -460,7 +460,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="NOTREERND" id="NOTREERND_ID" value=""> 
+                                        <input  type="checkbox" name="NOTREERND" id="NOTREERND_ID" value="false"> 
 
                                     </td>
 
@@ -475,7 +475,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="NOTYPEPREFIX_FFTW" id="NOTYPEPREFIX_FFTW_ID" value=""> 
+                                        <input  type="checkbox" name="NOTYPEPREFIX_FFTW" id="NOTYPEPREFIX_FFTW_ID" value="false"> 
 
                                     </td>
 
@@ -489,7 +489,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="LONG_XYZ" id="LONG_XYZ_ID" value=""> 
+                                        <input  type="checkbox" name="LONG_XYZ" id="LONG_XYZ_ID" value="false"> 
 
                                     </td>
 
@@ -503,7 +503,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="TWODIMS" id="TWODIMS_ID" value="">
+                                        <input  type="checkbox" name="TWODIMS" id="TWODIMS_ID" value="false">
 
                                     </td>
 
@@ -518,7 +518,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="SPH_BND_PARTICLES" id="SPH_BND_PARTICLES_ID" value=""> 
+                                        <input  type="checkbox" name="SPH_BND_PARTICLES" id="SPH_BND_PARTICLES_ID" value="false"> 
 
                                     </td>
 
@@ -533,7 +533,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="NOVISCOSITYLIMITER" id="NOVISCOSITYLIMITER_ID" value=""> 
+                                        <input  type="checkbox" name="NOVISCOSITYLIMITER" id="NOVISCOSITYLIMITER_ID" value="false"> 
 
                                     </td>
 
@@ -547,7 +547,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="COMPUTE_POTENTIAL_ENERGY" id="COMPUTE_POTENTIAL_ENERGY_ID" value="">  
+                                        <input  type="checkbox" name="COMPUTE_POTENTIAL_ENERGY" id="COMPUTE_POTENTIAL_ENERGY_ID" value="false">  
 
                                     </td>
 
@@ -561,7 +561,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="LONGIDS" id="LONGIDS_ID" value=""> 
+                                        <input  type="checkbox" name="LONGIDS" id="LONGIDS_ID" value="false"> 
 
                                     </td>
 
@@ -575,7 +575,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="ISOTHERMAL" id="ISOTHERMAL_ID" value=""> 
+                                        <input  type="checkbox" name="ISOTHERMAL" id="ISOTHERMAL_ID" value="false"> 
 
                                     </td>
 
@@ -589,7 +589,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="SELECTIVE_NO_GRAVITY" id="SELECTIVE_NO_GRAVITY_ID" value="">  
+                                        <input  type="checkbox" name="SELECTIVE_NO_GRAVITY" id="SELECTIVE_NO_GRAVITY_ID" value="false">  
 
                                     </td>
 
@@ -619,7 +619,7 @@
                                         <label id="labelEquals">= </label>
                                     </td>
                                     <td id="td_right">
-                                        <input  type="checkbox" name="MAKEGLASS" id="MAKEGLASS_ID" value="">
+                                        <input  type="checkbox" name="MAKEGLASS" id="MAKEGLASS_ID" value="false">
 
                                     </td>
 
@@ -661,10 +661,11 @@
        
        
        
-                        // if(document.getElementById("UNEQUALSOFTENINGS_ID").checked=="N"){
-                        //    document.getElementById("UNEQUALSOFTENINGS_N_ID").checked=true;
-                        //    document.getElementById("labelUNEQUALSOFTENINGS").style.color="black";
-                        // }
+                         if(document.getElementById("UNEQUALSOFTENINGS_ID").checked==false){
+                            document.getElementById("UNEQUALSOFTENINGS_ID").checked=false;
+                            document.getElementById("UNEQUALSOFTENINGS_ID").value="false";
+                            document.getElementById("labelUNEQUALSOFTENINGS").style.color="black";
+                         }
     
        
                         if(document.getElementById("PEANOHILBERT_ID").checked==false){
@@ -1036,6 +1037,8 @@
                             document.getElementById("PEANOHILBERT_ID").value="false";
                         else
                             document.getElementById("PEANOHILBERT_ID").value="true";
+                        
+                        
                 
                         if(document.getElementById("WALLCLOCK_ID").checked==false)
                             document.getElementById("WALLCLOCK_ID").value="false";

@@ -31,6 +31,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.portlet.*;
+import javax.swing.JCheckBox;
 
 public class GADGET_portlet extends GenericPortlet {
 
@@ -48,14 +49,15 @@ public class GADGET_portlet extends GenericPortlet {
     private enum Actions {
 
         ACTION_INPUT // Called before to show the INPUT view
-        , ACTION_SUBMIT_MUSIC   // Called after the user press the submit button    
+        , ACTION_SUBMIT_MUSIC // Called after the user press the submit button    
+        , ACTION_SUBMIT_GADGET
     }
 
     private enum Views {
 
         VIEW_INPUT // View containing application input field
-        , VIEW_SUBMIT_MUSIC // View reporting input value    
-        , VIEW_NO_ACTION
+        , VIEW_SUBMIT_MUSIC // View reporting input value 
+        , VIEW_SUBMIT_GADGET, VIEW_NO_ACTION
     }
 
     // The init values will be read form portlet.xml from <init-param> xml tag
@@ -122,18 +124,19 @@ public class GADGET_portlet extends GenericPortlet {
         String smoother;
         String laplace_order;
         String grad_order;
-        
+
         public App_Input() {
 
             boxlength = zstart = levelmin = levelmin_TF = levelmax = padding = overlap = ref_center = ref_extent = ref_offset = align_top = baryons = use_2LPT = periodic_TF = "";
             omega_m = omega_L = omega_b = H0 = sigma_8 = nspec = transfer = "";
             seed7 = seed8 = seed9 = seed10 = seed11 = seed12 = "";
             fft_fine = accuracy = pre_smooth = post_smooth = smoother = laplace_order = grad_order = "";
-            
+
         }
     } // App_Input
 
-    class App_InputGADGET{
+    class App_InputGADGET {
+
         boolean PERIODIC;
         boolean UNEQUALSOFTENINGS;
         boolean PEANOHILBERT;
@@ -168,14 +171,16 @@ public class GADGET_portlet extends GenericPortlet {
         boolean SELECTIVE_NO_GRAVITY;
         boolean FORCETEST;
         boolean MAKEGLASS;
-        
-        public App_InputGADGET(){
-            
-            PERIODIC=UNEQUALSOFTENINGS=PEANOHILBERT=WALLCLOCK=PMGR=DOUBLEPRECISION=DOUBLEPRECISION_FFTW=SYNCHRONIZATION=FLEXSTEPS=PSEUDOSYMMETRIC=NOSTOP_WHEN_BELOW_MINTIMESTEP=NOPMSTEPADJUSTMENT=HAVE_HDF5=OUTPUTPOTENTIAL=OUTPUTACCELERATION=OUTPUTCHANGEOFENTROPY=OUTPUTTIMESTEP=NOGRAVITY=NOTREERND=NOTYPEPREFIX_FFTW=LONG_XYZ=TWODIMS=SPH_BND_PARTICLES=NOVISCOSITYLIMITER=COMPUTE_POTENTIAL_ENERGY=LONGIDS=ISOTHERMAL=SELECTIVE_NO_GRAVITY=FORCETEST=MAKEGLASS=false;
-            PLACEHIGHRESREGION=ENLARGEREGION=ASMT=RCUT="";
+
+        public App_InputGADGET() {
+
+
+            PERIODIC = UNEQUALSOFTENINGS = PEANOHILBERT = WALLCLOCK = PMGR = DOUBLEPRECISION = DOUBLEPRECISION_FFTW = SYNCHRONIZATION = FLEXSTEPS = PSEUDOSYMMETRIC = NOSTOP_WHEN_BELOW_MINTIMESTEP = NOPMSTEPADJUSTMENT = HAVE_HDF5 = OUTPUTPOTENTIAL = OUTPUTACCELERATION = OUTPUTCHANGEOFENTROPY = OUTPUTTIMESTEP = NOGRAVITY = NOTREERND = NOTYPEPREFIX_FFTW = LONG_XYZ = TWODIMS = SPH_BND_PARTICLES = NOVISCOSITYLIMITER = COMPUTE_POTENTIAL_ENERGY = LONGIDS = ISOTHERMAL = SELECTIVE_NO_GRAVITY = FORCETEST = MAKEGLASS = false;
+            PLACEHIGHRESREGION = ENLARGEREGION = ASMT = RCUT = "";
+
         }
     }
-    
+
     class App_Preferences {
 
         String pref_value;
@@ -286,6 +291,27 @@ public class GADGET_portlet extends GenericPortlet {
 
                     //response.setRenderParameter("inputValue", "" + appInput.inputValue);
                     break;
+
+                case ACTION_SUBMIT_GADGET:
+                    System.out.println("Got action: 'ACTION_SUBMIT'");
+
+
+
+                    // Create the appInput object
+                    App_InputGADGET appInputGADGET = new App_InputGADGET();
+
+
+
+                    // Process input field
+                    getInputFormGADGET(request, appInputGADGET);
+
+
+
+                    // Send the inputValue and assign the correct view                    
+                    response.setRenderParameter("PortletStatus", "" + Views.VIEW_SUBMIT_MUSIC);
+
+                    //response.setRenderParameter("inputValue", "" + appInput.inputValue);
+                    break;
                 default:
                     System.out.println("Unhandled action: '" + actionStatus + "'");
                     response.setRenderParameter("PortletStatus", "" + Views.VIEW_INPUT);
@@ -373,7 +399,7 @@ public class GADGET_portlet extends GenericPortlet {
 
                 String inputValue = request.getParameter("inputValue");
 
-               // request.setAttribute("inputValue", inputValue);
+                // request.setAttribute("inputValue", inputValue);
                 PortletRequestDispatcher dispatcher = getPortletContext().getRequestDispatcher("/inputGadget.jsp");
                 dispatcher.include(request, response);
             }
@@ -484,8 +510,8 @@ public class GADGET_portlet extends GenericPortlet {
         appInput.laplace_order = (String) request.getParameter("laplace_order");
         appInput.grad_order = (String) request.getParameter("grad_order");
 
-        
-       
+
+
 
 
 
@@ -533,150 +559,186 @@ public class GADGET_portlet extends GenericPortlet {
                 + LS + "grad_order: '" + appInput.grad_order + "'"
                 + LS);
     } // getInputForm 
-   public void getInputFormGADGET(ActionRequest request, App_InputGADGET appInputGADGET) {
+
+    public void getInputFormGADGET(ActionRequest request, App_InputGADGET appInputGADGET) {
 
         // Retrieve from the input form the given application values
 
-        
-        
+
+
         /**
          * ****** RETRIVE INPUT GADGET VALUES*******
          */
         // We first have to do checks on the boolean variables and convert them
         // to booleans from strings
-        if(request.getParameter("PERIODIC").equals("true")) 
-			appInputGADGET.PERIODIC = true;
-		else
-			appInputGADGET.PERIODIC = false;
-	    if(request.getParameter("UNEQUALSOFTENINGS").equals("true"))
-			appInputGADGET.UNEQUALSOFTENINGS = true;
-		else
-			appInputGADGET.UNEQUALSOFTENINGS = false;
-		if(request.getParameter("PEANNOHILBERT").equals("true"))
-			appInputGADGET.PEANOHILBERT = true;
-		else
-			appInputGADGET.PEANOHILBERT = false;
-		if(request.getParameter("WALLCLOCK").equals("true"))
-			appInputGADGET.WALLCLOCK = true;
-		else
-			appInputGADGET.WALLCLOCK = false;
-		if (request.getParameter("PMGR").equals("true"))
-			appInputGADGET.PMGR = true;
-		else
-			appInputGADGET.PMGR = false;
-			
-	    appInputGADGET.PLACEHIGHRESREGION = (String) request.getParameter("PLACEHIGHRESREGION");
+        if (request.getParameter("PERIODIC").equals("true")) {
+            appInputGADGET.PERIODIC = true;
+        } else {
+            appInputGADGET.PERIODIC = false;
+        }
+
+
+        System.out.println("ERRORE=>>> " + request.getParameter("UNEQUALSOFTENINGS"));
+         System.out.println("ERRORE2=>>> " + request.getParameter("PEANOHILBERT"));
+
+        if (request.getParameter("UNEQUALSOFTENINGS").equals("true")) {
+            appInputGADGET.UNEQUALSOFTENINGS = true;
+        } else {
+            appInputGADGET.UNEQUALSOFTENINGS = false;
+        }
+        if (request.getParameter("PEANOHILBERT").equals("true")) {
+            appInputGADGET.PEANOHILBERT = true;
+        } else {
+            appInputGADGET.PEANOHILBERT = false;
+        }
+        if (request.getParameter("WALLCLOCK").equals("true")) {
+            appInputGADGET.WALLCLOCK = true;
+        } else {
+            appInputGADGET.WALLCLOCK = false;
+        }
+        if (request.getParameter("PMGR").equals("true")) {
+            appInputGADGET.PMGR = true;
+        } else {
+            appInputGADGET.PMGR = false;
+        }
+
+        appInputGADGET.PLACEHIGHRESREGION = (String) request.getParameter("PLACEHIGHRESREGION");
+
         appInputGADGET.ENLARGEREGION = (String) request.getParameter("ENLARGEREGION");
         appInputGADGET.ASMT = (String) request.getParameter("ASMT");
         appInputGADGET.RCUT = (String) request.getParameter("RCUT");
-		
-		if(request.getParameter("DOUBLEPRECISION").equals("true"))
-			appInputGADGET.DOUBLEPRECISION = true;
-		else
-			appInputGADGET.DOUBLEPRECISION = false;
-        if(request.getParameter("DOUBLEPRECISION_FFTW").equals("true"))
-			appInputGADGET.DOUBLEPRECISION_FFTW = true;
-		else
-			appInputGADGET.DOUBLEPRECISION_FFTW = false;
-		if(request.getParameter("SYNCHRONISATION").equals("true"))
-			appInputGADGET.SYNCHRONIZATION = true;
-		else
-			appInputGADGET.SYNCHRONIZATION = false;
-		if(request.getParameter("FLEXSTEPS").equals("true"))
-			appInputGADGET.FLEXSTEPS = true;
-		else
-			appInputGADGET.FLEXSTEPS = false;
-		if(request.getParameter("PSEUDOSYMMETRIC").equals("true"))
-			appInputGADGET.PSEUDOSYMMETRIC = true;
-		else
-			appInputGADGET.PSEUDOSYMMETRIC = false;
-		if(request.getParameter("NOSTOP_WHEN_BELOW_MINTIMESTEP").equals("true"))
-			appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = true;
-		else
-			appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = false;
-		if (request.getParameter("NOPMSTEPADJUSTMENT").equals("true"))
-			appInputGADGET.NOPMSTEPADJUSTMENT = true;
-		else 
-			appInputGADGET.NOPMSTEPADJUSTMENT = false;
-		if(request.getParameter("HAVE_HDF5").equals("true"))
-			appInputGADGET.HAVE_HDF5 = true;
-		else 
-			appInputGADGET.HAVE_HDF5 = false;
-		if(request.getParameter("OUTPUTPOTENTIAL").equals("true"))
-			appInputGADGET.OUTPUTPOTENTIAL = true;
-		else
-			appInputGADGET.OUTPUTPOTENTIAL = false;
-		if(request.getParameter("OUTPUTACCELERATION").equals("true"))
-			appInputGADGET.OUTPUTACCELERATION = true;
-		else
-			appInputGADGET.OUTPUTACCELERATION = false;
-		if(request.getParameter("OUTPUTCHANGEOFENTROPY").equals("true"))
-			appInputGADGET.OUTPUTCHANGEOFENTROPY = true;
-		else
-			appInputGADGET.OUTPUTCHANGEOFENTROPY = false;
-		if(request.getParameter("OUTPUTTIMESTEP").equals("true"))
-			appInputGADGET.OUTPUTTIMESTEP = true;
-		else
-			appInputGADGET.OUTPUTTIMESTEP = false;
-		if(request.getParameter("NOGRAVITY").equals("true"))
-			appInputGADGET.NOGRAVITY = true;
-		else 
-			appInputGADGET.NOGRAVITY = false;
-		if(request.getParameter("NOTREERND").equals("true"))
-			appInputGADGET.NOTREERND = true;
-		else
-			appInputGADGET.NOTREERND = false;
-		if(request.getParameter("NOTYPEPREFIX_FFTW").equals("true"))
-			appInputGADGET.NOTYPEPREFIX_FFTW = true;
-		else
-			appInputGADGET.NOTYPEPREFIX_FFTW = false;
-		if(request.getParameter("LONG_XYZ").equals("true"))
-			appInputGADGET.LONG_XYZ = true;
-		else
-			appInputGADGET.LONG_XYZ = false;
-		if(request.getParameter("TWODIMS").equals("true"))
-			appInputGADGET.TWODIMS = true;
-		else
-			appInputGADGET.TWODIMS = false;
-		if(request.getParameter("SPH_BND_PARTICLES").equals("true"))
-			appInputGADGET.SPH_BND_PARTICLES = true;
-		else
-			appInputGADGET.SPH_BND_PARTICLES = false;
-		if(request.getParameter("NOVISCOSITYLIMITER").equals("true"))
-			appInputGADGET.NOVISCOSITYLIMITER = true;
-		else
-			appInputGADGET.NOVISCOSITYLIMITER = false;
-		if(request.getParameter("COMPUTE_POTENTIAL_ENERGY").equals("true"))
-			appInputGADGET.COMPUTE_POTENTIAL_ENERGY = true;
-		else
-			appInputGADGET.COMPUTE_POTENTIAL_ENERGY = false;
-		if(request.getParameter("LONGIDS").equals("true"))
-			appInputGADGET.LONGIDS = true;
-		else
-			appInputGADGET.LONGIDS = false;
-		if(request.getParameter("ISOTHERMAL").equals("true"))
-			appInputGADGET.ISOTHERMAL = true;
-		else
-			appInputGADGET.ISOTHERMAL = false;
-		if(request.getParameter("SELECTIVE_NO_GRAVITY").equals("true"))
-			appInputGADGET.SELECTIVE_NO_GRAVITY = true;
-		else 
-			appInputGADGET.SELECTIVE_NO_GRAVITY = false;
-		if(request.getParameter("FORCETEST").equals("true"))
-			appInputGADGET.FORCETEST = true;
-		else
-			appInputGADGET.FORCETEST = false;
-		if(request.getParameter("MAKEGLASS").equals("true"))
-			appInputGADGET.MAKEGLASS = true;
-		else
-			appInputGADGET.MAKEGLASS = false;
+
+        if (request.getParameter("DOUBLEPRECISION").equals("true")) {
+            appInputGADGET.DOUBLEPRECISION = true;
+        } else {
+            appInputGADGET.DOUBLEPRECISION = false;
+        }
+        if (request.getParameter("DOUBLEPRECISION_FFTW").equals("true")) {
+            appInputGADGET.DOUBLEPRECISION_FFTW = true;
+        } else {
+            appInputGADGET.DOUBLEPRECISION_FFTW = false;
+        }
+        if (request.getParameter("SYNCHRONISATION").equals("true")) {
+            appInputGADGET.SYNCHRONIZATION = true;
+        } else {
+            appInputGADGET.SYNCHRONIZATION = false;
+        }
+        if (request.getParameter("FLEXSTEPS").equals("true")) {
+            appInputGADGET.FLEXSTEPS = true;
+        } else {
+            appInputGADGET.FLEXSTEPS = false;
+        }
+        if (request.getParameter("PSEUDOSYMMETRIC").equals("true")) {
+            appInputGADGET.PSEUDOSYMMETRIC = true;
+        } else {
+            appInputGADGET.PSEUDOSYMMETRIC = false;
+        }
+        if (request.getParameter("NOSTOP_WHEN_BELOW_MINTIMESTEP").equals("true")) {
+            appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = true;
+        } else {
+            appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = false;
+        }
+        if (request.getParameter("NOPMSTEPADJUSTMENT").equals("true")) {
+            appInputGADGET.NOPMSTEPADJUSTMENT = true;
+        } else {
+            appInputGADGET.NOPMSTEPADJUSTMENT = false;
+        }
+        if (request.getParameter("HAVE_HDF5").equals("true")) {
+            appInputGADGET.HAVE_HDF5 = true;
+        } else {
+            appInputGADGET.HAVE_HDF5 = false;
+        }
+        if (request.getParameter("OUTPUTPOTENTIAL").equals("true")) {
+            appInputGADGET.OUTPUTPOTENTIAL = true;
+        } else {
+            appInputGADGET.OUTPUTPOTENTIAL = false;
+        }
+        if (request.getParameter("OUTPUTACCELERATION").equals("true")) {
+            appInputGADGET.OUTPUTACCELERATION = true;
+        } else {
+            appInputGADGET.OUTPUTACCELERATION = false;
+        }
+        if (request.getParameter("OUTPUTCHANGEOFENTROPY").equals("true")) {
+            appInputGADGET.OUTPUTCHANGEOFENTROPY = true;
+        } else {
+            appInputGADGET.OUTPUTCHANGEOFENTROPY = false;
+        }
+        if (request.getParameter("OUTPUTTIMESTEP").equals("true")) {
+            appInputGADGET.OUTPUTTIMESTEP = true;
+        } else {
+            appInputGADGET.OUTPUTTIMESTEP = false;
+        }
+        if (request.getParameter("NOGRAVITY").equals("true")) {
+            appInputGADGET.NOGRAVITY = true;
+        } else {
+            appInputGADGET.NOGRAVITY = false;
+        }
+        if (request.getParameter("NOTREERND").equals("true")) {
+            appInputGADGET.NOTREERND = true;
+        } else {
+            appInputGADGET.NOTREERND = false;
+        }
+        if (request.getParameter("NOTYPEPREFIX_FFTW").equals("true")) {
+            appInputGADGET.NOTYPEPREFIX_FFTW = true;
+        } else {
+            appInputGADGET.NOTYPEPREFIX_FFTW = false;
+        }
+        if (request.getParameter("LONG_XYZ").equals("true")) {
+            appInputGADGET.LONG_XYZ = true;
+        } else {
+            appInputGADGET.LONG_XYZ = false;
+        }
+        if (request.getParameter("TWODIMS").equals("true")) {
+            appInputGADGET.TWODIMS = true;
+        } else {
+            appInputGADGET.TWODIMS = false;
+        }
+        if (request.getParameter("SPH_BND_PARTICLES").equals("true")) {
+            appInputGADGET.SPH_BND_PARTICLES = true;
+        } else {
+            appInputGADGET.SPH_BND_PARTICLES = false;
+        }
+        if (request.getParameter("NOVISCOSITYLIMITER").equals("true")) {
+            appInputGADGET.NOVISCOSITYLIMITER = true;
+        } else {
+            appInputGADGET.NOVISCOSITYLIMITER = false;
+        }
+        if (request.getParameter("COMPUTE_POTENTIAL_ENERGY").equals("true")) {
+            appInputGADGET.COMPUTE_POTENTIAL_ENERGY = true;
+        } else {
+            appInputGADGET.COMPUTE_POTENTIAL_ENERGY = false;
+        }
+        if (request.getParameter("LONGIDS").equals("true")) {
+            appInputGADGET.LONGIDS = true;
+        } else {
+            appInputGADGET.LONGIDS = false;
+        }
+        if (request.getParameter("ISOTHERMAL").equals("true")) {
+            appInputGADGET.ISOTHERMAL = true;
+        } else {
+            appInputGADGET.ISOTHERMAL = false;
+        }
+        if (request.getParameter("SELECTIVE_NO_GRAVITY").equals("true")) {
+            appInputGADGET.SELECTIVE_NO_GRAVITY = true;
+        } else {
+            appInputGADGET.SELECTIVE_NO_GRAVITY = false;
+        }
+        if (request.getParameter("FORCETEST").equals("true")) {
+            appInputGADGET.FORCETEST = true;
+        } else {
+            appInputGADGET.FORCETEST = false;
+        }
+        if (request.getParameter("MAKEGLASS").equals("true")) {
+            appInputGADGET.MAKEGLASS = true;
+        } else {
+            appInputGADGET.MAKEGLASS = false;
+        }
 
 
 
-      
+
     } // getInputForm 
 
-    
     public void createMUSICconfigFile(App_Input appInput) {
 
 
@@ -693,7 +755,7 @@ public class GADGET_portlet extends GenericPortlet {
             System.out.println("sono dentro createMUSICconf ");
 
             String content = ""
-//                    + "OPT   +=  -DPERIODIC "
+                    //                    + "OPT   +=  -DPERIODIC "
                     + "[setup]\n"
                     + "boxlength     = " + appInput.boxlength + "\n"
                     + "zstart        = " + appInput.zstart + "\n"
@@ -781,7 +843,4 @@ public class GADGET_portlet extends GenericPortlet {
             e.printStackTrace();
         }
     }
-    
-    
-    
 } // GADGET_portlet 

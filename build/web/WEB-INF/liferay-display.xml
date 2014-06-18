@@ -3,6 +3,6 @@
 
 <display>
 	<category name="CataniaSG">
-		<portlet id="myFirst-portlet" />
+		<portlet id="GADGET-portlet" />
 	</category>
 </display>
