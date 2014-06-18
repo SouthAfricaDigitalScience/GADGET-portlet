@@ -37,10 +37,10 @@ before_install:
   - sudo mkdir -p /etc/grid-security
   - wget 'http://grid.ct.infn.it/cron_files/grid_settings.tar.gz' -O grid_settings.tar.gz
   - sudo tar xvfz grid_settings.tar.gz -C /etc/grid-security/
-before_script:
+install: 
   - mkdir -p liferay-plugins/liferay-plugins-sdk-6.1.1/portlets/GADGET-portlet
   - cd liferay-plugins/liferay-plugins-sdk-6.1.1/portlets/GADGET-portlet
-install: 
+  - ls -lht liferay-plugins/liferay-plugins-sdk-6.1.1/portlets/
   - ant deploy
 notifications:
   email:
