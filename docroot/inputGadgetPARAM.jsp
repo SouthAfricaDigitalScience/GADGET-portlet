@@ -126,7 +126,7 @@
 -->
 
 <script src="<%=renderRequest.getContextPath()%>/js/jquery-1.3.2.min.js" type="text/javascript"></script>
-<form id="form_gadget" action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT_GADGET_PARAM"/></portlet:actionURL>" method="post">
+<form id="form_gadget_param" action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT_GADGET_PARAM"/></portlet:actionURL>" method="post">
 
 
 
@@ -530,4 +530,7 @@ function SetGADGETDemoParam(){
         
 }
 
+function ResetGADGETparam(){
+document.getElementById("form_gadget_param").reset();
+}
 </script>

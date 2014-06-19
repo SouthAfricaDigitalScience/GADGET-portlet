@@ -558,7 +558,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="3" align="center"><input type="button" value="Demo" onclick="SetGADGETDemoValues()">
-                                        <input type="button" value="Reset" onclick="ResetGADGETValues()">
+                                        <input type="button" value="Reset" onclick="reset()">
                                         <input type="button" value="Validate Random" onclick="ValidateGADGETValues()">
                                     </td>
 
@@ -767,116 +767,7 @@
                 
                     
                     
-                    function ResetGADGETValues(){
-        
-              
-                         
-                       
-                        document.getElementById("PERIODIC_ID").checked=false;                            
-                            
-                        document.getElementById("UNEQUALSOFTENINGS_ID").checked=false;
-                    
-                            
-                        document.getElementById("PEANOHILBERT_ID").checked=false;
-                    
-                       
-                        document.getElementById("WALLCLOCK_ID").checked=false;
-                    
-                      
-                        document.getElementById("PMGRID_ID").checked=false;
-                    
-        
-                        document.getElementById("PLACEHIGHRESREGIONID").value="";
-                            
-                        document.getElementById("ENLARGEREGIONID").value="";
-                            
-                        document.getElementById("ASMTHID").value="";
-                             
-                        document.getElementById("RCUTID").value="";
-                            
-                           
-                      
-                        document.getElementById("DOUBLEPRECISION_ID").checked=false;
-                    
-        
-                      
-                        document.getElementById("DOUBLEPRECISION_FFTW_ID").checked=false;
-                    
-        
-                      
-                      
-                        document.getElementById("SYNCHRONIZATION_ID").checked=false;
-                            
-                      
-                              
-                        document.getElementById("FLEXSTEPS_ID").checked=false;
-                    
-                         
-                        document.getElementById("PSEUDOSYMMETRIC_ID").checked=false;
-                    
-                        
-                        document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").checked=false;
-                    
-                        
-                        document.getElementById("NOPMSTEPADJUSTMENT_ID").checked=false;
-                    
-                        
-                        document.getElementById("HAVE_HDF5_ID").checked=false;
-                    
-                      
-                        
-                        document.getElementById("OUTPUTPOTENTIAL_ID").checked=false;
-                    
-                        
-                        document.getElementById("OUTPUTACCELERATION_ID").checked=false;
-                    
-                        
-                        document.getElementById("OUTPUTCHANGEOFENTROPY_ID").checked=false;
-                    
-                        
-                        document.getElementById("OUTPUTTIMESTEP_ID").checked=false;
-                    
-                        
-                        document.getElementById("NOGRAVITY_ID").checked=false;
-                    
-                      
-                      
-                              
-                        document.getElementById("NOTREERND_ID").checked=false;
-                    
-                        
-                        document.getElementById("NOTYPEPREFIX_FFTW_ID").checked=false;
-                    
-                        
-                        document.getElementById("LONG_XYZ_ID").checked=false;
-                    
-                        
-                        document.getElementById("TWODIMS_ID").checked=false;
-                    
-                        
-                        document.getElementById("SPH_BND_PARTICLES_ID").checked=false;
-                    
-                        
-                    
-                        document.getElementById("NOVISCOSITYLIMITER_ID").checked=false;
-                        
-                        document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").checked=false;
-                    
-                        
-                        document.getElementById("LONGIDS_ID").checked=false;
-                    
-                        
-                        document.getElementById("ISOTHERMAL_ID").checked=false;
-                    
-                        
-                        document.getElementById("SELECTIVE_NO_GRAVITY_ID").checked=false;
-                    
-                        
-                        document.getElementById("FORCETESTID").value="";
-                       
-                        document.getElementById("MAKEGLASS_ID").checked=false;
-            
-                    }                
+                                  
                     function ValidateGADGETValues(){
                           
                          
