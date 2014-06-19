@@ -47,18 +47,20 @@ public class GADGET_portlet extends GenericPortlet {
     // The default prortlet mode by default is: ACTION_INPUT (see ProcessAction)
     private enum Actions {
 
-        ACTION_INPUT // Called before to show the INPUT view
+          ACTION_INPUT // Called before to show the INPUT view
         , ACTION_SUBMIT_MUSIC // Called after the user press the submit button    
         , ACTION_SUBMIT_GADGET_MAKEFILE
         , ACTION_SUBMIT_GADGET_PARAM
+        ,ACTION_SUBMIT
     }
 
     private enum Views {
 
-        VIEW_INPUT // View containing application input field
+         VIEW_INPUT // View containing application input field
         , VIEW_SUBMIT_MUSIC // View reporting input value 
         , VIEW_SUBMIT_GADGET_MAKEFILE, VIEW_NO_ACTION
         ,VIEW_SUBMIT_GADGET_PARAM
+        ,VIEW_SUBMIT
     }
 
     // The init values will be read form portlet.xml from <init-param> xml tag
@@ -364,7 +366,7 @@ public class GADGET_portlet extends GenericPortlet {
                     createGADGET_PARAM(appInputGADGET_PARAM);
 
                     // Send the inputValue and assign the correct view                    
-                    response.setRenderParameter("PortletStatus", "" + Views.VIEW_INPUT);
+                    response.setRenderParameter("PortletStatus", "" + Views.VIEW_SUBMIT);
 
                     //response.setRenderParameter("inputValue", "" + appInput.inputValue);
                     break;
@@ -472,9 +474,9 @@ public class GADGET_portlet extends GenericPortlet {
             }
             break;    
                 
-            case VIEW_NO_ACTION: {
-                System.out.println("VIEW_NO_ACTION Selected ...");
-                PortletRequestDispatcher dispatcher = getPortletContext().getRequestDispatcher("/view_without_action.jsp");
+            case VIEW_SUBMIT: {
+                System.out.println("VIEW_SUBMIT Selected ...");
+                PortletRequestDispatcher dispatcher = getPortletContext().getRequestDispatcher("/submit.jsp");
                 dispatcher.include(request, response);
             }
             break;
@@ -985,15 +987,55 @@ public class GADGET_portlet extends GenericPortlet {
                     + "ResubmitOn               " + appInputGADGET_PARAM.ResubmitOn + "\n"
                     + "CpuTimeBetRestartFile    " + appInputGADGET_PARAM.CpuTimeBetRestartFile + "\n"
                     + "TimeBegin                " + appInputGADGET_PARAM.TimeBegin + "\n"
-                    + "TimeMax                " + appInputGADGET_PARAM.TimeMax + "\n"
+                    + "TimeMax                  " + appInputGADGET_PARAM.TimeMax + "\n"
                     + "BoxSize                  " + appInputGADGET_PARAM.BoxSize + "\n"
                     + "PeriodicBoundariesOn     " + appInputGADGET_PARAM.PeriodicBoundariesOn + "\n"
                     + "ComovingIntegrationOn    " + appInputGADGET_PARAM.ComovingIntegrationOn + "\n"
                     + "HubbleParam              " + appInputGADGET_PARAM.HubbleParam + "\n"
                     + "Omega0                   " + appInputGADGET_PARAM.Omega0 + "\n"
                     + "OmegaLambda              " + appInputGADGET_PARAM.OmegaLambda + "\n"
-                    + "OmegaBaryon              " + appInputGADGET_PARAM.OmegaBaryon + "\n";
-                  
+                    + "OmegaBaryon              " + appInputGADGET_PARAM.OmegaBaryon + "\n"
+                    + "BufferSize                5\n"
+                    + "PartAllocFactor           1.1\n"
+                    + "TreeAllocFactor           0.7\n" 
+                    + "TypeOfOpeningCriterion    0\n"
+                    + "ErrTolTheta               0.7\n"
+                    + "ErrTolForceAcc            0.005\n"
+                    + "MaxSizeTimestep           0.01\n"
+                    + "MinSizeTimestep           0\n"
+                    + "TypeOfTimestepCriterion   0\n"
+                    + "ErrTolIntAccuracy         0.025\n"
+                    + "TreeDomainUpdateFrequency 0.05\n"
+                    + "MaxRMSDisplacementFac     0.25\n"
+                    + "OutputListOn              0\n"
+                    + "OutputListFilename        output times.txt\n"
+                    + "TimeOfFirstSnapshot       0.047619048\n"
+                    + "TimeBetSnapshot           1.0627825\n"
+                    + "TimeBetStatistics         0.1\n"
+                    + "NumFilesWrittenInParallel 16\n"
+                    + "UnitVelocity_in_cm_per_s  1e5\n"
+                    + "UnitLength_in_cm          3.085678e21\n"
+                    + "UnitMass_in_g             1.989e43\n"
+                    + "GravityConstantInternal   0\n"
+                    + "DesNumNgb                 64\n"
+                    + "MaxNumNgbDeviation        2\n"
+                    + "ArtBulkViscCons           1.0\n"
+                    + "CourantFac                0.15\n"
+                    + "InitGasTemp               10000\n"
+                    + "MinGasTemp                20\n"
+                    + "MinGasHsmlFractional      0.1\n"
+                    + "SofteningGas              0\n"
+                    + "SofteningHalo             18\n"
+                    + "SofteningDisk             90\n"
+                    + "SofteningBulge            450\n"
+                    + "SofteningStars            0\n"
+                    + "SofteningBndry            0\n"
+                    + "SofteningGasMaxPhys       0\n"
+                    + "SofteningHaloMaxPhys      3\n"
+                    + "SofteningDiskMaxPhys      15\n"
+                    + "SofteningBulgeMaxPhys     75\n"
+                    + "SofteningStarsMaxPhys     0\n"
+                    + "SofteningBndryMaxPhys     0\n";
 
 
             // String inputSandbox=appServerPath+"WEB-INF/job/"+file;
@@ -1165,7 +1207,7 @@ public class GADGET_portlet extends GenericPortlet {
 
 
             // String inputSandbox=appServerPath+"WEB-INF/job/"+file;
-            File file = new File(appServerPath + "/WEB-INF/job/prova.makefile");
+            File file = new File(appServerPath + "/WEB-INF/job/gadget.makefile");
 
 
             // if file doesnt exists, then create it

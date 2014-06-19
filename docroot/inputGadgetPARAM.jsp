@@ -709,11 +709,18 @@
         }
         else{
             
-            gadgetIsValidate=true;
-            alert("Validate GADGET "+gadgetIsValidate);
+            gadgetParamIsValidate=true;
+            alert("Validate GADGET PARAM "+gadgetParamIsValidate);
         }
       
       
     }
+    function SubmitGadgetParam(){
+        if( gadgetParamIsValidate)
+            document.getElementById("form_gadget_param").submit();
+        else
+            
+        alert("Validate paremeters!! ");
+}
 
 </script>
