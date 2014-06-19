@@ -398,7 +398,7 @@ public class GADGET_portlet extends GenericPortlet {
                 String inputValue = request.getParameter("inputValue");
 
                 // request.setAttribute("inputValue", inputValue);
-                PortletRequestDispatcher dispatcher = getPortletContext().getRequestDispatcher("/inputGadget.jsp");
+                PortletRequestDispatcher dispatcher = getPortletContext().getRequestDispatcher("/inputGadgetMAKEFILE.jsp");
                 dispatcher.include(request, response);
             }
             break;
