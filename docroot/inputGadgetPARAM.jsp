@@ -335,7 +335,7 @@
 
                                     </td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelTimeMax"  >TimeMax * </label>
                                     </td>
@@ -448,10 +448,15 @@
         </tr>
     </table>
 </div>
+
+<div align="center"><input type="button" value="Submit" onClick="SubmitGadgetParam()"></div>
 </form>
 <script>
-function SetGADGETDemoParam(){
-    document.getElementById("OutputDir_ID").value="./";
+    
+    var gadgetParamIsValidate=false;
+    
+    function SetGADGETDemoParam(){
+        document.getElementById("OutputDir_ID").value="./";
         document.getElementById("labelOutputDir").style.color="black";
         
         document.getElementById("SnapshotFileBase_ID").value="snapshot";
@@ -528,9 +533,187 @@ function SetGADGETDemoParam(){
         document.getElementById("labelOmegaBaryon").style.color="black";
         
         
-}
+    }
 
-function ResetGADGETparam(){
-document.getElementById("form_gadget_param").reset();
-}
+    function ResetGADGETparam(){
+        document.getElementById("form_gadget_param").reset();
+    }
+    function ValidateGADGETparam(){
+        var  bool= true;
+    
+        if(document.getElementById("TimeMax_ID").value== null || document.getElementById("TimeMax_ID").value==""){
+            document.getElementById("TimeMax_ID").value="";
+            document.getElementById("labelTimeMax").style.color="red";
+            bool=false;
+            document.getElementById("TimeMax_ID").focus();       
+        }else{
+            document.getElementById("labelTimeMax").style.color="black";
+        }
+
+
+        if(document.getElementById("TimeBegin_ID").value== null || document.getElementById("TimeBegin_ID").value==""){
+            document.getElementById("TimeBegin_ID").value="";
+            document.getElementById("labelTimeBegin").style.color="red";
+            bool=false;
+            document.getElementById("TimeBegin_ID").focus();       
+        }else{
+            document.getElementById("labelTimeBegin").style.color="black";
+        }
+
+
+       
+        if(document.getElementById("CpuTimeBetRestartFile_ID").value== null || document.getElementById("CpuTimeBetRestartFile_ID").value==""){
+            document.getElementById("CpuTimeBetRestartFile_ID").value="";
+            document.getElementById("labelCpuTimeBetRestartFile").style.color="red";
+            bool=false;
+            document.getElementById("CpuTimeBetRestartFile_ID").focus();       
+        }else{
+            document.getElementById("labelCpuTimeBetRestartFile").style.color="black";
+        }
+
+
+        if(document.getElementById("ResubmitOn_ID").value== null || document.getElementById("ResubmitOn_ID").value==""){
+            document.getElementById("ResubmitOn_ID").value="";
+            document.getElementById("labelResubmitOn").style.color="red";
+            bool=false;
+            document.getElementById("ResubmitOn_ID").focus();       
+        }else{
+            document.getElementById("labelResubmitOn").style.color="black";
+        }
+          
+        if(document.getElementById("ResubmitCommand_ID").value== null || document.getElementById("ResubmitCommand_ID").value==""){
+            document.getElementById("ResubmitCommand_ID").value="";
+            document.getElementById("labelResubmitCommand").style.color="red";
+            bool=false;
+            document.getElementById("ResubmitCommand_ID").focus();       
+        }else{
+            document.getElementById("labelResubmitCommand").style.color="black";
+        }
+        
+        if(document.getElementById("TimeLimitCPU_ID").value== null || document.getElementById("TimeLimitCPU_ID").value==""){
+            document.getElementById("TimeLimitCPU_ID").value="";
+            document.getElementById("labelTimeLimitCPU").style.color="red";
+            bool=false;
+            document.getElementById("ResubmitCommand_ID").focus();       
+        }else{
+            document.getElementById("labelTimeLimitCPU").style.color="black";
+        }
+        
+        
+         
+        if(document.getElementById("EnergyFile_ID").value== null || document.getElementById("EnergyFile_ID").value==""){
+            document.getElementById("EnergyFile_ID").value="";
+            document.getElementById("labelEnergyFile").style.color="red";
+            bool=false;
+            document.getElementById("EnergyFile_ID").focus();       
+        }else{
+            document.getElementById("labelEnergyFile").style.color="black";
+        }
+
+
+
+        if(document.getElementById("CpuFile_ID").value== null || document.getElementById("CpuFile_ID").value==""){
+            document.getElementById("CpuFile_ID").value="";
+            document.getElementById("labelCpuFile").style.color="red";
+            bool=false;
+            document.getElementById("CpuFile_ID").focus();       
+        }else{
+            document.getElementById("labelCpuFile").style.color="black";
+        }
+        if(document.getElementById("TimingsFile_ID").value== null || document.getElementById("TimingsFile_ID").value==""){
+            document.getElementById("TimingsFile_ID").value="";
+            document.getElementById("labelTimingsFile").style.color="red";
+            bool=false;
+            document.getElementById("TimingsFile_ID").focus();       
+        }else{
+            document.getElementById("labelTimingsFile").style.color="black";
+        }
+        
+        if(document.getElementById("InfoFile_ID").value== null || document.getElementById("InfoFile_ID").value==""){
+            document.getElementById("InfoFile_ID").value="";
+            document.getElementById("labelInfoFile").style.color="red";
+            bool=false;
+            document.getElementById("InfoFile_ID").focus();       
+        }else{
+            document.getElementById("labelInfoFile").style.color="black";
+        }
+        
+        if(document.getElementById("NumFilesPerSnapshot_ID").value== null || document.getElementById("NumFilesPerSnapshot_ID").value==""){
+            document.getElementById("NumFilesPerSnapshot_ID").value="";
+            document.getElementById("labelNumFilesPerSnapshot").style.color="red";
+            bool=false;
+            document.getElementById("NumFilesPerSnapshot_ID").focus();       
+        }else{
+            document.getElementById("labelNumFilesPerSnapshot").style.color="black";
+        }
+        
+        if(document.getElementById("InfoFile_ID").value== null || document.getElementById("InfoFile_ID").value==""){
+            document.getElementById("InfoFile_ID").value="";
+            document.getElementById("labelInfoFile").style.color="red";
+            bool=false;
+            document.getElementById("InfoFile_ID").focus();       
+        }else{
+            document.getElementById("labelInfoFile").style.color="black";
+        }
+        
+        
+        if(document.getElementById("RestartFile_ID").value== null || document.getElementById("RestartFile_ID").value==""){
+            document.getElementById("RestartFile_ID").value="";
+            document.getElementById("labelRestartFile").style.color="red";
+            bool=false;
+            document.getElementById("RestartFile_ID").focus();       
+        }else{
+            document.getElementById("labelRestartFile").style.color="black";
+        }
+        
+        if(document.getElementById("NumFilesPerSnapshot_ID").value== null || document.getElementById("NumFilesPerSnapshot_ID").value==""){
+            document.getElementById("NumFilesPerSnapshot_ID").value="";
+            document.getElementById("labelNumFilesPerSnapshot").style.color="red";
+            bool=false;
+            document.getElementById("NumFilesPerSnapshot_ID").focus();       
+        }else{
+            document.getElementById("labelNumFilesPerSnapshot").style.color="black";
+        }
+        
+        if(document.getElementById("SnapFormat_ID").value== null || document.getElementById("SnapFormat_ID").value==""){
+            document.getElementById("SnapFormat_ID").value="";
+            document.getElementById("labelSnapFormat").style.color="red";
+            bool=false;
+            document.getElementById("SnapFormat_ID").focus();       
+        }else{
+            document.getElementById("labelSnapFormat").style.color="black";
+        }
+        
+        
+        if(document.getElementById("SnapshotFileBase_ID").value== null || document.getElementById("SnapshotFileBase_ID").value==""){
+            document.getElementById("SnapshotFileBase_ID").value="";
+            document.getElementById("labelSnapshotFileBase").style.color="red";
+            bool=false;
+            document.getElementById("SnapshotFileBase_ID").focus();       
+        }else{
+            document.getElementById("labelSnapshotFileBase").style.color="black";
+        }
+        
+        if(document.getElementById("OutputDir_ID").value== null || document.getElementById("OutputDir_ID").value==""){
+            document.getElementById("OutputDir_ID").value="";
+            document.getElementById("labelOutputDir").style.color="red";
+            bool=false;
+            document.getElementById("OutputDir_ID").focus();       
+        }else{
+            document.getElementById("labelOutputDir").style.color="black";
+        }
+        
+ 
+        if(bool==false){
+            alert("Oops ! \n Something went wrong with the input parameters. \n Please check the parameters highlighted in red");
+        }
+        else{
+            
+            gadgetIsValidate=true;
+            alert("Validate GADGET "+gadgetIsValidate);
+        }
+      
+      
+    }
+
 </script>

@@ -573,7 +573,7 @@
 
 
 
-                <div align="center"><input type="button" value="Submit" onClick="SubmitGadgetParam()"></div>
+                <div align="center"><input type="button" value="Submit" onClick="SubmitGadgetMAKEFILE()"></div>
                 </form>
 
                 <script>
@@ -849,7 +849,7 @@
                         
                         
                 
-                    function SubmitGadgetParam(){
+                    function SubmitGadgetMAKEFILE(){
                             getValues();
                         if( gadgetIsValidate)
                             document.getElementById("form_gadget").submit();
