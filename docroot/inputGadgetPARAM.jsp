@@ -335,6 +335,18 @@
 
                                     </td>
                                 </tr>
+                                 <tr>
+                                    <td id="td_left">   
+                                        <label class="gadget2_label" id="labelTimeMax"  >TimeMax * </label>
+                                    </td>
+                                    <td id="td_center">=</td>
+                                    <td id="td_right">
+
+                                        <input  type="text" name="TimeMax" id="TimeMax_ID" value=""> 
+
+
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td id="td_left">   
                                         <label class="gadget2_label" id="labelBoxSize"  >BoxSize </label>
@@ -438,6 +450,84 @@
 </div>
 </form>
 <script>
-
+function SetGADGETDemoParam(){
+    document.getElementById("OutputDir_ID").value="./";
+        document.getElementById("labelOutputDir").style.color="black";
+        
+        document.getElementById("SnapshotFileBase_ID").value="snapshot";
+        document.getElementById("labelSnapshotFileBase").style.color="black";
+        
+        
+        document.getElementById("SnapFormat_ID").value="1";
+        document.getElementById("labelSnapFormat").style.color="black";
+        
+        document.getElementById("NumFilesPerSnapshot_ID").value="2";
+        document.getElementById("labelNumFilesPerSnapshot").style.color="black";
+        
+        
+        document.getElementById("InitCondFile_ID").value="music.conf";
+        document.getElementById("labelInitCondFile").style.color="black";
+        
+        
+        document.getElementById("ICFormat_ID").value="1";
+        document.getElementById("labelICFormat").style.color="black";
+        
+        document.getElementById("RestartFile_ID").value="restart";
+        document.getElementById("labelRestartFile").style.color="black";
+        
+        document.getElementById("InfoFile_ID").value="info.txt";
+        document.getElementById("labelInfoFile").style.color="black";
+        
+        document.getElementById("TimingsFile_ID").value="timings.txt";
+        document.getElementById("labelTimingsFile").style.color="black";
+        
+        document.getElementById("CpuFile_ID").value="cpu.txt";
+        document.getElementById("labelCpuFile").style.color="black";
+        
+        document.getElementById("EnergyFile_ID").value="energy.txt";
+        document.getElementById("labelEnergyFile").style.color="black";
+        
+        document.getElementById("TimeLimitCPU_ID").value="40000.0";
+        document.getElementById("labelTimeLimitCPU").style.color="black";
+        
+        document.getElementById("ResubmitCommand_ID").value="xyz.sh";
+        document.getElementById("labelResubmitCommand").style.color="black";
+        
+        
+        document.getElementById("ResubmitOn_ID").value="0";
+        document.getElementById("labelResubmitOn").style.color="black";
+        
+        document.getElementById("CpuTimeBetRestartFile_ID").value="7200";
+        document.getElementById("labelCpuTimeBetRestartFile").style.color="black";
+        
+        document.getElementById("TimeBegin_ID").value="0";
+        document.getElementById("labelTimeBegin").style.color="black";
+        
+        document.getElementById("TimeMax_ID").value="3.0";
+        document.getElementById("labelTimeMax").style.color="black";
+        
+        document.getElementById("BoxSize_ID").value="10000.0";
+        document.getElementById("labelBoxSize").style.color="black";
+        
+        document.getElementById("PeriodicBoundariesOn_ID").value="1";
+        document.getElementById("labelPeriodicBoundariesOn").style.color="black";
+        
+        document.getElementById("ComovingIntegrationOn_ID").value="0";
+        document.getElementById("labelComovingIntegrationOn").style.color="black";
+        
+        document.getElementById("HubbleParam_ID").value="0.7";
+        document.getElementById("labelHubbleParam").style.color="black";
+        
+        document.getElementById("Omega0_ID").value="0.3";
+        document.getElementById("labelOmega0").style.color="black";
+        
+        document.getElementById("OmegaLambda_ID").value="0.7";
+        document.getElementById("labelOmegaLambda").style.color="black";
+        
+        document.getElementById("OmegaBaryon_ID").value="0";
+        document.getElementById("labelOmegaBaryon").style.color="black";
+        
+        
+}
 
 </script>

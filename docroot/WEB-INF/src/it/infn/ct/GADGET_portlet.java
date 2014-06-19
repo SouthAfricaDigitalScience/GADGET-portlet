@@ -199,6 +199,7 @@ public class GADGET_portlet extends GenericPortlet {
          String ResubmitOn;
          String CpuTimeBetRestartFile;
          String TimeBegin;
+         String TimeMax;
          String BoxSize;
          String PeriodicBoundariesOn;
          String ComovingIntegrationOn;        
@@ -209,7 +210,7 @@ public class GADGET_portlet extends GenericPortlet {
                  
                  
          public App_InputGADGET_PARAM() {
-             OutputDir=SnapshotFileBase=SnapFormat=NumFilesPerSnapshot=InitCondFile=ICFormat=RestartFile=InfoFile=TimingsFile=TimingsFile=CpuFile=EnergyFile=TimeLimitCPU=ResubmitCommand=ResubmitOn=CpuTimeBetRestartFile=TimeBegin=BoxSize=PeriodicBoundariesOn=ComovingIntegrationOn=HubbleParam=Omega0=OmegaLambda=OmegaBaryon="";
+             OutputDir=SnapshotFileBase=SnapFormat=NumFilesPerSnapshot=InitCondFile=ICFormat=RestartFile=InfoFile=TimingsFile=TimingsFile=CpuFile=EnergyFile=TimeLimitCPU=ResubmitCommand=ResubmitOn=CpuTimeBetRestartFile=TimeBegin=TimeMax=BoxSize=PeriodicBoundariesOn=ComovingIntegrationOn=HubbleParam=Omega0=OmegaLambda=OmegaBaryon="";
          }
      }
     
@@ -946,7 +947,8 @@ public class GADGET_portlet extends GenericPortlet {
          appInputGADGET_PARAM.ResubmitCommand=(String) request.getParameter("ResubmitCommand");             
          appInputGADGET_PARAM.ResubmitOn=(String) request.getParameter("ResubmitOn");      
          appInputGADGET_PARAM.CpuTimeBetRestartFile=(String) request.getParameter("CpuTimeBetRestartFile");      
-         appInputGADGET_PARAM.TimeBegin=(String) request.getParameter("TimeBegin");      
+         appInputGADGET_PARAM.TimeBegin=(String) request.getParameter("TimeBegin");
+         appInputGADGET_PARAM.TimeMax=(String) request.getParameter("TimeMax");      
          appInputGADGET_PARAM.BoxSize=(String) request.getParameter("BoxSize");      
          appInputGADGET_PARAM.PeriodicBoundariesOn=(String) request.getParameter("PeriodicBoundariesOn");      
          appInputGADGET_PARAM.ComovingIntegrationOn=(String) request.getParameter("ComovingIntegrationOn");              
@@ -983,6 +985,7 @@ public class GADGET_portlet extends GenericPortlet {
                     + "ResubmitOn               " + appInputGADGET_PARAM.ResubmitOn + "\n"
                     + "CpuTimeBetRestartFile    " + appInputGADGET_PARAM.CpuTimeBetRestartFile + "\n"
                     + "TimeBegin                " + appInputGADGET_PARAM.TimeBegin + "\n"
+                    + "TimeMax                " + appInputGADGET_PARAM.TimeMax + "\n"
                     + "BoxSize                  " + appInputGADGET_PARAM.BoxSize + "\n"
                     + "PeriodicBoundariesOn     " + appInputGADGET_PARAM.PeriodicBoundariesOn + "\n"
                     + "ComovingIntegrationOn    " + appInputGADGET_PARAM.ComovingIntegrationOn + "\n"
