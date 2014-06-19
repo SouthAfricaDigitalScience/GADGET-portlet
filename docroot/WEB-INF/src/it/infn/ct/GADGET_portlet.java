@@ -143,7 +143,7 @@ public class GADGET_portlet extends GenericPortlet {
         boolean PMGRID;
         String PLACEHIGHRESREGION;
         String ENLARGEREGION;
-        String ASMT;
+        String ASMTH;
         String RCUT;
         boolean DOUBLEPRECISION;
         boolean DOUBLEPRECISION_FFTW;
@@ -174,7 +174,7 @@ public class GADGET_portlet extends GenericPortlet {
         public App_InputGADGET() {
 
             PERIODIC = UNEQUALSOFTENINGS = PEANOHILBERT = WALLCLOCK = PMGRID = DOUBLEPRECISION = DOUBLEPRECISION_FFTW = SYNCHRONIZATION = FLEXSTEPS = PSEUDOSYMMETRIC = NOSTOP_WHEN_BELOW_MINTIMESTEP = NOPMSTEPADJUSTMENT = HAVE_HDF5 = OUTPUTPOTENTIAL = OUTPUTACCELERATION = OUTPUTCHANGEOFENTROPY = OUTPUTTIMESTEP = NOGRAVITY = NOTREERND = NOTYPEPREFIX_FFTW = LONG_XYZ = TWODIMS = SPH_BND_PARTICLES = NOVISCOSITYLIMITER = COMPUTE_POTENTIAL_ENERGY = LONGIDS = ISOTHERMAL = SELECTIVE_NO_GRAVITY = MAKEGLASS = false;
-            PLACEHIGHRESREGION = ENLARGEREGION = ASMT = RCUT = FORCETEST = "";
+            PLACEHIGHRESREGION = ENLARGEREGION = ASMTH = RCUT = FORCETEST = "";
 
         }
     }
@@ -569,7 +569,7 @@ public class GADGET_portlet extends GenericPortlet {
          */
         // We first have to do checks on the boolean variables and convert them
         // to booleans from strings
-        //System.out.println("V1 " + request.getParameter("PERIODIC") + " V2 " + request.getParameter("UNEQUALSOFTENINGS"));
+        System.out.println("V1 " + request.getParameter("PLACEHIGHRESREGION") + " V2 " + request.getParameter("ASMTH"));
         if (request.getParameter("PERIODIC") != null) {
             if (request.getParameter("PERIODIC").equals("true")) {
                 appInputGADGET.PERIODIC = true;
@@ -620,6 +620,8 @@ public class GADGET_portlet extends GenericPortlet {
         } else {
             appInputGADGET.PLACEHIGHRESREGION = "";
         }
+        
+        System.out.println("VAL " +appInputGADGET.PLACEHIGHRESREGION ); 
 
         if (request.getParameter("ENLARGEREGION") != null) {
             appInputGADGET.ENLARGEREGION = (String) request.getParameter("ENLARGEREGION");
@@ -627,10 +629,10 @@ public class GADGET_portlet extends GenericPortlet {
             appInputGADGET.ENLARGEREGION = "";
         }
 
-        if (request.getParameter("ASMT") != null) {
-            appInputGADGET.ASMT = (String) request.getParameter("ASMT");
+        if (request.getParameter("ASMTH") != null) {
+            appInputGADGET.ASMTH = (String) request.getParameter("ASMTH");
         } else {
-            appInputGADGET.ASMT = "";
+            appInputGADGET.ASMTH = "";
         }
 
         if ((String) request.getParameter("RCUT") != null) {
@@ -877,14 +879,20 @@ public class GADGET_portlet extends GenericPortlet {
             if (appInputGADGET.PMGRID) {
                 content += "OPT   +=  -DPMGRID\n";
             }
+            
+             if (appInputGADGET.PLACEHIGHRESREGION!="") {
+                content += "OPT   +=  -DPLACEHIGHRESREGION="+appInputGADGET.PLACEHIGHRESREGION+"\n";
+            }
+
+          
 
             if (appInputGADGET.ENLARGEREGION != "") {
                 content += "OPT   +=  -DENLARGEREGIO=" + appInputGADGET.ENLARGEREGION + "\n";
             }
 
 
-            if (appInputGADGET.ASMT != "") {
-                content += "OPT   +=  -DASMT=" + appInputGADGET.ASMT + "\n";
+            if (appInputGADGET.ASMTH != "") {
+                content += "OPT   +=  -DASMTH=" + appInputGADGET.ASMTH + "\n";
             }
 
             if (appInputGADGET.RCUT != "") {
@@ -1008,6 +1016,7 @@ public class GADGET_portlet extends GenericPortlet {
 
 
             System.out.println("MAKEFILE Done " + file.getAbsolutePath());
+             System.out.println(content);
 
 
         } catch (IOException e) {
