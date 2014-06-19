@@ -161,7 +161,7 @@
         <tr>
 
             <td>
-                <!-- <div id="gadget2_setup1">Click to add the setup value</div>-->
+                
                 <div id="gadget2_s">
                     <center>
                         <fieldset class="gadget2_fieldset" id="setup_fieldset">

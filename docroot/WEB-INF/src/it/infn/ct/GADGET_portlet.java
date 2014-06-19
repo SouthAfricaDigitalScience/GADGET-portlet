@@ -49,14 +49,16 @@ public class GADGET_portlet extends GenericPortlet {
 
         ACTION_INPUT // Called before to show the INPUT view
         , ACTION_SUBMIT_MUSIC // Called after the user press the submit button    
-        , ACTION_SUBMIT_GADGET
+        , ACTION_SUBMIT_GADGET_MAKEFILE
+        , ACTION_SUBMIT_GADGET_PARAM
     }
 
     private enum Views {
 
         VIEW_INPUT // View containing application input field
         , VIEW_SUBMIT_MUSIC // View reporting input value 
-        , VIEW_SUBMIT_GADGET, VIEW_NO_ACTION
+        , VIEW_SUBMIT_GADGET_MAKEFILE, VIEW_NO_ACTION
+        ,VIEW_SUBMIT_GADGET_PARAM
     }
 
     // The init values will be read form portlet.xml from <init-param> xml tag
@@ -179,6 +181,38 @@ public class GADGET_portlet extends GenericPortlet {
         }
     }
 
+     class App_InputGADGET_PARAM {
+     
+         String OutputDir;
+         String SnapshotFileBase;       
+         String SnapFormat;
+         String NumFilesPerSnapshot;
+         String InitCondFile;
+         String ICFormat;
+         String RestartFile;
+         String InfoFile;         
+         String TimingsFile;       
+         String CpuFile;
+         String EnergyFile;
+         String TimeLimitCPU;       
+         String ResubmitCommand;       
+         String ResubmitOn;
+         String CpuTimeBetRestartFile;
+         String TimeBegin;
+         String BoxSize;
+         String PeriodicBoundariesOn;
+         String ComovingIntegrationOn;        
+         String HubbleParam;
+         String Omega0;
+         String OmegaLambda;
+         String OmegaBaryon;
+                 
+                 
+         public App_InputGADGET_PARAM() {
+             OutputDir=SnapshotFileBase=SnapFormat=NumFilesPerSnapshot=InitCondFile=ICFormat=RestartFile=InfoFile=TimingsFile=TimingsFile=CpuFile=EnergyFile=TimeLimitCPU=ResubmitCommand=ResubmitOn=CpuTimeBetRestartFile=TimeBegin=BoxSize=PeriodicBoundariesOn=ComovingIntegrationOn=HubbleParam=Omega0=OmegaLambda=OmegaBaryon="";
+         }
+     }
+    
     class App_Preferences {
 
         String pref_value;
@@ -187,6 +221,9 @@ public class GADGET_portlet extends GenericPortlet {
             pref_value = "";
         }
     }
+    
+    
+    
     public App_Preferences appPreferences = new App_Preferences();
     // Liferay portlet data        
     PortletSession portletSession;  // PorteltSession
@@ -290,8 +327,8 @@ public class GADGET_portlet extends GenericPortlet {
                     //response.setRenderParameter("inputValue", "" + appInput.inputValue);
                     break;
 
-                case ACTION_SUBMIT_GADGET:
-                    System.out.println("Got action: 'ACTION_SUBMIT'");
+                case ACTION_SUBMIT_GADGET_MAKEFILE:
+                    System.out.println("Got action: 'ACTION_SUBMIT_GADGET_MAKEFILE'");
 
 
 
@@ -306,10 +343,31 @@ public class GADGET_portlet extends GenericPortlet {
                     createGADGET_MAKEFILE(appInputGADGET);
 
                     // Send the inputValue and assign the correct view                    
-                    response.setRenderParameter("PortletStatus", "" + Views.VIEW_SUBMIT_MUSIC);
+                    response.setRenderParameter("PortletStatus", "" + Views.VIEW_SUBMIT_GADGET_MAKEFILE);
 
                     //response.setRenderParameter("inputValue", "" + appInput.inputValue);
                     break;
+                     case ACTION_SUBMIT_GADGET_PARAM:
+                    System.out.println("Got action: 'ACTION_SUBMIT_GADGET_PARAM'");
+
+
+
+                    // Create the appInput object
+                    App_InputGADGET_PARAM appInputGADGET_PARAM = new App_InputGADGET_PARAM();
+
+
+
+                    // Process input field
+                    getInputFormGADGET_PARAM(request, appInputGADGET_PARAM);
+
+                    createGADGET_PARAM(appInputGADGET_PARAM);
+
+                    // Send the inputValue and assign the correct view                    
+                    response.setRenderParameter("PortletStatus", "" + Views.VIEW_INPUT);
+
+                    //response.setRenderParameter("inputValue", "" + appInput.inputValue);
+                    break;
+                    
                 default:
                     System.out.println("Unhandled action: '" + actionStatus + "'");
                     response.setRenderParameter("PortletStatus", "" + Views.VIEW_INPUT);
@@ -393,7 +451,7 @@ public class GADGET_portlet extends GenericPortlet {
             }
             break;
             case VIEW_SUBMIT_MUSIC: {
-                System.out.println("VIEW_SUBMIT Selected ...");
+                System.out.println("VIEW_SUBMIT_MUSIC Selected ...");
 
                 String inputValue = request.getParameter("inputValue");
 
@@ -402,6 +460,17 @@ public class GADGET_portlet extends GenericPortlet {
                 dispatcher.include(request, response);
             }
             break;
+            case VIEW_SUBMIT_GADGET_MAKEFILE: {
+                System.out.println("VIEW_SUBMIT_GADGET_MAKEFILE Selected ...");
+
+                String inputValue = request.getParameter("inputValue");
+
+                // request.setAttribute("inputValue", inputValue);
+                PortletRequestDispatcher dispatcher = getPortletContext().getRequestDispatcher("/inputGadgetPARAM.jsp");
+                dispatcher.include(request, response);
+            }
+            break;    
+                
             case VIEW_NO_ACTION: {
                 System.out.println("VIEW_NO_ACTION Selected ...");
                 PortletRequestDispatcher dispatcher = getPortletContext().getRequestDispatcher("/view_without_action.jsp");
@@ -565,7 +634,7 @@ public class GADGET_portlet extends GenericPortlet {
 
 
         /**
-         * ****** RETRIVE INPUT GADGET VALUES*******
+         * ****** RETRIVE INPUT GADGET VALUES FOR MAKEFILE*******
          */
         // We first have to do checks on the boolean variables and convert them
         // to booleans from strings
@@ -852,8 +921,100 @@ public class GADGET_portlet extends GenericPortlet {
 
 
 
-    } // getInputForm 
+    } // getInputGADGET
+    public void getInputFormGADGET_PARAM(ActionRequest request,App_InputGADGET_PARAM appInputGADGET_PARAM){
+            // Retrieve from the input form the given application values
 
+
+
+        /**
+         * ****** RETRIVE INPUT GADGET PARAM*******
+         */
+        
+         appInputGADGET_PARAM.OutputDir=(String) request.getParameter("OutputDir");
+         appInputGADGET_PARAM.SnapshotFileBase=(String) request.getParameter("SnapshotFileBase");      
+         appInputGADGET_PARAM.SnapFormat=(String) request.getParameter("SnapFormat");      
+         appInputGADGET_PARAM.NumFilesPerSnapshot=(String) request.getParameter("NumFilesPerSnapshot");      
+         appInputGADGET_PARAM.InitCondFile=(String) request.getParameter("InitCondFile");      
+         appInputGADGET_PARAM.ICFormat=(String) request.getParameter("ICFormat");      
+         appInputGADGET_PARAM.RestartFile=(String) request.getParameter("RestartFile");      
+         appInputGADGET_PARAM.InfoFile=(String) request.getParameter("InfoFile");      
+         appInputGADGET_PARAM.TimingsFile=(String) request.getParameter("TimingsFile");            
+         appInputGADGET_PARAM.CpuFile=(String) request.getParameter("CpuFile");      
+         appInputGADGET_PARAM.EnergyFile=(String) request.getParameter("EnergyFile");      
+         appInputGADGET_PARAM.TimeLimitCPU=(String) request.getParameter("TimeLimitCPU");             
+         appInputGADGET_PARAM.ResubmitCommand=(String) request.getParameter("ResubmitCommand");             
+         appInputGADGET_PARAM.ResubmitOn=(String) request.getParameter("ResubmitOn");      
+         appInputGADGET_PARAM.CpuTimeBetRestartFile=(String) request.getParameter("CpuTimeBetRestartFile");      
+         appInputGADGET_PARAM.TimeBegin=(String) request.getParameter("TimeBegin");      
+         appInputGADGET_PARAM.BoxSize=(String) request.getParameter("BoxSize");      
+         appInputGADGET_PARAM.PeriodicBoundariesOn=(String) request.getParameter("PeriodicBoundariesOn");      
+         appInputGADGET_PARAM.ComovingIntegrationOn=(String) request.getParameter("ComovingIntegrationOn");              
+         appInputGADGET_PARAM.HubbleParam=(String) request.getParameter("HubbleParam");      
+         appInputGADGET_PARAM.Omega0=(String) request.getParameter("Omega0");      
+         appInputGADGET_PARAM.OmegaLambda=(String) request.getParameter("OmegaLambda");      
+         appInputGADGET_PARAM.OmegaBaryon=(String) request.getParameter("OmegaBaryon");      
+        
+         
+        
+    }
+
+    public void createGADGET_PARAM(App_InputGADGET_PARAM appInputGADGET_PARAM){
+         try {
+
+            System.out.println("sono dentro param ");
+
+            String content = ""
+                    
+                    + "\n"
+                    + "OutputDir                " + appInputGADGET_PARAM.OutputDir + "\n"
+                    + "SnapshotFileBase         " + appInputGADGET_PARAM.SnapshotFileBase + "\n"
+                    + "SnapFormat               " + appInputGADGET_PARAM.SnapFormat + "\n"
+                    + "NumFilesPerSnapshot      " + appInputGADGET_PARAM.NumFilesPerSnapshot + "\n"
+                    + "InitCondFile             " + appInputGADGET_PARAM.InitCondFile + "\n"
+                    + "ICFormat                 " + appInputGADGET_PARAM.ICFormat + "\n"
+                    + "RestartFile              " + appInputGADGET_PARAM.RestartFile + "\n"
+                    + "InfoFile                 " + appInputGADGET_PARAM.InfoFile + "\n"
+                    + "TimingsFile              " + appInputGADGET_PARAM.TimingsFile + "\n"
+                    + "CpuFile                  " + appInputGADGET_PARAM.CpuFile + "\n"
+                    + "EnergyFile               " + appInputGADGET_PARAM.EnergyFile + "'\n"
+                    + "TimeLimitCPU             " + appInputGADGET_PARAM.TimeLimitCPU + "\n"
+                    + "ResubmitCommand          " + appInputGADGET_PARAM.ResubmitCommand + "\n"
+                    + "ResubmitOn               " + appInputGADGET_PARAM.ResubmitOn + "\n"
+                    + "CpuTimeBetRestartFile    " + appInputGADGET_PARAM.CpuTimeBetRestartFile + "\n"
+                    + "TimeBegin                " + appInputGADGET_PARAM.TimeBegin + "\n"
+                    + "BoxSize                  " + appInputGADGET_PARAM.BoxSize + "\n"
+                    + "PeriodicBoundariesOn     " + appInputGADGET_PARAM.PeriodicBoundariesOn + "\n"
+                    + "ComovingIntegrationOn    " + appInputGADGET_PARAM.ComovingIntegrationOn + "\n"
+                    + "HubbleParam              " + appInputGADGET_PARAM.HubbleParam + "\n"
+                    + "Omega0                   " + appInputGADGET_PARAM.Omega0 + "\n"
+                    + "OmegaLambda              " + appInputGADGET_PARAM.OmegaLambda + "\n"
+                    + "OmegaBaryon              " + appInputGADGET_PARAM.OmegaBaryon + "\n";
+                  
+
+
+            // String inputSandbox=appServerPath+"WEB-INF/job/"+file;
+            File file = new File(appServerPath + "/WEB-INF/job/gadget.param");
+
+
+            // if file doesnt exists, then create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(content);
+            bw.close();
+
+            System.out.println(content);
+            System.out.println("param file done " + file.getAbsolutePath());
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void createGADGET_MAKEFILE(App_InputGADGET appInputGADGET) {
 
 
@@ -1025,16 +1186,6 @@ public class GADGET_portlet extends GenericPortlet {
     }
 
     public void createMUSICconfigFile(App_Input appInput) {
-
-
-//        String inputSandbox=appServerPath+"WEB-INF/job/"        //
-//                               +appPreferences.getPilotScript()     // pilot script
-//                               +","+appInput.inputSandbox_inputFile // input file
-//                               ;
-
-
-
-
         try {
 
             System.out.println("sono dentro createMUSICconf ");

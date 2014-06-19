@@ -1,4 +1,3 @@
-
 .gadget2_textbox{
 width: 80px;  
 float: right;
@@ -8,24 +7,19 @@ float: right;
     width: 100px;
 }
 
-#gadget2_legend{
-    font: bold;
-    
-}
+
 
 .gadget2_label{
 
  float: left;
+ font: bold;
 }
 
 #labelEquals{
     float: center; 
 }
 
-/*.tabel{
-    border-spacing: 10;
-    border-collapse:collapse;
-}*/
+
 
 #td_left{
     padding-right: 10px;

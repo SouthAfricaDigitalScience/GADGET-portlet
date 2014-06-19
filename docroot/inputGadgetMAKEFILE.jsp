@@ -126,7 +126,7 @@
 -->
 
 <script src="<%=renderRequest.getContextPath()%>/js/jquery-1.3.2.min.js" type="text/javascript"></script>
-<form id="form_gadget" action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT_GADGET"/></portlet:actionURL>" method="post">
+<form id="form_gadget" action="<portlet:actionURL portletMode="view"><portlet:param name="PortletStatus" value="ACTION_SUBMIT_GADGET_MAKEFILE"/></portlet:actionURL>" method="post">
 
 
 
@@ -140,7 +140,7 @@
                     <center>
                         <fieldset class="gadget2_fieldset" >
 
-                            <legend class="gadget2_legend"> GADGET VALUES </legend>
+                            <legend class="gadget2_legend"> GADGET MAKEFILE </legend>
                             <table>
                                 <tr>
                                     <td id="td_left">   
