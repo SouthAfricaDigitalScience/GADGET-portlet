@@ -767,382 +767,208 @@
                 
                     
                     
-                        function ResetGADGETValues(){
+                    function ResetGADGETValues(){
         
               
                          
                        
-                            document.getElementById("PERIODIC_ID").checked=false;                            
+                        document.getElementById("PERIODIC_ID").checked=false;                            
                             
-                            document.getElementById("UNEQUALSOFTENINGS_ID").checked=false;
+                        document.getElementById("UNEQUALSOFTENINGS_ID").checked=false;
                     
                             
-                            document.getElementById("PEANOHILBERT_ID").checked=false;
+                        document.getElementById("PEANOHILBERT_ID").checked=false;
                     
                        
-                            document.getElementById("WALLCLOCK_ID").checked=false;
+                        document.getElementById("WALLCLOCK_ID").checked=false;
                     
                       
-                            document.getElementById("PMGRID_ID").checked=false;
+                        document.getElementById("PMGRID_ID").checked=false;
                     
         
-                            document.getElementById("PLACEHIGHRESREGIONID").value="";
+                        document.getElementById("PLACEHIGHRESREGIONID").value="";
                             
-                            document.getElementById("ENLARGEREGIONID").value="";
+                        document.getElementById("ENLARGEREGIONID").value="";
                             
-                            document.getElementById("ASMTHID").value="";
+                        document.getElementById("ASMTHID").value="";
                              
-                            document.getElementById("RCUTID").value="";
+                        document.getElementById("RCUTID").value="";
                             
                            
                       
-                            document.getElementById("DOUBLEPRECISION_ID").checked=false;
+                        document.getElementById("DOUBLEPRECISION_ID").checked=false;
                     
         
                       
-                            document.getElementById("DOUBLEPRECISION_FFTW_ID").checked=false;
+                        document.getElementById("DOUBLEPRECISION_FFTW_ID").checked=false;
                     
         
                       
                       
-                            document.getElementById("SYNCHRONIZATION_ID").checked=false;
+                        document.getElementById("SYNCHRONIZATION_ID").checked=false;
                             
                       
                               
-                            document.getElementById("FLEXSTEPS_ID").checked=false;
+                        document.getElementById("FLEXSTEPS_ID").checked=false;
                     
                          
-                            document.getElementById("PSEUDOSYMMETRIC_ID").checked=false;
+                        document.getElementById("PSEUDOSYMMETRIC_ID").checked=false;
                     
                         
-                            document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").checked=false;
+                        document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").checked=false;
                     
                         
-                            document.getElementById("NOPMSTEPADJUSTMENT_ID").checked=false;
+                        document.getElementById("NOPMSTEPADJUSTMENT_ID").checked=false;
                     
                         
-                            document.getElementById("HAVE_HDF5_ID").checked=false;
+                        document.getElementById("HAVE_HDF5_ID").checked=false;
                     
                       
                         
-                            document.getElementById("OUTPUTPOTENTIAL_ID").checked=false;
+                        document.getElementById("OUTPUTPOTENTIAL_ID").checked=false;
                     
                         
-                            document.getElementById("OUTPUTACCELERATION_ID").checked=false;
+                        document.getElementById("OUTPUTACCELERATION_ID").checked=false;
                     
                         
-                            document.getElementById("OUTPUTCHANGEOFENTROPY_ID").checked=false;
+                        document.getElementById("OUTPUTCHANGEOFENTROPY_ID").checked=false;
                     
                         
-                            document.getElementById("OUTPUTTIMESTEP_ID").checked=false;
+                        document.getElementById("OUTPUTTIMESTEP_ID").checked=false;
                     
                         
-                            document.getElementById("NOGRAVITY_ID").checked=false;
+                        document.getElementById("NOGRAVITY_ID").checked=false;
                     
                       
                       
                               
-                            document.getElementById("NOTREERND_ID").checked=false;
+                        document.getElementById("NOTREERND_ID").checked=false;
                     
                         
-                            document.getElementById("NOTYPEPREFIX_FFTW_ID").checked=false;
+                        document.getElementById("NOTYPEPREFIX_FFTW_ID").checked=false;
                     
                         
-                            document.getElementById("LONG_XYZ_ID").checked=false;
+                        document.getElementById("LONG_XYZ_ID").checked=false;
                     
                         
-                            document.getElementById("TWODIMS_ID").checked=false;
+                        document.getElementById("TWODIMS_ID").checked=false;
                     
                         
-                            document.getElementById("SPH_BND_PARTICLES_ID").checked=false;
+                        document.getElementById("SPH_BND_PARTICLES_ID").checked=false;
                     
                         
                     
-                            document.getElementById("NOVISCOSITYLIMITER_ID").checked=false;
+                        document.getElementById("NOVISCOSITYLIMITER_ID").checked=false;
                         
-                            document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").checked=false;
+                        document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").checked=false;
                     
                         
-                            document.getElementById("LONGIDS_ID").checked=false;
+                        document.getElementById("LONGIDS_ID").checked=false;
                     
                         
-                            document.getElementById("ISOTHERMAL_ID").checked=false;
+                        document.getElementById("ISOTHERMAL_ID").checked=false;
                     
                         
-                            document.getElementById("SELECTIVE_NO_GRAVITY_ID").checked=false;
+                        document.getElementById("SELECTIVE_NO_GRAVITY_ID").checked=false;
                     
                         
-                            document.getElementById("FORCETESTID").value="";
+                        document.getElementById("FORCETESTID").value="";
                        
-                            document.getElementById("MAKEGLASS_ID").checked=false;
+                        document.getElementById("MAKEGLASS_ID").checked=false;
             
-                        }                
-                        function ValidateGADGETValues(){
+                    }                
+                    function ValidateGADGETValues(){
                           
                          
                          
                          
-                            var  bool= true; //bool
+                        var  bool= true; //bool
 
         
-                            if( document.getElementById("HAVE_HDF5_ID").checked==false) {
-                                document.getElementById("labelHAVE_HDF5").style.color="red";
-                                bool=false;
-                                document.getElementById("HAVE_HDF5_ID").focus();
-                            }
-                            else{
-                                document.getElementById("labelHAVE_HDF5").style.color="black";
-            
-                            }
-        
-                            if( document.getElementById("FLEXSTEPS_ID").checked== false ){
-                                document.getElementById("labelFLEXSTEPS").style.color="red";
-                                bool=false;
-                                document.getElementById("FLEXSTEPS_ID").focus();
-                            }
-                            else{
-                                document.getElementById("labelFLEXSTEPS").style.color="black";
-            
-                            }
-                        
-                        
-                            if( document.getElementById("DOUBLEPRECISION_ID").checked== false){
-                                document.getElementById("labelDOUBLEPRECISION").style.color="red";
-                                bool=false;
-                                document.getElementById("DOUBLEPRECISION_ID").focus();
-                            }
-                            else{
-                                document.getElementById("labelDOUBLEPRECISION").style.color="black";
-            
-                            }
-                        
-                            if( document.getElementById("DOUBLEPRECISION_FFTW_ID").checked== false){
-                                document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="red";
-                                bool=false;
-                                document.getElementById("DOUBLEPRECISION_FFTW_ID").focus();
-                            }
-                            else{
-                                document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="black";
-            
-                            }
-                            if( document.getElementById("PMGRID_ID").checked== false){
-                                document.getElementById("labelPMGRID").style.color="red";
-                                bool=false;
-                                document.getElementById("PMGRID_ID").focus();
-                            }
-                            else{
-                                document.getElementById("labelPMGRID").style.color="black";
-            
-                            }
-                            if(document.getElementById("PERIODIC_ID").checked==false){
-                                document.getElementById("labelPERIODIC").style.color="red";
-                                bool=false;
-                                document.getElementById("PERIODIC_ID").focus();
-                            }
-                            else{
-                            
-                                document.getElementById("labelPERIODIC").style.color="black";
-            
-                            }
-        
-            
-                            if(bool==false){
-                                alert("Oops ! \n Something went wrong with the input parameters. \n Please check the parameters highlighted in red");
-                            }
-                            else{
-            
-                                gadgetIsValidate=true;
-                                alert("Validate GADGET "+gadgetIsValidate);
-                            }
+                        if( document.getElementById("HAVE_HDF5_ID").checked==false) {
+                            document.getElementById("labelHAVE_HDF5").style.color="red";
+                            bool=false;
+                            document.getElementById("HAVE_HDF5_ID").focus();
                         }
-    
-                        function SubmitGadgetParam(){
-                            if(document.getElementById("PERIODIC_ID").checked==false)
-                                document.getElementById("PERIODIC_ID").value="false";
-                            else
-                                document.getElementById("PERIODIC_ID").value="true";
-     
-                            if(document.getElementById("UNEQUALSOFTENINGS_ID").checked==false)
-                                document.getElementById("UNEQUALSOFTENINGS_ID").value="false";
-                            else
-                                document.getElementById("UNEQUALSOFTENINGS_ID").value="true";
-                    
-                    
-                    
-                            alert("V1= "+document.getElementById("PERIODIC_ID").checked+" v2= "+ document.getElementById("UNEQUALSOFTENINGS_ID").checked);
-                            alert("V1= "+document.getElementById("PERIODIC_ID").value+" v2= "+ document.getElementById("UNEQUALSOFTENINGS_ID").value);
-                    
-                            if(document.getElementById("PEANOHILBERT_ID").checked==false)
-                                document.getElementById("PEANOHILBERT_ID").value="false";
-                            else
-                                document.getElementById("PEANOHILBERT_ID").value="true";
+                        else{
+                            document.getElementById("labelHAVE_HDF5").style.color="black";
+            
+                        }
+        
+                        if( document.getElementById("FLEXSTEPS_ID").checked== false ){
+                            document.getElementById("labelFLEXSTEPS").style.color="red";
+                            bool=false;
+                            document.getElementById("FLEXSTEPS_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelFLEXSTEPS").style.color="black";
+            
+                        }
+                        
+                        
+                        if( document.getElementById("DOUBLEPRECISION_ID").checked== false){
+                            document.getElementById("labelDOUBLEPRECISION").style.color="red";
+                            bool=false;
+                            document.getElementById("DOUBLEPRECISION_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelDOUBLEPRECISION").style.color="black";
+            
+                        }
+                        
+                        if( document.getElementById("DOUBLEPRECISION_FFTW_ID").checked== false){
+                            document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="red";
+                            bool=false;
+                            document.getElementById("DOUBLEPRECISION_FFTW_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelDOUBLEPRECISION_FFTW").style.color="black";
+            
+                        }
+                        if( document.getElementById("PMGRID_ID").checked== false){
+                            document.getElementById("labelPMGRID").style.color="red";
+                            bool=false;
+                            document.getElementById("PMGRID_ID").focus();
+                        }
+                        else{
+                            document.getElementById("labelPMGRID").style.color="black";
+            
+                        }
+                        if(document.getElementById("PERIODIC_ID").checked==false){
+                            document.getElementById("labelPERIODIC").style.color="red";
+                            bool=false;
+                            document.getElementById("PERIODIC_ID").focus();
+                        }
+                        else{
+                            
+                            document.getElementById("labelPERIODIC").style.color="black";
+            
+                        }
+        
+            
+                        if(bool==false){
+                            alert("Oops ! \n Something went wrong with the input parameters. \n Please check the parameters highlighted in red");
+                        }
+                        else{
+            
+                            gadgetIsValidate=true;
+                            alert("Validate GADGET "+gadgetIsValidate);
+                        }
+                    }
                         
                         
                 
-                            if(document.getElementById("WALLCLOCK_ID").checked==false)
-                                document.getElementById("WALLCLOCK_ID").value="false";
-                            else
-                                document.getElementById("WALLCLOCK_ID").value="true";        
-                   
-                            if(document.getElementById("PMGRID_ID").checked==false)
-                                document.getElementById("PMGRID_ID").value="false";
-                            else
-                                document.getElementById("PMGRID_ID").value="true";  
-                    
-                    
-                            if(document.getElementById("DOUBLEPRECISION_ID").checked==false)
-                                document.getElementById("DOUBLEPRECISION_ID").value="false";
-                            else
-                                document.getElementById("DOUBLEPRECISION_ID").value="true"; 
-                    
-                            if(document.getElementById("DOUBLEPRECISION_FFTW_ID").checked==false)
-                                document.getElementById("DOUBLEPRECISION_FFTW_ID").value="false";
-                            else
-                                document.getElementById("DOUBLEPRECISION_FFTW_ID").value="true";   
+                    function SubmitGadgetParam(){
                             
-                           
-                            if(document.getElementById("SYNCHRONIZATION_ID").checked==false)
-                                document.getElementById("SYNCHRONIZATION_ID").value="false";
-                            else
-                                document.getElementById("SYNCHRONIZATION_ID").value="true";   
-                             
-                            if(document.getElementById("FLEXSTEPS_ID").checked==false)
-                                document.getElementById("FLEXSTEPS_ID").value="false";
-                            else
-                                document.getElementById("FLEXSTEPS_ID").value="true";     
-        
-                      
-                            if(document.getElementById("PSEUDOSYMMETRIC_ID").checked==false)
-                                document.getElementById("PSEUDOSYMMETRIC_ID").value="false";
-                            else
-                                document.getElementById("PSEUDOSYMMETRIC_ID").value="true";  
-                   
-                            
-                            if(document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").checked==false)
-                                document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").value="false";
-                            else
-                                document.getElementById("NOSTOP_WHEN_BELOW_MINTIMESTEP_ID").value="true";  
-                      
-                              
-                            if(document.getElementById("NOPMSTEPADJUSTMENT_ID").checked==false)
-                                document.getElementById("NOPMSTEPADJUSTMENT_ID").value="false";
-                            else
-                                document.getElementById("NOPMSTEPADJUSTMENT_ID").value="true";      
-                    
-                         
-                        
-                            if(document.getElementById("HAVE_HDF5_ID").checked==false)
-                                document.getElementById("HAVE_HDF5_ID").value="false";
-                            else
-                                document.getElementById("HAVE_HDF5_ID").value="true";   
-                        
-                     
-                    
-                            if(document.getElementById("OUTPUTPOTENTIAL_ID").checked==false)
-                                document.getElementById("OUTPUTPOTENTIAL_ID").value="false";
-                            else
-                                document.getElementById("OUTPUTPOTENTIAL_ID").value="true";   
-                        
-                        
-                    
-                    
-                            if(document.getElementById("OUTPUTACCELERATION_ID").checked==false)
-                                document.getElementById("OUTPUTACCELERATION_ID").value="false";
-                            else
-                                document.getElementById("OUTPUTACCELERATION_ID").value="true"; 
-                        
-                        
-                            if(document.getElementById("OUTPUTCHANGEOFENTROPY_ID").checked==false)
-                                document.getElementById("OUTPUTCHANGEOFENTROPY_ID").value="false";
-                            else
-                                document.getElementById("OUTPUTCHANGEOFENTROPY_ID").value="true";      
-                      
-                        
-                        
-                            if(document.getElementById("OUTPUTTIMESTEP_ID").checked==false)
-                                document.getElementById("OUTPUTTIMESTEP_ID").value="false";
-                            else
-                                document.getElementById("OUTPUTTIMESTEP_ID").value="true";   
-                        
-                            if(document.getElementById("NOGRAVITY_ID").checked==false)
-                                document.getElementById("NOGRAVITY_ID").value="false";
-                            else
-                                document.getElementById("NOGRAVITY_ID").value="true"; 
-                    
-                        
-                            if(document.getElementById("NOTREERND_ID").checked==false)
-                                document.getElementById("NOTREERND_ID").value="false";
-                            else
-                                document.getElementById("NOTREERND_ID").value="true"; 
-                    
-                            if(document.getElementById("NOTYPEPREFIX_FFTW_ID").checked==false)
-                                document.getElementById("NOTYPEPREFIX_FFTW_ID").value="false";
-                            else
-                                document.getElementById("NOTYPEPREFIX_FFTW_ID").value="true"; 
-                        
-                    
-                            if(document.getElementById("LONG_XYZ_ID").checked==false)
-                                document.getElementById("LONG_XYZ_ID").value="false";
-                            else
-                                document.getElementById("LONG_XYZ_ID").value="true"; 
-                        
-                            if(document.getElementById("TWODIMS_ID").checked==false)
-                                document.getElementById("TWODIMS_ID").value="false";
-                            else
-                                document.getElementById("TWODIMS_ID").value="true"; 
-                        
-                    
-                            if(document.getElementById("SPH_BND_PARTICLES_ID").checked==false)
-                                document.getElementById("SPH_BND_PARTICLES_ID").value="false";
-                            else
-                                document.getElementById("SPH_BND_PARTICLES_ID").value="true"; 
-                        
-                      
-                            if(document.getElementById("NOVISCOSITYLIMITER_ID").checked==false)
-                                document.getElementById("NOVISCOSITYLIMITER_ID").value="false";
-                            else
-                                document.getElementById("NOVISCOSITYLIMITER_ID").value="true"; 
-                              
-                        
-                            if(document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").checked==false)
-                                document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").value="false";
-                            else
-                                document.getElementById("COMPUTE_POTENTIAL_ENERGY_ID").value="true"; 
-                        
-                        
-                       
-                            if(document.getElementById("LONGIDS_ID").checked==false)
-                                document.getElementById("LONGIDS_ID").value="false";
-                            else
-                                document.getElementById("LONGIDS_ID").value="true"; 
-                        
-                     
-                            if(document.getElementById("ISOTHERMAL_ID").checked==false)
-                                document.getElementById("ISOTHERMAL_ID").value="false";
-                            else
-                                document.getElementById("ISOTHERMAL_ID").value="true"; 
-                        
-                    
-                            if(document.getElementById("SELECTIVE_NO_GRAVITY_ID").checked==false)
-                                document.getElementById("SELECTIVE_NO_GRAVITY_ID").value="false";
-                            else
-                                document.getElementById("SELECTIVE_NO_GRAVITY_ID").value="true";   
-                        
-                    
-                        
-                            if(document.getElementById("MAKEGLASS_ID").checked==false)
-                                document.getElementById("MAKEGLASS_ID").value="false";
-                            else
-                                document.getElementById("MAKEGLASS_ID").value="true";
-                    
-                        
-                        
-                    
-     
-     
-         
+                        if( gadgetIsValidate)
                             document.getElementById("form_gadget").submit();
-                        }
+                        else
+            
+                        alert("Validate paremeters!! ");
+          
+            
+            
+                }
                           
                        
                          

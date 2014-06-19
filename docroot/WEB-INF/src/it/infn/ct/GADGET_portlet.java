@@ -31,7 +31,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.portlet.*;
-import javax.swing.JCheckBox;
 
 public class GADGET_portlet extends GenericPortlet {
 
@@ -174,8 +173,8 @@ public class GADGET_portlet extends GenericPortlet {
 
         public App_InputGADGET() {
 
-            PERIODIC = UNEQUALSOFTENINGS = PEANOHILBERT = WALLCLOCK = PMGRID = DOUBLEPRECISION = DOUBLEPRECISION_FFTW = SYNCHRONIZATION = FLEXSTEPS = PSEUDOSYMMETRIC = NOSTOP_WHEN_BELOW_MINTIMESTEP = NOPMSTEPADJUSTMENT = HAVE_HDF5 = OUTPUTPOTENTIAL = OUTPUTACCELERATION = OUTPUTCHANGEOFENTROPY = OUTPUTTIMESTEP = NOGRAVITY = NOTREERND = NOTYPEPREFIX_FFTW = LONG_XYZ = TWODIMS = SPH_BND_PARTICLES = NOVISCOSITYLIMITER = COMPUTE_POTENTIAL_ENERGY = LONGIDS = ISOTHERMAL = SELECTIVE_NO_GRAVITY  = MAKEGLASS = false;
-            PLACEHIGHRESREGION = ENLARGEREGION = ASMT = RCUT = FORCETEST="";
+            PERIODIC = UNEQUALSOFTENINGS = PEANOHILBERT = WALLCLOCK = PMGRID = DOUBLEPRECISION = DOUBLEPRECISION_FFTW = SYNCHRONIZATION = FLEXSTEPS = PSEUDOSYMMETRIC = NOSTOP_WHEN_BELOW_MINTIMESTEP = NOPMSTEPADJUSTMENT = HAVE_HDF5 = OUTPUTPOTENTIAL = OUTPUTACCELERATION = OUTPUTCHANGEOFENTROPY = OUTPUTTIMESTEP = NOGRAVITY = NOTREERND = NOTYPEPREFIX_FFTW = LONG_XYZ = TWODIMS = SPH_BND_PARTICLES = NOVISCOSITYLIMITER = COMPUTE_POTENTIAL_ENERGY = LONGIDS = ISOTHERMAL = SELECTIVE_NO_GRAVITY = MAKEGLASS = false;
+            PLACEHIGHRESREGION = ENLARGEREGION = ASMT = RCUT = FORCETEST = "";
 
         }
     }
@@ -304,7 +303,7 @@ public class GADGET_portlet extends GenericPortlet {
                     // Process input field
                     getInputFormGADGET(request, appInputGADGET);
 
-
+                    createGADGET_MAKEFILE(appInputGADGET);
 
                     // Send the inputValue and assign the correct view                    
                     response.setRenderParameter("PortletStatus", "" + Views.VIEW_SUBMIT_MUSIC);
@@ -571,65 +570,88 @@ public class GADGET_portlet extends GenericPortlet {
         // We first have to do checks on the boolean variables and convert them
         // to booleans from strings
         //System.out.println("V1 " + request.getParameter("PERIODIC") + " V2 " + request.getParameter("UNEQUALSOFTENINGS"));
-
-        
-        if (request.getParameter("PERIODIC")!=null) {
-        if (request.getParameter("PERIODIC").equals("true")) 
-            appInputGADGET.PERIODIC = true;
+        if (request.getParameter("PERIODIC") != null) {
+            if (request.getParameter("PERIODIC").equals("true")) {
+                appInputGADGET.PERIODIC = true;
+            }
         } else {
             appInputGADGET.PERIODIC = false;
         }
 
 
         if (request.getParameter("UNEQUALSOFTENINGS") != null) {
-            if (request.getParameter("UNEQUALSOFTENINGS").equals("true")) 
+            if (request.getParameter("UNEQUALSOFTENINGS").equals("true")) {
                 appInputGADGET.UNEQUALSOFTENINGS = true;
-            
+            }
+
         } else {
             appInputGADGET.UNEQUALSOFTENINGS = false;
         }
 
-        if (request.getParameter("PEANOHILBERT")!=null) {
-            if (request.getParameter("PEANOHILBERT").equals("true")) 
+        if (request.getParameter("PEANOHILBERT") != null) {
+            if (request.getParameter("PEANOHILBERT").equals("true")) {
                 appInputGADGET.PEANOHILBERT = true;
-            
+            }
+
         } else {
             appInputGADGET.PEANOHILBERT = false;
         }
-        
-        
-        if (request.getParameter("WALLCLOCK")!=null){
-        if (request.getParameter("WALLCLOCK").equals("true")) 
-            appInputGADGET.WALLCLOCK = true;
+
+
+        if (request.getParameter("WALLCLOCK") != null) {
+            if (request.getParameter("WALLCLOCK").equals("true")) {
+                appInputGADGET.WALLCLOCK = true;
+            }
         } else {
             appInputGADGET.WALLCLOCK = false;
         }
-        
-        
-        if (request.getParameter("PMGRID")!=null){
-        if (request.getParameter("PMGRID").equals("true")) 
-            appInputGADGET.PMGRID = true;
+
+
+        if (request.getParameter("PMGRID") != null) {
+            if (request.getParameter("PMGRID").equals("true")) {
+                appInputGADGET.PMGRID = true;
+            }
         } else {
             appInputGADGET.PMGRID = false;
         }
 
-        appInputGADGET.PLACEHIGHRESREGION = (String) request.getParameter("PLACEHIGHRESREGION");
+        if (request.getParameter("PLACEHIGHRESREGION") != null) {
+            appInputGADGET.PLACEHIGHRESREGION = (String) request.getParameter("PLACEHIGHRESREGION");
+        } else {
+            appInputGADGET.PLACEHIGHRESREGION = "";
+        }
 
-        appInputGADGET.ENLARGEREGION = (String) request.getParameter("ENLARGEREGION");
-        appInputGADGET.ASMT = (String) request.getParameter("ASMT");
-        appInputGADGET.RCUT = (String) request.getParameter("RCUT");
-        
+        if (request.getParameter("ENLARGEREGION") != null) {
+            appInputGADGET.ENLARGEREGION = (String) request.getParameter("ENLARGEREGION");
+        } else {
+            appInputGADGET.ENLARGEREGION = "";
+        }
 
-        if (request.getParameter("DOUBLEPRECISION")!=null){
-        if (request.getParameter("DOUBLEPRECISION").equals("true")) 
-            appInputGADGET.DOUBLEPRECISION = true;
+        if (request.getParameter("ASMT") != null) {
+            appInputGADGET.ASMT = (String) request.getParameter("ASMT");
+        } else {
+            appInputGADGET.ASMT = "";
+        }
+
+        if ((String) request.getParameter("RCUT") != null) {
+            appInputGADGET.RCUT = (String) request.getParameter("RCUT");
+        } else {
+            appInputGADGET.RCUT = "";
+        }
+
+
+        if (request.getParameter("DOUBLEPRECISION") != null) {
+            if (request.getParameter("DOUBLEPRECISION").equals("true")) {
+                appInputGADGET.DOUBLEPRECISION = true;
+            }
         } else {
             appInputGADGET.DOUBLEPRECISION = false;
         }
-        
-        if (request.getParameter("DOUBLEPRECISION_FFTW")!=null){
-        if (request.getParameter("DOUBLEPRECISION_FFTW").equals("true")) 
-            appInputGADGET.DOUBLEPRECISION_FFTW = true;
+
+        if (request.getParameter("DOUBLEPRECISION_FFTW") != null) {
+            if (request.getParameter("DOUBLEPRECISION_FFTW").equals("true")) {
+                appInputGADGET.DOUBLEPRECISION_FFTW = true;
+            }
         } else {
             appInputGADGET.DOUBLEPRECISION_FFTW = false;
         }
@@ -644,163 +666,183 @@ public class GADGET_portlet extends GenericPortlet {
         }
 
         if (request.getParameter("FLEXSTEPS") != null) {
-            if (request.getParameter("FLEXSTEPS").equals("true")) 
+            if (request.getParameter("FLEXSTEPS").equals("true")) {
                 appInputGADGET.FLEXSTEPS = true;
-            
+            }
+
         } else {
             appInputGADGET.FLEXSTEPS = false;
         }
         if (request.getParameter("PSEUDOSYMMETRIC") != null) {
-            if (request.getParameter("PSEUDOSYMMETRIC").equals("true")) 
+            if (request.getParameter("PSEUDOSYMMETRIC").equals("true")) {
                 appInputGADGET.PSEUDOSYMMETRIC = true;
-            
+            }
+
         } else {
             appInputGADGET.PSEUDOSYMMETRIC = false;
         }
-        
-        
-        
-        if (request.getParameter("NOSTOP_WHEN_BELOW_MINTIMESTEP")!=null){
-        if (request.getParameter("NOSTOP_WHEN_BELOW_MINTIMESTEP").equals("true")) 
-            appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = true;
+
+
+
+        if (request.getParameter("NOSTOP_WHEN_BELOW_MINTIMESTEP") != null) {
+            if (request.getParameter("NOSTOP_WHEN_BELOW_MINTIMESTEP").equals("true")) {
+                appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = true;
+            }
         } else {
             appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP = false;
         }
-        
-         if (request.getParameter("NOPMSTEPADJUSTMENT")!=null){
-        if (request.getParameter("NOPMSTEPADJUSTMENT").equals("true")) 
-            appInputGADGET.NOPMSTEPADJUSTMENT = true;
+
+        if (request.getParameter("NOPMSTEPADJUSTMENT") != null) {
+            if (request.getParameter("NOPMSTEPADJUSTMENT").equals("true")) {
+                appInputGADGET.NOPMSTEPADJUSTMENT = true;
+            }
         } else {
             appInputGADGET.NOPMSTEPADJUSTMENT = false;
         }
-         
-         
-       if (request.getParameter("HAVE_HDF5")!=null){  
-        if (request.getParameter("HAVE_HDF5").equals("true")) 
-            appInputGADGET.HAVE_HDF5 = true;
+
+
+        if (request.getParameter("HAVE_HDF5") != null) {
+            if (request.getParameter("HAVE_HDF5").equals("true")) {
+                appInputGADGET.HAVE_HDF5 = true;
+            }
         } else {
             appInputGADGET.HAVE_HDF5 = false;
         }
-       
-       
-       if (request.getParameter("OUTPUTPOTENTIAL")!=null){
-        if (request.getParameter("OUTPUTPOTENTIAL").equals("true")) 
-            appInputGADGET.OUTPUTPOTENTIAL = true;
+
+
+        if (request.getParameter("OUTPUTPOTENTIAL") != null) {
+            if (request.getParameter("OUTPUTPOTENTIAL").equals("true")) {
+                appInputGADGET.OUTPUTPOTENTIAL = true;
+            }
         } else {
             appInputGADGET.OUTPUTPOTENTIAL = false;
         }
-       
-       if (request.getParameter("OUTPUTACCELERATION")!=null){
-        if (request.getParameter("OUTPUTACCELERATION").equals("true")) 
-            appInputGADGET.OUTPUTACCELERATION = true;
+
+        if (request.getParameter("OUTPUTACCELERATION") != null) {
+            if (request.getParameter("OUTPUTACCELERATION").equals("true")) {
+                appInputGADGET.OUTPUTACCELERATION = true;
+            }
         } else {
             appInputGADGET.OUTPUTACCELERATION = false;
         }
-       
-       if (request.getParameter("OUTPUTCHANGEOFENTROPY")!=null){
-        if (request.getParameter("OUTPUTCHANGEOFENTROPY").equals("true")) 
-            appInputGADGET.OUTPUTCHANGEOFENTROPY = true;
+
+        if (request.getParameter("OUTPUTCHANGEOFENTROPY") != null) {
+            if (request.getParameter("OUTPUTCHANGEOFENTROPY").equals("true")) {
+                appInputGADGET.OUTPUTCHANGEOFENTROPY = true;
+            }
         } else {
             appInputGADGET.OUTPUTCHANGEOFENTROPY = false;
         }
-       
-       
-       if (request.getParameter("OUTPUTTIMESTEP")!=null){
-        if (request.getParameter("OUTPUTTIMESTEP").equals("true")) 
-            appInputGADGET.OUTPUTTIMESTEP = true;
+
+
+        if (request.getParameter("OUTPUTTIMESTEP") != null) {
+            if (request.getParameter("OUTPUTTIMESTEP").equals("true")) {
+                appInputGADGET.OUTPUTTIMESTEP = true;
+            }
         } else {
             appInputGADGET.OUTPUTTIMESTEP = false;
         }
-       
-       if (request.getParameter("NOGRAVITY")!=null){
-        if (request.getParameter("NOGRAVITY").equals("true")) 
-            appInputGADGET.NOGRAVITY = true;
+
+        if (request.getParameter("NOGRAVITY") != null) {
+            if (request.getParameter("NOGRAVITY").equals("true")) {
+                appInputGADGET.NOGRAVITY = true;
+            }
         } else {
             appInputGADGET.NOGRAVITY = false;
         }
-       
-       if (request.getParameter("NOTREERND")!=null){
-        if (request.getParameter("NOTREERND").equals("true")) 
-            appInputGADGET.NOTREERND = true;
+
+        if (request.getParameter("NOTREERND") != null) {
+            if (request.getParameter("NOTREERND").equals("true")) {
+                appInputGADGET.NOTREERND = true;
+            }
         } else {
             appInputGADGET.NOTREERND = false;
         }
-       
-       
-       if (request.getParameter("NOTYPEPREFIX_FFTW")!=null){
-        if (request.getParameter("NOTYPEPREFIX_FFTW").equals("true")) 
-            appInputGADGET.NOTYPEPREFIX_FFTW = true;
+
+
+        if (request.getParameter("NOTYPEPREFIX_FFTW") != null) {
+            if (request.getParameter("NOTYPEPREFIX_FFTW").equals("true")) {
+                appInputGADGET.NOTYPEPREFIX_FFTW = true;
+            }
         } else {
             appInputGADGET.NOTYPEPREFIX_FFTW = false;
         }
-       
-       if (request.getParameter("LONG_XYZ")!=null){
-        if (request.getParameter("LONG_XYZ").equals("true")) 
-            appInputGADGET.LONG_XYZ = true;
+
+        if (request.getParameter("LONG_XYZ") != null) {
+            if (request.getParameter("LONG_XYZ").equals("true")) {
+                appInputGADGET.LONG_XYZ = true;
+            }
         } else {
             appInputGADGET.LONG_XYZ = false;
         }
-       
-       if (request.getParameter("TWODIMS")!=null){
-        if (request.getParameter("TWODIMS").equals("true")) 
-            appInputGADGET.TWODIMS = true;
+
+        if (request.getParameter("TWODIMS") != null) {
+            if (request.getParameter("TWODIMS").equals("true")) {
+                appInputGADGET.TWODIMS = true;
+            }
         } else {
             appInputGADGET.TWODIMS = false;
         }
-       
-       if (request.getParameter("SPH_BND_PARTICLES")!=null){
-        if (request.getParameter("SPH_BND_PARTICLES").equals("true")) 
-            appInputGADGET.SPH_BND_PARTICLES = true;
+
+        if (request.getParameter("SPH_BND_PARTICLES") != null) {
+            if (request.getParameter("SPH_BND_PARTICLES").equals("true")) {
+                appInputGADGET.SPH_BND_PARTICLES = true;
+            }
         } else {
             appInputGADGET.SPH_BND_PARTICLES = false;
         }
-       
-       
-       if (request.getParameter("NOVISCOSITYLIMITER")!=null){
-        if (request.getParameter("NOVISCOSITYLIMITER").equals("true")) 
-            appInputGADGET.NOVISCOSITYLIMITER = true;
+
+
+        if (request.getParameter("NOVISCOSITYLIMITER") != null) {
+            if (request.getParameter("NOVISCOSITYLIMITER").equals("true")) {
+                appInputGADGET.NOVISCOSITYLIMITER = true;
+            }
         } else {
             appInputGADGET.NOVISCOSITYLIMITER = false;
         }
-       
-       if (request.getParameter("COMPUTE_POTENTIAL_ENERGY") !=null){
-       
+
+        if (request.getParameter("COMPUTE_POTENTIAL_ENERGY") != null) {
+
             appInputGADGET.COMPUTE_POTENTIAL_ENERGY = true;
         } else {
             appInputGADGET.COMPUTE_POTENTIAL_ENERGY = false;
         }
-       
-       
-       
-       if (request.getParameter("LONGIDS")!=null){
-        if (request.getParameter("LONGIDS").equals("true")) 
-            appInputGADGET.LONGIDS = true;
+
+
+
+        if (request.getParameter("LONGIDS") != null) {
+            if (request.getParameter("LONGIDS").equals("true")) {
+                appInputGADGET.LONGIDS = true;
+            }
         } else {
             appInputGADGET.LONGIDS = false;
         }
-       
-       if (request.getParameter("ISOTHERMAL")!=null){
-        if (request.getParameter("ISOTHERMAL").equals("true")) 
-            appInputGADGET.ISOTHERMAL = true;
+
+        if (request.getParameter("ISOTHERMAL") != null) {
+            if (request.getParameter("ISOTHERMAL").equals("true")) {
+                appInputGADGET.ISOTHERMAL = true;
+            }
         } else {
             appInputGADGET.ISOTHERMAL = false;
         }
-       
-       if (request.getParameter("SELECTIVE_NO_GRAVITY")!=null){
-        if (request.getParameter("SELECTIVE_NO_GRAVITY").equals("true")) 
-            appInputGADGET.SELECTIVE_NO_GRAVITY = true;
+
+        if (request.getParameter("SELECTIVE_NO_GRAVITY") != null) {
+            if (request.getParameter("SELECTIVE_NO_GRAVITY").equals("true")) {
+                appInputGADGET.SELECTIVE_NO_GRAVITY = true;
+            }
         } else {
             appInputGADGET.SELECTIVE_NO_GRAVITY = false;
         }
-       
-        if (request.getParameter("FORCETEST")!=null){
-             appInputGADGET.FORCETEST = request.getParameter("FORCETEST");
-        
+
+        if (request.getParameter("FORCETEST") != null) {
+            appInputGADGET.FORCETEST = request.getParameter("FORCETEST");
+
         }
-        
-         if (request.getParameter("MAKEGLASS")!=null){
-        if (request.getParameter("MAKEGLASS").equals("true")) 
-            appInputGADGET.MAKEGLASS = true;
+
+        if (request.getParameter("MAKEGLASS") != null) {
+            if (request.getParameter("MAKEGLASS").equals("true")) {
+                appInputGADGET.MAKEGLASS = true;
+            }
         } else {
             appInputGADGET.MAKEGLASS = false;
         }
@@ -809,6 +851,169 @@ public class GADGET_portlet extends GenericPortlet {
 
 
     } // getInputForm 
+
+    public void createGADGET_MAKEFILE(App_InputGADGET appInputGADGET) {
+
+
+        //System.out.println("V1=>"+appInputGADGET.PERIODIC"V2=>"+appInputGADGET.UNEQUALSOFTENINGS+"V3=>"+appInputGADGET.PEANOHILBERT+"V4=>"+"V1=>"+"V1=>"+"V1=>"+"V1=>"+);
+        try {
+            String content = "";
+            System.out.println("sono dentro createGADGET_MAKEFILE ");
+            if (appInputGADGET.PERIODIC) {
+                content += "OPT   +=  -DPERIODIC \n";
+            }
+            if (appInputGADGET.UNEQUALSOFTENINGS) {
+                content += "OPT   +=  -DUNEQUALSOFTENINGS\n";
+            }
+
+            if (appInputGADGET.PEANOHILBERT) {
+                content += "OPT   +=  -DPEANOHILBERT\n";
+            };
+
+            if (appInputGADGET.WALLCLOCK) {
+                content += "OPT   +=  -DWALLCLOCK\n";
+            }
+
+            if (appInputGADGET.PMGRID) {
+                content += "OPT   +=  -DPMGRID\n";
+            }
+
+            if (appInputGADGET.ENLARGEREGION != "") {
+                content += "OPT   +=  -DENLARGEREGIO=" + appInputGADGET.ENLARGEREGION + "\n";
+            }
+
+
+            if (appInputGADGET.ASMT != "") {
+                content += "OPT   +=  -DASMT=" + appInputGADGET.ASMT + "\n";
+            }
+
+            if (appInputGADGET.RCUT != "") {
+                content += "OPT   +=  -DRECUT=" + appInputGADGET.RCUT + "\n";
+            }
+
+
+            if (appInputGADGET.DOUBLEPRECISION) {
+                content += "OPT   +=  -DDOUBLEPRECISION\n";
+            }
+
+            if (appInputGADGET.DOUBLEPRECISION_FFTW) {
+                content += "OPT   +=  -DDOUBLEPRECISION_FFTW\n";
+            }
+
+            if (appInputGADGET.SYNCHRONIZATION) {
+                content += "OPT   +=  -DSYNCHRONIZATION\n";
+            }
+
+            if (appInputGADGET.FLEXSTEPS) {
+                content += "OPT   +=  -DFLEXSTEPS\n";
+            }
+
+            if (appInputGADGET.PSEUDOSYMMETRIC) {
+                content += "OPT   +=  -DPSEUDOSYMMETRIC\n";
+            }
+
+            if (appInputGADGET.NOSTOP_WHEN_BELOW_MINTIMESTEP) {
+                content += "OPT   +=  -DNOSTOP_WHEN_BELOW_MINTIMESTEP\n";
+            }
+
+            if (appInputGADGET.NOPMSTEPADJUSTMENT) {
+                content += "OPT   +=  -DNOPMSTEPADJUSTMENT\n";
+            }
+
+            if (appInputGADGET.HAVE_HDF5) {
+                content += "OPT   +=  -DHAVE_HDF5\n";
+            }
+
+            if (appInputGADGET.OUTPUTPOTENTIAL) {
+                content += "OPT   +=  -DOUTPUTPOTENTIAL\n";
+            }
+
+            if (appInputGADGET.OUTPUTACCELERATION) {
+                content += "OPT   +=  -DOUTPUTACCELERATION\n";
+            }
+
+            if (appInputGADGET.OUTPUTCHANGEOFENTROPY) {
+                content += "OPT   +=  -DOUTPUTCHANGEOFENTROPY\n";
+            }
+
+            if (appInputGADGET.OUTPUTTIMESTEP) {
+                content += "OPT   +=  -DOUTPUTTIMESTEP\n";
+            }
+
+            if (appInputGADGET.NOGRAVITY) {
+                content += "OPT   +=  -DNOGRAVITY\n";
+            }
+
+            if (appInputGADGET.NOTREERND) {
+                content += "OPT   +=  -DNOTREERND\n";
+            }
+
+            if (appInputGADGET.NOTYPEPREFIX_FFTW) {
+                content += "OPT   +=  -DNOTYPEPREFIX_FFTW\n";
+            }
+
+            if (appInputGADGET.LONG_XYZ) {
+                content += "OPT   +=  -DLONG_XYZ\n";
+            }
+
+            if (appInputGADGET.TWODIMS) {
+                content += "OPT   +=  -DTWODIMS\n";
+            }
+
+            if (appInputGADGET.SPH_BND_PARTICLES) {
+                content += "OPT   +=  -DSPH_BND_PARTICLES\n";
+            }
+
+            if (appInputGADGET.NOVISCOSITYLIMITER) {
+                content += "OPT   +=  -DNOVISCOSITYLIMITER\n";
+            }
+
+            if (appInputGADGET.COMPUTE_POTENTIAL_ENERGY) {
+                content += "OPT   +=  -DCOMPUTE_POTENTIAL_ENERGY\n";
+            }
+
+            if (appInputGADGET.LONGIDS) {
+                content += "OPT   +=  -DLONGIDS\n";
+            }
+             if (appInputGADGET.ISOTHERMAL) {
+                content += "OPT   +=  -DISOTHERMAL\n";
+            }
+             
+              if (appInputGADGET.SELECTIVE_NO_GRAVITY) {
+                content += "OPT   +=  -DSELECTIVE_NO_GRAVITY\n";
+            }
+              
+             if (appInputGADGET.FORCETEST != "") {
+                content += "OPT   +=  -DFORCETEST=" + appInputGADGET.FORCETEST + "\n";
+            } 
+              
+               if (appInputGADGET.MAKEGLASS) {
+                content += "OPT   +=  -DMAKEGLASS\n";
+            }
+
+
+            // String inputSandbox=appServerPath+"WEB-INF/job/"+file;
+            File file = new File(appServerPath + "/WEB-INF/job/prova.makefile");
+
+
+            // if file doesnt exists, then create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(content);
+            bw.close();
+
+
+            System.out.println("MAKEFILE Done " + file.getAbsolutePath());
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void createMUSICconfigFile(App_Input appInput) {
 
