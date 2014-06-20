@@ -3,12 +3,12 @@
 
 <liferay-portlet-app>
 	<portlet>
-		<portlet-name>myFirst-portlet</portlet-name>
+		<portlet-name>GADGET-portlet</portlet-name>
 		<icon>/images/icon.png</icon>
 		<instanceable>true</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
-		<css-class-wrapper>myFirst_portlet</css-class-wrapper>
+		<css-class-wrapper>GADGET_portlet</css-class-wrapper>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>
