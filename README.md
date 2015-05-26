@@ -1,7 +1,7 @@
 # Project SitRep
 | Build Status | Travis | SAGrid Jenkins |
 |--------------|--------|----------------|
-|              | [![Build Status](https://travis-ci.org/SouthAfricaDigitalScience/GADGET-portlet.svg?branch=master)](https://travis-ci.org/SouthAfricaDigitalScience/GADGET-portlet) | [![Build Status](http://ci.sagrid.ac.za:8080/buildStatus/icon?job=GADGET2-portlet)](http://ci.sagrid.ac.za:8080/view/All/job/GADGET2-portlet/) |
+|              | [![Build Status](https://travis-ci.org/SouthAfricaDigitalScience/GADGET-portlet.svg?branch=master)](https://travis-ci.org/SouthAfricaDigitalScience/GADGET-portlet) | [![Build Status](http://ci.sagrid.ac.za:8080/view/All/job/GADGET2-portlet/badge/icon)](http://ci.sagrid.ac.za:8080/view/All/job/GADGET2-portlet/) |
 | Project issues | [![Stories in Ready](https://badge.waffle.io/southafricadigitalscience/GADGET-portlet.png?label=ready&title=Ready)](https://waffle.io/southafricadigitalscience/GADGET-portlet)| [![Stories in Ready](https://badge.waffle.io/southafricadigitalscience/GADGET-portlet.png?label=In%20Progress&title=In%20Progress)](https://waffle.io/southafricadigitalscience/GADGET-portlet) | 
 
 GADGET-portlet
