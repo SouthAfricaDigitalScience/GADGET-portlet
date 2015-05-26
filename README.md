@@ -20,3 +20,5 @@ The portlet will provide an interface to the user. The main functionality of the
 # Contributing
 
 Are you an astronomer interested in using this portlet ? [Open a ticket with a requested feature](https://github.com/SouthAfricaDigitalScience/GADGET-portlet/issues/new)
+
+!http://ci.sagrid.ac.za:8080/buildStatus/icon?job=GADGET2-portlet
